@@ -17,9 +17,10 @@ const ImageBox = ({data}) => {
     <div className='image-box'  
     style={{
         position:"absolute",width:"400px" ,height:"400px",
-        top:`${random(99)}%`, left:`${random(99)}%`
+        top:`${random(99)}%`, left:`${random(99)}%`,zIndex:`${random(5)}`
     }}
-    draggable="true">
+    draggable="true"
+    >
 
         <Image 
         //loader={myLoader}

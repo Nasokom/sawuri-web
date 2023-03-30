@@ -32,7 +32,7 @@ const Hero = ({photos}) => {
       
         // Ajout de l'animation pour agrandir l'image
         tl.to(photoLayout, {
-          top:0,
+          top:"-100vh",
           ease: "power2.inOut",
         },0)
           
@@ -43,8 +43,8 @@ const Hero = ({photos}) => {
 
   return (
     <div className='hero' ref={main}>
-        <div className='hero-title-box'>
           <PhotoLayout photos={photos}/>
+        <div className='hero-title-box'>
           <h1>Marcel Sawuri</h1>
         </div>
     </div>
