@@ -16,8 +16,6 @@ const Hero = ({photos}) => {
 
 
     const photoLayout = self.selector('.photo-layout');
-    //const vh = window.innerHeight;
-    console.log(photoLayout)
         
         const tl = gsap.timeline({
           scrollTrigger: {
@@ -26,11 +24,9 @@ const Hero = ({photos}) => {
             end: "+=1000px",
             scrub: true,
             pin: true,
-            markers: true
           }
         });
       
-        // Ajout de l'animation pour agrandir l'image
         tl.to(photoLayout, {
           top:"-100vh",
           ease: "power2.inOut",
