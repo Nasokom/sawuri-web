@@ -1,0 +1,14 @@
+.intro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    width: 100%;
+    min-height: 100vh;
+    color: white;
+}
+
+.intro p{
+    padding: 5vw;
+    font-size: xx-large;
+}

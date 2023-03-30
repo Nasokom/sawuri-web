@@ -1,0 +1,8 @@
+footer{
+    min-height: 10vh;
+    min-height: 10dvh;
+    min-width: 100vw;
+    display: flex;
+    background-color: red;
+    bottom: 0;
+}
