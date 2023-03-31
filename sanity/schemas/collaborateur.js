@@ -17,12 +17,6 @@ export default {
         title: 'images',
         name: 'images',
         type: 'image',
-      },
-      {
-        title: 'lien',
-        name:"lien",
-        type: "array",
-        of: [{ type: 'url',}]
       }
     ]
   }

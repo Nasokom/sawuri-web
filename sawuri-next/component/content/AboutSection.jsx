@@ -7,13 +7,14 @@ const AboutSection = ({datas}) => {
   const [utilHeight,setUtilHeight] = useState({
     container:0,img:0
   })
-  console.log(images)
+//  console.log(images)
 
 useEffect(()=>{
-  const height = main.current.querySelector('.text-container').offsetHeight;
-  const imgHeigth = height/images.length;
-  setUtilHeight({container:height, img:imgHeigth})
-
+  setTimeout(()=>{
+    const height = main.current.querySelector('.text-container').offsetHeight;
+    const imgHeigth = height/images.length;
+    setUtilHeight({container:height, img:imgHeigth})
+  },1000)
 },[])
 
   return (
@@ -25,9 +26,10 @@ useEffect(()=>{
         </div>
         <div className='about-img-layout' style={{height:`${utilHeight.container}px`}}>
         {images.map((img,i)=>{
+          {i == images.length -1 && console.table({i,img})}
                 return( 
-                <div className='about-img-limiter' key={i}style={{height:`${utilHeight.img}px`}} >  
-                  <ImageBox data={img} key={i}/>
+                <div className='about-img-limiter' key={i} style={{height:`${utilHeight.img}px`}} >  
+                  <ImageBox data={img} key={i} axesRanges={{max:80,min:20}} rndmZidx={false}/>
                 </div>
                 )
             })}

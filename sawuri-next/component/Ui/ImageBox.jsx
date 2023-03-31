@@ -4,14 +4,16 @@ import { urlFor } from '@/Utils/sanity/sanityClient'
 import { useStateContext } from '@/context/StateContext'
 
 
-const ImageBox = ({data}) => {
+const ImageBox = ({data,axesRanges,rndmZidx}) => {
 
     const {isMobile} = useStateContext();
+    const {max, min} = axesRanges;
 
     const myLoader = () => {
-        return data.image && urlFor(data.image).url()}
+        return data && urlFor(data).url()}
     
     //!! PERFORMANCE ISSUES Server : CLient & Server Different style
+    //TODO Maybe try a useEffect side effect to be sur all elt are there
     function random(min, max) {
       return Math.floor(Math.random() * (max - min + 1) + min);
     }
@@ -19,11 +21,10 @@ const ImageBox = ({data}) => {
   return (
     <div className='image-box'  
     style={{
-        position:"absolute",//,width:`${isMobile ? 200 : 400}px` ,height:`${isMobile ? 200 : 400}px`,
-        top:`${random(10,90)}%`, left:`${random(10,90)}%`,zIndex:`${random(0,5)}`
+        position:"absolute",rotate:`${random(-15,15)}deg`,
+        top:`${random(min,max)}%`, left:`${random(min,max)}%`,zIndex:`${ rndmZidx && random(0,5)}`
     }}
     draggable="true"
-    
     >
 
         <Image 
@@ -32,7 +33,7 @@ const ImageBox = ({data}) => {
         height={isMobile ? 200 : 400}
         width={isMobile ? 200 : 400}
         style={{objectFit:'contain'}}
-        alt={data.name}
+        alt={'photo de marcel'}
         loader={myLoader}
         />
     </div>

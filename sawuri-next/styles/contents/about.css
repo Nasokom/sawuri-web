@@ -18,7 +18,6 @@
 .about .text-container{
     width: 60%;
     min-height: 100%;
-    border:1px solid green ;
     color: black;
     padding: 20px;
 }
@@ -29,38 +28,35 @@
     font-size: 20px;
     font-family: "Grandstander-variable";
     line-height: 4rem;
+    opacity:0;
 }
 
 .about-img-layout{
-    width: 40%;
+    width: 30%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
     position: relative;
-    flex-wrap: wrap;
 }
 
 .about-img-limiter{
     width:100%;
     height: 20%;
     position: relative;
-    border:2px solid red
+    opacity: 0;
+   /*  transform: rotateX(63deg) rotateY(44deg); */
 }
 
 @media (max-width: 700px) {
 
     .about .text-container{
-        min-height: 100%;
-        border:1px solid green ;
-        color: black;
-        padding: 20px;
+        width: 98%;
     }
     
     .about-img-layout{
-        width: 40%;
-        height: 100%;
-        display: none;
+        width: 80%;
+        position: absolute;
+        justify-content:start;
     }
- 
 }
