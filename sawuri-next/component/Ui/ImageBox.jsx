@@ -9,9 +9,9 @@ const ImageBox = ({data}) => {
     const {isMobile} = useStateContext();
 
     const myLoader = () => {
-        return data.image && urlFor( data.image).url()}
+        return data.image && urlFor(data.image).url()}
     
-    //!! PERFORMANCE ISSUES Server & CLient & Server Different
+    //!! PERFORMANCE ISSUES Server : CLient & Server Different style
     function random(min, max) {
       return Math.floor(Math.random() * (max - min + 1) + min);
     }

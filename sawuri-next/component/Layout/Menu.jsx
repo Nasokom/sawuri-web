@@ -1,9 +1,39 @@
-import React from 'react'
+import React, {useEffect, useRef} from 'react'
+import Link from 'next/link'
+import { useStateContext } from '@/context/StateContext'
 
-const Menu = () => {
+const Menu = ({toggleMenu}) => {
+
+    const {setShowMenu} = useStateContext()
+    const menu = useRef(null)
+
+    useEffect(()=>{
+
+        document.documentElement.style.overflow = "hidden"
+
+        return ()=>{
+            document.documentElement.style.overflow = "auto"
+        }
+
+    },[])
+
   return (
-    <div id='menu'>
-        
+    <div id='menu' ref={menu}>
+
+        <Link href={''} className="nav-link" onClick={()=>toggleMenu()}>
+            Home
+        </Link>
+
+        <Link href={''} className="nav-link" onClick={()=>toggleMenu()}>
+            Biographie
+        </Link>
+        <Link href={''} className="nav-link" onClick={()=>toggleMenu()}>
+            Collaborateur
+        </Link>
+        <Link href={''} className="nav-link" onClick={()=>toggleMenu()}>
+            Contact
+        </Link>
+
     </div>
   )
 }
