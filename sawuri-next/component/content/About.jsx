@@ -35,7 +35,6 @@ const About= ({datas}) => {
           trigger: section,
           start:"top 40%",
           end: "bottom 40%",
-          markers:true,
           scrub: true,
           pin: false,
         }
