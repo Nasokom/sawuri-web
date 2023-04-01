@@ -6,7 +6,7 @@ import { useIsomorphicLayoutEffect } from '@/Utils/isomorphicLayout';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const About= ({datas}) => {
+const AboutScrollContainer= ({datas}) => {
 
 
   function sortContent( a, b ){
@@ -80,4 +80,4 @@ const About= ({datas}) => {
   )
 }
 
-export default About
+export default AboutScrollContainer

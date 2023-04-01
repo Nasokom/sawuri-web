@@ -5,7 +5,7 @@ import styles from '@/styles/Home.module.css'
 import { client } from '@/Utils/sanity/sanityClient'
 import Hero from '@/component/Hero'
 import Intro from '@/component/content/Intro'
-import About from '@/component/content/About'
+import AboutScrollContainer from '@/component/content/AboutScrollContainer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,7 +20,7 @@ export default function Home({aboutData,photos}) {
       </Head>
         <Hero photos={photos}/>
         <Intro/>
-        <About datas={aboutData}/>
+        <AboutScrollContainer datas={aboutData}/>
     </>
   )
 }

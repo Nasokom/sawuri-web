@@ -1,0 +1,9 @@
+.about-page{
+    min-height: 90vh;
+    padding-top: 10vh;
+}
+
+.about-page h1{
+    font-size: 40px;
+    margin-bottom: 100px;
+}

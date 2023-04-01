@@ -24,7 +24,7 @@ const Menu = ({toggleMenu}) => {
             Home
         </Link>
 
-        <Link href={''} className="nav-link" onClick={()=>toggleMenu()}>
+        <Link href={'/about'} className="nav-link" onClick={()=>toggleMenu()}>
             Biographie
         </Link>
         <Link href={'/musiciens'} className="nav-link" onClick={()=>toggleMenu()}>

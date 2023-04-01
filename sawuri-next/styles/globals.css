@@ -94,9 +94,9 @@ p{
 @import url('contents/intro.css');
 @import url('contents/about.css');
 @import url('layouts/menu.css');
-@import url('pages/team.css');
-@import url('pages/contact.css');
 @import url("ui/ui.css");
+@import url('pages/page.css');
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;

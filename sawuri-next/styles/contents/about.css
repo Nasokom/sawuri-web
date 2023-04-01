@@ -17,8 +17,8 @@
 .about .text-container{
     width: 60%;
     min-height: 100%;
-    color: black;
-    /* mix-blend-mode: difference; */
+   /*  color: black; */
+    mix-blend-mode: difference;
     padding: 20px;
 }
 
