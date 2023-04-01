@@ -21,12 +21,15 @@ useEffect(()=>{
     <div className='about-section' ref={main}>
         <div className='text-container'>
             {para.map((p,i)=>{
-                return <p key={i}>{p}</p>
+                return (
+                  <div className='text-box' key={i}>
+                    <p>{p}</p>
+                  </div>
+                )
             })}
         </div>
         <div className='about-img-layout' style={{height:`${utilHeight.container}px`}}>
         {images.map((img,i)=>{
-          {i == images.length -1 && console.table({i,img})}
                 return( 
                 <div className='about-img-limiter' key={i} style={{height:`${utilHeight.img}px`}} >  
                   <ImageBox data={img} key={i} axesRanges={{max:80,min:20}} rndmZidx={false}/>

@@ -1,7 +1,7 @@
 export default {
     name: 'contenu',
     type: 'document',
-      title: 'Contenu',
+      title: 'Biographie Sawuri',
     fields: [
        {   
         name:"ordre",
@@ -24,12 +24,6 @@ export default {
         name: 'images',
         type: 'array',
         of: [{type: 'image'}]
-      },
-       {
-        title: 'Text',
-        name: 'text',
-        type: 'array',
-        of: [{type: 'block'}]
       }
      
     ]}

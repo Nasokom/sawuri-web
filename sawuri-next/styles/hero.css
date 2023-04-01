@@ -18,7 +18,7 @@
     left: auto;
     z-index: 10;
 }
-h1{
+.hero h1{
     font-size: 70px;
     text-align: center;
     animation: titleAnim 0.5s forwards ease;

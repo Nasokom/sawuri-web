@@ -27,25 +27,28 @@ const About= ({datas}) => {
 
     const sections = self.selector('.about-section');
     
-    console.log(sections)
+
     sections.forEach((section, i) => {
       
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: section,
-          start:"top 40%",
-          end: "bottom 40%",
+          start:"top 65%",
+          end: "bottom 20%",
           scrub: true,
           pin: false,
         }
       });
        const imgs = section.querySelectorAll('.about-img-limiter'),
-       texts = section.querySelectorAll('p');
-      console.log(texts.length + imgs.length)
+       texts = section.querySelectorAll('.text-box');
       
 
       texts.forEach((text,i)=>{
-        tl.to(text,{
+        tl.from(text.querySelector('p'),{
+         translateY: 100,
+        })
+        tl.to(text.querySelector('p'),{
+          translateY:0,
           opacity:1,
           ease:"power2.inOut"
         },i == 0 ? 0 : i*2)
@@ -57,7 +60,7 @@ const About= ({datas}) => {
           opacity:1,
           ease:"power2.inOut",
           transform: "rotateX(0deg) rotateY(0deg)",
-        },i == 0 ? 1 : i + (i+1))
+        },i == 0 ? 0.5 : (i*2)+0.5)
        })
       
 });

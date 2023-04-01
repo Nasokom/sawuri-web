@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import Image from 'next/image'
 import { urlFor } from '@/Utils/sanity/sanityClient'
 import { useStateContext } from '@/context/StateContext'
@@ -17,6 +17,7 @@ const ImageBox = ({data,axesRanges,rndmZidx}) => {
     function random(min, max) {
       return Math.floor(Math.random() * (max - min + 1) + min);
     }
+
 
   return (
     <div className='image-box'  

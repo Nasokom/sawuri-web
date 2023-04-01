@@ -20,17 +20,17 @@ const Menu = ({toggleMenu}) => {
   return (
     <div id='menu' ref={menu}>
 
-        <Link href={''} className="nav-link" onClick={()=>toggleMenu()}>
+        <Link href={'/'} className="nav-link" onClick={()=>toggleMenu()}>
             Home
         </Link>
 
         <Link href={''} className="nav-link" onClick={()=>toggleMenu()}>
             Biographie
         </Link>
-        <Link href={''} className="nav-link" onClick={()=>toggleMenu()}>
+        <Link href={'/musiciens'} className="nav-link" onClick={()=>toggleMenu()}>
             Collaborateur
         </Link>
-        <Link href={''} className="nav-link" onClick={()=>toggleMenu()}>
+        <Link href={'/contact'} className="nav-link" onClick={()=>toggleMenu()}>
             Contact
         </Link>
 

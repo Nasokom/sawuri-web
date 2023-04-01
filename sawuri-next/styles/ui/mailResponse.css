@@ -1,0 +1,70 @@
+
+.mail-response{
+    position: fixed;
+    min-width: 90%;
+    background-color: rgba(0, 0, 0, 0.707);
+    height: 90vh;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    border-radius: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    backdrop-filter: blur(20px);
+    transition: 1s;
+    animation: anim 0.5s forwards;
+    overflow: hidden;
+}
+
+.mail-response-container{
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    mix-blend-mode: difference;
+    color: white;
+}
+.mail-response h2{
+    margin-bottom: 40px ;
+    font-family: 'climateCrisis';
+    text-align: center;
+}
+
+.mail-response p{
+    line-height: 2rem;
+}
+
+.mail-response button{
+    mix-blend-mode: difference;
+    border: 4px solid white;
+    padding: 10px;
+    font-family: 'climateCrisis';
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.mail-response button:hover{
+    mix-blend-mode: none;
+    border: 6px solid green;
+    border-radius: 20px;
+    background-color: yellow;
+    padding: 8px;
+    color: red;
+    scale: 2 2;
+}
+
+
+@keyframes anim {
+    
+    0%{
+        height: 0vh;
+    }
+
+    100%{
+        height: 90vh;
+    }
+}

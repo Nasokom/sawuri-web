@@ -13,7 +13,7 @@ export default function Home({aboutData,photos}) {
   return (
     <>
       <Head>
-        <title>Sawuri</title>
+        <title>Marcel Sawuri</title>
         <meta name="description" content="Sawuri website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />

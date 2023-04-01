@@ -77,14 +77,26 @@
   src: url('.././public/fonts/BlackSansaFree-Regular.otf')
 }
 
+h1{
+  font-family: 'climateCrisis';
+  font-size: 70px;
+  width: 100%;
+  text-align: center;
+}
 
-
+p{
+  font-size: 20px;
+  font-family: "Grandstander-variable";
+}
 @import url('layouts/navbar.css');
 @import url('layouts/footer.css');
 @import url('hero.css');
 @import url('contents/intro.css');
 @import url('contents/about.css');
 @import url('layouts/menu.css');
+@import url('pages/team.css');
+@import url('pages/contact.css');
+@import url("ui/ui.css");
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;

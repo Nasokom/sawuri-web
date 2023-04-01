@@ -1,7 +1,7 @@
 export default {
     name: 'sons',
     type: 'document',
-      title: 'Sons',
+      title: 'Musique Piste',
     fields: [
       {
         name: 'titre',
