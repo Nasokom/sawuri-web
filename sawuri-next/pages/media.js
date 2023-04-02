@@ -13,9 +13,9 @@ const Media = ({videos}) => {
 
         <div className='video-container'>
 
-            {videos.map((video)=>{
+            {videos.map((video,i)=>{
               return (
-                <div className='video-box'>
+                <div className='video-box' key={i}>
                         <h4 >{video.titre}</h4>
                         <iframe width="560" height="420" src={`${video.url}${video.url == 'youtube' ? '' :''}`}
                         frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share; fullscreen" allowfullScreen="true" allowFullScreen="true"
