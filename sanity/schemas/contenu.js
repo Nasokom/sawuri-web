@@ -11,7 +11,7 @@ export default {
       {
         name: 'name',
         type: 'string',
-        title: 'Name'
+        title: 'Titre'
       },
       {
         title: 'paragraphe',

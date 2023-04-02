@@ -1,0 +1,27 @@
+.media-page{
+    min-height: 100vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 10vh;
+}
+
+iframe{
+}
+
+iframe > * {
+    opacity: 0;
+    display: none;
+    opacity: inherit;
+}
+
+iframe html {
+    opacity: 0;
+    display: none;
+}
+
+._4_6w{
+    opacity: 0;
+}

@@ -33,10 +33,11 @@ const AboutScrollContainer= ({datas}) => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: section,
-          start:"top 65%",
+          start:"200px 45%",
           end: "bottom 20%",
           scrub: true,
           pin: false,
+          markers:true,
         }
       });
        const imgs = section.querySelectorAll('.about-img-limiter'),

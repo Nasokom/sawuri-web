@@ -10,9 +10,21 @@ export default {
       },
       {
         name:"url",
-        type:"text",
+        type:"string",
         title:"Lien",
         description:"chemin exact svp"
+      },
+      {
+        name:"source",
+        type:"string",
+        title:"Source",
+        options: {
+          list: [
+            'youtube', 'facebook', 'dailymotion','autre',
+          ], // <-- predefined values
+          layout: 'radio' // <-- defaults to 'dropdown'
+        },
+        description:"important"
       },
       {
         name:'desc',
