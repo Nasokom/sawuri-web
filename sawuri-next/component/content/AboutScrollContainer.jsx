@@ -37,7 +37,7 @@ const AboutScrollContainer= ({datas}) => {
           end: "bottom 20%",
           scrub: true,
           pin: false,
-          markers:true,
+          //markers:true,
         }
       });
        const imgs = section.querySelectorAll('.about-img-limiter'),

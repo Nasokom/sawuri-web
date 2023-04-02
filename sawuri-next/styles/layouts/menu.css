@@ -1,7 +1,7 @@
 #menu{
     width: 99vw;
     height: 99vh;
-    background-color: black;
+    background-image:var(--bg) ;
     z-index: 99;
     position: fixed;
     border-radius: 20px;
@@ -19,7 +19,7 @@
 }
 
 .nav-link{
-    color: white;
+    color: var(--textcolor);
     font-family: "climateCrisis";
     font-size: 35px;
     transition: 0.3s;

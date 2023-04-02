@@ -19,7 +19,7 @@ const TeamCard = ({member}) => {
         <h2>{member.name}</h2>
 
 
-        <Image 
+       {member.images && <Image 
             style={{objectFit:'cover',borderRadius:"20px"
             }}
             src="vzzf" 
@@ -27,7 +27,7 @@ const TeamCard = ({member}) => {
             width={ isMobile ? 300 : 500 } 
             loader={myLoader}
             alt={"image du musicien"}
-        />
+        />}
 
 
 
@@ -35,10 +35,10 @@ const TeamCard = ({member}) => {
         {member.desc.map((p,i)=>{
            return <p key={i}>{p}</p>
         })}
-            <p>Maitrise : {member.skillz.map((skill,i)=>{
+            { member.skillz &&  <p>Maitrise : {member.skillz.map((skill,i)=>{
                return <span key={i}>{skill}</span>
                 })}
-            </p>
+            </p>}
         </div>
 
        

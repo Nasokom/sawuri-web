@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import axios from "axios";
 import MailResponse from '@/component/Ui/MailResponse';
+import Banner from '@/component/Ui/Banner';
 
 const Contact = () => {
 
@@ -69,8 +70,10 @@ const Contact = () => {
 
   return (
     <div className='contact-page'>
-            <h1>contact</h1>
+            <h1 className="page-title">contact</h1>
 
+
+    {/* <h3>Vous souhaitez collaborer avec moi, discuter musique ou simplement dire bonjour ? N'hésitez pas à utiliser le formulaire ci-dessous pour entrer en contact !</h3> */}
             {error && <p>{error}</p>}
             {success && <p>{success}</p>}
             <div>
@@ -84,6 +87,11 @@ const Contact = () => {
                 </form>
             </div>
                 {toggleMsg && <MailResponse success={success} closeMsg={setToggleMsg}/>}
+
+                <Banner liens={[{
+          path:'about',
+          name:'biographie'
+        },{ path:'media',name:'media'}]}/>
     </div>
   )
 }

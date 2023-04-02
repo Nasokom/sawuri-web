@@ -11,11 +11,11 @@
 
 
 .contact-page h1{
-    font-size: 50px;
+    font-size: 70px;
     text-align: center;
     transition: 0.3s;
-    mix-blend-mode: difference;
-    color:white;
+  /*   mix-blend-mode: difference;
+    color:white; */
     width: 100%;
 }
 

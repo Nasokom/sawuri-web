@@ -10,7 +10,6 @@ const Menu = ({toggleMenu}) => {
     useEffect(()=>{
 
         document.documentElement.style.overflow = "hidden"
-
         return ()=>{
             document.documentElement.style.overflow = "auto"
         }
@@ -26,6 +25,10 @@ const Menu = ({toggleMenu}) => {
 
         <Link href={'/about'} className="nav-link" onClick={()=>toggleMenu()}>
             Biographie
+        </Link>
+
+        <Link href={'/media'} className="nav-link" onClick={()=>toggleMenu()}>
+            Media
         </Link>
         <Link href={'/musiciens'} className="nav-link" onClick={()=>toggleMenu()}>
             Collaborateur

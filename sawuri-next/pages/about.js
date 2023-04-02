@@ -1,6 +1,7 @@
 import React from 'react'
 import AboutScrollContainer from '@/component/content/AboutScrollContainer'
 import { client } from '@/Utils/sanity/sanityClient'
+import Banner from '@/component/Ui/Banner'
 
 const About = ({aboutData}) => {
 
@@ -9,22 +10,17 @@ const About = ({aboutData}) => {
 
     <div className='about-page'>
 
-            <h1>Biographie </h1>
+            <h1 className='page-title'>Biographie </h1>
             <AboutScrollContainer datas={aboutData}/>
 
-            <div>
-
-                <h2>Decouvir ses composition</h2>
-
-                <h2>Decouvir les musiciens de Sawuri</h2>
-            </div>
-
-
+            <Banner liens={[{
+          path:'media',
+          name:'media'
+        },{ path:'contact',name:'contact'}]}/>
 
     </div>
   )
 }
-
 
 
 export async function getStaticProps() {

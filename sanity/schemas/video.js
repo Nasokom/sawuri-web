@@ -21,8 +21,8 @@ export default {
         options: {
           list: [
             'youtube', 'facebook', 'dailymotion','autre',
-          ], // <-- predefined values
-          layout: 'radio' // <-- defaults to 'dropdown'
+          ], 
+          layout: 'radio',
         },
         description:"important"
       },
@@ -30,7 +30,13 @@ export default {
         name:'desc',
         type:'string',
         title:'Description',
-        description:"Presentation courte"
+        description:"Presentation courte",
       },
+      {
+        name:"path",
+        type:"string",
+        title:"FolderPathDontTouch!!!",
+        description:"Ne pas modifier!!!!!!"
+      }
     ]
 }

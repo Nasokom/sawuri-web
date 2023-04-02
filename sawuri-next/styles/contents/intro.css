@@ -2,15 +2,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #DAC4AF;
     width: 100%;
     min-height: 100vh;
 }
 
 .intro p{
-    mix-blend-mode: lighten;
     padding: 5vw;
     font-size: xx-large;
-    color: white;
-
 }

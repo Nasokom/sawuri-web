@@ -17,6 +17,9 @@ const nextConfig = {
             key: "Access-Control-Allow-Headers",
             value: "Origin, X-Requested-With, Content-Type, Accept",
           },
+          { key: 'Access-Control-Allow-Headers', value: 'Accept-Encoding' },
+          { key: 'Access-Control-Allow-Methods', value: 'GET' },
+          { key: 'Access-Control-Allow-Origin', value: '*' },
         ],
       },
     ];

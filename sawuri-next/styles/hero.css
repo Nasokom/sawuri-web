@@ -1,12 +1,11 @@
 .hero{
-    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     min-width: 100vw;
     min-height: 100vh;
-    color: white;
+    color: var(--textcolor);
     font-family: "Grandstander-variable";
     font-family: "cubao";
     font-family: "blackSansa";
@@ -25,6 +24,7 @@
     transition: 0.3s;
     mix-blend-mode: difference;
     z-index: 10;
+    
 }
 
 .hero-title-box{

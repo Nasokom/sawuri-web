@@ -1,8 +1,35 @@
 footer{
-    min-height: 10vh;
-    min-height: 10dvh;
+    min-height: 40vh;
+    min-height: 40dvh;
     min-width: 100vw;
     display: flex;
-    background-color: red;
     bottom: 0;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 3px solid var(--textcolor);
+    font-family: 'BlackSansa';
+    flex-wrap: wrap;
+}
+
+footer h2{
+    font-size: 40px;
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.footer-menu{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    border-left:1px solid var(--textcolor) ;
+
+}
+.footer-menu p{
+    text-decoration: underline;
+}
+.footer-menu > *{
+    margin: 10px 0px;
+    margin-right: 150px;
+    margin-left: 20px;
 }

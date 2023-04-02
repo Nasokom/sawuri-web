@@ -13,16 +13,26 @@ nav{
     z-index: 1000;
 }
 
+#logo{
+    background-color: green;
+    width: 100px;
+    height: 100px;
+border-radius: 50px;
+}
+
 #burger-btn{
-    width: 50px;
-    height: 50px;
     position: relative;
     overflow: hidden;
     z-index: 100;   
-
+    cursor: pointer;
 }
 
 #burger-btn span{
+    font-size: 40px;
+    font-family: 'climateCrisis';
+}
+
+/* #burger-btn span{
     position: absolute;
     height: 3px;
     width: 40px;
@@ -32,6 +42,10 @@ nav{
     border: 1px solid white;
     transform: translate(-50%,-50%);
     background-blend-mode: difference;
+} */
+
+#burger-btn span{
+
 }
 
 #burger-btn span:nth-child(1){

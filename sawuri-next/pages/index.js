@@ -5,11 +5,11 @@ import styles from '@/styles/Home.module.css'
 import { client } from '@/Utils/sanity/sanityClient'
 import Hero from '@/component/Hero'
 import Intro from '@/component/content/Intro'
-import AboutScrollContainer from '@/component/content/AboutScrollContainer'
+import Banner from '@/component/Ui/Banner'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home({aboutData,photos}) {
+export default function Home({photos}) {
   return (
     <>
       <Head>
@@ -20,18 +20,21 @@ export default function Home({aboutData,photos}) {
       </Head>
         <Hero photos={photos}/>
         <Intro/>
-        <AboutScrollContainer datas={aboutData}/>
+        <Banner liens={[{
+          path:'about',
+          name:'biographie'
+        },{ path:'media',name:'media'}]}/>
     </>
   )
 }
 
 export async function getStaticProps() {
 
-  const aboutData = await client.fetch(`*[_type == "contenu"]`);
+  //const aboutData = await client.fetch(`*[_type == "contenu"]`);
   const photos = await client.fetch(`*[_type == "gallery"]`);
   return {
     props: {
-      aboutData,
+     // aboutData,
       photos
     }
   };

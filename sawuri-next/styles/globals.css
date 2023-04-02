@@ -1,4 +1,7 @@
 :root {
+  --textcolor:black;
+  --bg : linear-gradient(to right bottom, #ffe5c8, #f2e3c0, #e3e1ba, #d3dfb7, #c1ddb7);
+  --rasta-bg: linear-gradient(90deg, rgba(29,121,9,1) 0%, rgba(190,198,28,1) 34%, rgba(255,222,0,1) 50%, rgba(240,180,2,1) 68%, rgba(179,10,10,1) 100%);
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
@@ -39,6 +42,7 @@
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
 }
+
 
 /* Fonts */
 @font-face {
@@ -84,6 +88,19 @@ h1{
   text-align: center;
 }
 
+.page-title{
+  mix-blend-mode: none;
+  font-size: 40px;
+  font-size: 72px;
+  background: rgb(29,121,9);
+  background: linear-gradient(90deg, rgba(29,121,9,1) 0%, rgba(190,198,28,1) 34%, rgba(255,222,0,1) 50%, rgba(240,180,2,1) 68%, rgba(179,10,10,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px var(--textcolor);
+
+}
+
+
 p{
   font-size: 20px;
   font-family: "Grandstander-variable";
@@ -99,6 +116,8 @@ p{
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --textcolor:white;
+    --bg:radial-gradient(circle, #000000, #1a1210, #281f17, #312e1c, #30402a);
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
@@ -149,14 +168,15 @@ p{
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
 }
 main{
   width:100%;
-  min-height:100vh
+  background-image: var(--bg);
+  min-height:100vh;
+
 }
 
-body {
+/* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -165,7 +185,7 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
-
+ */
 a {
   color: inherit;
   text-decoration: none;
