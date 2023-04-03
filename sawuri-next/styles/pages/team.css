@@ -35,7 +35,6 @@
 
 .team-card:nth-child(even){
     flex-direction: row-reverse;
-
 }
 
 .team-card .team-text-container{

@@ -25,30 +25,45 @@ const AboutScrollContainer= ({datas}) => {
 
     const ctx = gsap.context((self) => {
 
-    const sections = self.selector('.about-section');
+    const sections = self.selector('.para-container');
     
 
     sections.forEach((section, i) => {
-      
+    
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: section,
-          start:"200px 45%",
-          end: "bottom 20%",
+          start:"0 80%",
+          end: "100% 60%",
           scrub: true,
           pin: false,
-          //markers:true,
         }
       });
-       const imgs = section.querySelectorAll('.about-img-limiter'),
-       texts = section.querySelectorAll('.text-box');
-      
 
-      texts.forEach((text,i)=>{
+       const imgs = section.querySelectorAll('.about-img-limiter');
+       const texts = section.querySelectorAll('.text-container');
+       const paragraphe = section.querySelector('.about-paragraphe')
+      
+       console.log(texts)
+
+     /*  texts.forEach((text,i)=>{
         tl.from(text.querySelector('p'),{
          translateY: 100,
         })
+
         tl.to(text.querySelector('p'),{
+          translateY:0,
+          opacity:1,
+          ease:"power2.inOut"
+        },i == 0 ? 0 : i*2)
+       }) */
+
+       texts.forEach((text,i)=>{
+        tl.from(text,{
+         translateY: 70,
+        },i == 0 ? 0 : i*2 -0,5)
+
+        tl.to(text,{
           translateY:0,
           opacity:1,
           ease:"power2.inOut"

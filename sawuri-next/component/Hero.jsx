@@ -28,7 +28,7 @@ const Hero = ({photos}) => {
         });
       
         tl.to(photoLayout, {
-          top:"-100vh",
+          top:"-120vh",
           ease: "power2.inOut",
         },0)
           

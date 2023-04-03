@@ -1,8 +1,10 @@
 import sons from './sons'
-import videos from './video'
 import gallery from './gallery'
 import contenu from './contenu'
 import collaborateur from './collaborateur'
 import video from './video'
+import test from './textImage'
+import about from './about'
+import marketing from './marketing'
 
-export const schemaTypes = [sons, gallery, contenu, collaborateur, video]
+export const schemaTypes = [marketing,test,about,sons, gallery, contenu, collaborateur, video]

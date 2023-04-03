@@ -5,7 +5,7 @@ import Banner from '@/component/Ui/Banner'
 
 const About = ({aboutData}) => {
 
-    console.log(aboutData)
+   // console.table(aboutData[0].contenu[0].text)
   return (
 
     <div className='about-page'>

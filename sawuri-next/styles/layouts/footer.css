@@ -22,8 +22,7 @@ footer h2{
     justify-content: start;
     align-items: start;
     flex-direction: column;
-    border-left:1px solid var(--textcolor) ;
-
+    border-left: 4px solid var(--textcolor) ;
 }
 .footer-menu p{
     text-decoration: underline;

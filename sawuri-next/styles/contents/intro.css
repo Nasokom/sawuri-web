@@ -2,11 +2,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     width: 100%;
     min-height: 100vh;
+    padding-top: 100px;
 }
 
 .intro p{
-    padding: 5vw;
+    padding: 50px 4vw ;
     font-size: xx-large;
+    line-height: 4rem;
 }
