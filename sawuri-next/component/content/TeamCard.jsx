@@ -35,9 +35,7 @@ const TeamCard = ({member}) => {
         {member.desc.map((p,i)=>{
            return <p key={i}>{p}</p>
         })}
-            { member.skillz &&  <p>Maitrise : {member.skillz.map((skill,i)=>{
-               return <span key={i}>{skill}</span>
-                })}
+            { member.skillz &&  <p>Maitrise : {member.skillz}
             </p>}
         </div>
 

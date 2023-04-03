@@ -74,7 +74,7 @@ const Contact = () => {
   return (
     <div className='contact-page'>
             <h1 className="page-title">
-              {userLang == 'fr' ? 'contact' : userLang == 'de'? 'Kontakt' : 'en'}
+              contact
               </h1>
 
 
