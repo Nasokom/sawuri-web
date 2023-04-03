@@ -27,9 +27,17 @@ border-radius: 50px;
     cursor: pointer;
 }
 
-#burger-btn span{
+.menu-btn{
     font-size: 40px;
     font-family: 'climateCrisis';
+}
+
+.menu-btn-active{
+    background: rgb(29,121,9);
+    background: linear-gradient(90deg, rgba(29,121,9,1) 0%, rgba(190,198,28,1) 34%, rgba(255,222,0,1) 50%, rgba(240,180,2,1) 68%, rgba(179,10,10,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px var(--textcolor);
 }
 
 /* #burger-btn span{
