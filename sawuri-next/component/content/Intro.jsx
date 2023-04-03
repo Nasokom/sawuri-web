@@ -10,7 +10,7 @@ const Intro = () => {
              de la vie à la mort, des abus de pouvoirs (politiques ou spirituels) à l’amitié ... 
         </p>
         <p> Un repertoire tour à tour tendre, revolté, emouvant ou passionné. Chanté en bwamou, 
-             et dioula (2 des 50 dialectes du BurkinaFaso), en anglais et français 
+             et dioula "2 des 50 dialectes du BurkinaFaso", en anglais et français 
              (pour l’universalité du message).Un groove né sous le zenith et pétri par la dure terre du Sahel aux rythmes ancestraux.</p>
     </div>
   )

@@ -11,10 +11,8 @@ const SectionTest = ({datas}) => {
     <div className='about-section' ref={main}>
 
       <h2>{name}</h2>
-
       <div className='para-container'>
           {contenu.map((para,i)=>{
-            //console.table(para)
             return(
               <div className='about-paragraphe' key={i} style={{zIndex:i}}>
                     <ComplexText texts={para.text} />

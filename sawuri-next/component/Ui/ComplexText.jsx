@@ -1,7 +1,6 @@
 import React from 'react'
 
-const ComplexText = ({texts}) => {
-    //console.log(texts)
+const ComplexText = ({texts}) => { 
 
     const Span = ({data}) =>{
         const customStyle = {

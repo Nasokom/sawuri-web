@@ -33,7 +33,7 @@ const AboutScrollContainer= ({datas}) => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: section,
-          start:"0 80%",
+          start:"0 70%",
           end: "100% 60%",
           scrub: true,
           pin: false,
@@ -44,7 +44,6 @@ const AboutScrollContainer= ({datas}) => {
        const texts = section.querySelectorAll('.text-container');
        const paragraphe = section.querySelector('.about-paragraphe')
       
-       console.log(texts)
 
      /*  texts.forEach((text,i)=>{
         tl.from(text.querySelector('p'),{
