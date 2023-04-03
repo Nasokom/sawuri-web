@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ComplexText = ({texts}) => { 
+const ComplexText = ({texts}) => {
 
     const Span = ({data}) =>{
         const customStyle = {

@@ -9,6 +9,16 @@ export default {
         title: 'Titre'
       },
       {
+        name: 'titreEn',
+        type: 'string',
+        title: 'Titre Englais' 
+      },
+      {
+        name: 'titreDe',
+        type: 'string',
+        title: 'Titre allemand'
+      },
+      {
         name:"url",
         type:"string",
         title:"Lien",

@@ -15,17 +15,6 @@ export default {
       },
       {
         title: 'paragraphe',
-        name: 'para',
-        type: 'array',
-        of: [{ type: 'text',}]
-      },
-      {
-        title: 'images',
-        name: 'images',
-        type: 'array',
-        of: [{type: 'image'}]
-      },{
-        title: 'paragraphe',
         name: 'contenu',
         type: 'array',
         of: [{

@@ -15,8 +15,8 @@ export default async function sendEmail(req, res) {
     from: process.env.GMAIL_USER,
     to: `${email}`,
     subject: "Salut c'est marcel",
-    text: `
-    Bonjour,
+    text: 
+  `Bonjour,
 
     Merci de m'avoir contacté ! J'ai bien recu votre message et je vous en remercie.
 
@@ -28,7 +28,8 @@ export default async function sendEmail(req, res) {
 
     Marcel 
 
-    (#ceci est un mail automatique suite à la soumission du formulaire de contact sur le site wwww.sawuri-web.vercel.app#)
+    Ceci est un mail automatique suite à la soumission du formulaire de contact sur le site https://sawuri-web.vercel.app/ 
+    
  `,
   };
 

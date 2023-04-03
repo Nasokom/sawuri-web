@@ -2,9 +2,12 @@ import React,{useState} from 'react'
 import axios from "axios";
 import MailResponse from '@/component/Ui/MailResponse';
 import Banner from '@/component/Ui/Banner';
+import { useStateContext } from '@/context/StateContext';
+
 
 const Contact = () => {
 
+  const {userLang} = useStateContext();
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -70,7 +73,9 @@ const Contact = () => {
 
   return (
     <div className='contact-page'>
-            <h1 className="page-title">contact</h1>
+            <h1 className="page-title">
+              {userLang == 'fr' ? 'contact' : userLang == 'de'? 'Kontakt' : 'en'}
+              </h1>
 
 
     {/* <h3>Vous souhaitez collaborer avec moi, discuter musique ou simplement dire bonjour ? N'hésitez pas à utiliser le formulaire ci-dessous pour entrer en contact !</h3> */}

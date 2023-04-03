@@ -16,12 +16,40 @@ export default {
         description:'conseil 1 text sur la rencontre avec Marcel Sawuri, et 1 pour decrire le collaborateur lui meme'
       },
       {
+        name:'text',
+        title:'Description f',
+        type: 'array',
+        of: [{type: 'block'}],
+      },
+      {
+        name:'textEn',
+        title:'Description englais',
+        type: 'array',
+        of: [{type: 'block'}],
+      },
+      {
+        name:'textDe',
+        title:'Description allemand',
+        type: 'array',
+        of: [{type: 'block'}],
+      },
+      {
         name: 'skillz',
         title: 'instruments / Competences,',
-        type:'array',
-        of:[{ type: 'string'}],
-        description : '1 block = 1 skill, "1 est mieux que 10"'
+        type: 'string',
       },
+      {
+        name: 'skillzEn',
+        title: 'instruments En',
+        type:'string',
+        of:[{ type: 'string'}],
+      },
+      {
+        name: 'skillzDe',
+        title: 'instruments De',
+        type:'string',
+      },
+
       {
         title: 'images',
         name: 'images',
