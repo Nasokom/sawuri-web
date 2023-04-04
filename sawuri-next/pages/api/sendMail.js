@@ -16,8 +16,6 @@ export default async function sendEmail(req, res) {
 
   const emailHtml = templateFile
                     .replace('{name}',name)
-                    .replace('{email}',email)
-                    .replace('{name}',message)
 
   const mailOptions = {
     from: process.env.GMAIL_USER,
