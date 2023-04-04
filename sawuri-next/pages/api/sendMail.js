@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+const fs =  require('fs-extra')
 
 export default async function sendEmail(req, res) {
   const transporter = nodemailer.createTransport({
@@ -9,28 +10,21 @@ export default async function sendEmail(req, res) {
     },
   });
 
-  const { name, email, message } = req.body;
+  const { name, email, message,phone } = req.body;
+
+  const templateFile = await fs.readFile('public/mailTemplate/emailClient.html', 'utf-8');
+
+  const emailHtml = templateFile
+                    .replace('{name}',name)
+                    .replace('{email}',email)
+                    .replace('{name}',message)
 
   const mailOptions = {
     from: process.env.GMAIL_USER,
     to: `${email}`,
     subject: "Salut c'est marcel",
-    text: 
-  `Bonjour,
-
-    Merci de m'avoir contacté ! J'ai bien recu votre message et je vous en remercie.
-
-    Si vous avez des questions urgentes ou des demandes spécifiques, n'hésitez pas à me contacter à nouveau en répondant à ce message.
-
-    Merci encore de votre intérêt et j'espére pouvoir vous répondre bientôt.
-
-    Cordialement,
-
-    Marcel 
-
-    Ceci est un mail automatique suite à la soumission du formulaire de contact sur le site https://sawuri-web.vercel.app/ 
-    
- `,
+    text: 'Merci pour la venu sur mon site web',
+    html : emailHtml,
   };
 
   const mailOptions2 = {
@@ -40,21 +34,16 @@ export default async function sendEmail(req, res) {
   text: `Bonjour Marcel vous avez recu un mail de ${name} depuis votre site web :
     ${name}:
     ${message}
+    ${phone && `Voici son numero de telephone pour le contacter : ${phone}` }
   `
 };
-  try {
-    await transporter.sendMail(mailOptions);
-    res.status(200).json({ message: "Email sent successfully." });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Failed to send email." });
-  }
 
-  try {
-    await transporter.sendMail(mailOptions2);
-    res.status(200).json({ message: "Email sent successfully." });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Failed to send email." });
-  }
+try {
+  await transporter.sendMail(mailOptions);
+  await transporter.sendMail(mailOptions2);
+  res.status(200).json({ message: "Emails sent successfully." });
+} catch (error) {
+  console.error(error);
+  res.status(500).json({ message: "Failed to send emails." });
+}
 }

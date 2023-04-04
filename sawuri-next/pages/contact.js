@@ -18,6 +18,7 @@ const Contact = () => {
     const [error, setError] = useState("");
     const [success, setSuccess] = useState(null);
     const [toggleMsg, setToggleMsg]= useState(false)
+    const [phone,setPhone] = useState("")
 
     //Gerer les erreur de saisie 
 
@@ -26,6 +27,7 @@ const Contact = () => {
         //console.log(form)
         setName(form[0].value)
         setEmail(form[1].value)
+        setPhone(form[2].value)
         setMessage(form[3].value)
         //console.table(mail)
     }   
@@ -41,7 +43,10 @@ const Contact = () => {
           const response = await axios.post("/api/sendMail", {
               name,
             email,
+            phone,
             message,
+            userLang
+
         });
             
           //setSuccess(response.data.message);
