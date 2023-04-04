@@ -10,7 +10,7 @@ import { useStateContext } from '@/context/StateContext';
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home({photos}) {
+export default function Home({photos,marketing}) {
 
 
   const {userLang} = useStateContext();
@@ -24,7 +24,7 @@ export default function Home({photos}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
         <Hero photos={photos}/>
-        <Intro/>
+        <Intro data={marketing}/>
         <Banner liens={[{
           path:'about',
           name:`${userLang.includes('fr') ? 'biographie' : userLang.includes('de')? 'Biografie' : 'Biography'}`,
@@ -39,9 +39,11 @@ export async function getStaticProps() {
 
   //const aboutData = await client.fetch(`*[_type == "contenu"]`);
   const photos = await client.fetch(`*[_type == "gallery"]`);
+  const marketing = await client.fetch(`*[_type == "Marketing"]`);
   return {
     props: {
      // aboutData,
+     marketing,
       photos
     }
   };

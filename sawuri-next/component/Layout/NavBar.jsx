@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React ,{useRef} from 'react'
 import Menu from './Menu'
+import Link from 'next/link'
 import { useStateContext } from '@/context/StateContext'
 
 const NavBar = () => {
@@ -24,10 +25,12 @@ const NavBar = () => {
   return (
     <>
     <nav ref={nav}>
+      <Link href={'/'}>
         <button id='logo'>
-            
+          <div>Marcel</div>
+          <div>Sawuri</div>
         </button>
-
+      </Link>
 
         <button id='burger-btn' onClick={()=>toggleMenu()}>
             <span className={showMenu ? 'menu-btn-active menu-btn' : 'menu-btn' }>{showMenu ? 'CLOSE':'MENU'}</span>

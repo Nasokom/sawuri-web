@@ -71,6 +71,12 @@
   src: url('.././public/fonts/BlackSansaFree-Regular.otf')
 }
 
+@font-face {
+  font-family: "manuscrit";
+  /* src: url("/sawuri-next/public/fonts/CubaoFree2-SemiCondensed.ttf") */
+  src: url('.././public/fonts/tuesdaynight-regular.otf')
+}
+
 h1{
   font-family: 'climateCrisis';
   font-size: 70px;

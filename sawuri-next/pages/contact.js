@@ -79,7 +79,7 @@ const Contact = () => {
             {userLang.includes('fr') ? 'contact' : userLang.includes('de')? 'Kontakt' : 'contact'}
               </h1>
 
-              userLang.includes('fr') ? 'envoyer' : userLang.includes('de')? 'schicken' : 'send'
+  
     {/* <h3>Vous souhaitez collaborer avec moi, discuter musique ou simplement dire bonjour ? N'hésitez pas à utiliser le formulaire ci-dessous pour entrer en contact !</h3> */}
             {error && <p>{error}</p>}
             {success && <p>{success}</p>}
