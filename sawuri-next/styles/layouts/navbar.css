@@ -20,6 +20,7 @@ border-radius: 50px;
 mix-blend-mode: difference;
 z-index: 1000;
 cursor: pointer;
+color: var(--textcolor);
 }
 
 #logo div {
@@ -35,6 +36,7 @@ cursor: pointer;
     overflow: hidden;
     z-index: 100;   
     cursor: pointer;
+    color: var(--textcolor);
 }
 
 .menu-btn{
