@@ -12,11 +12,11 @@ export default async function sendEmail(req, res) {
 
   const { name, email, message,phone } = req.body;
 
-  const templateFile = await fs.readFile('public/mailTemplate/emailClient.html', 'utf-8');
+  /* const templateFile = await fs.readFile('public/mailTemplate/emailClient.html', 'utf-8');
 
   const emailHtml = templateFile
                     .replace('{name}',name)
-
+ */
   const mailOptions = {
     from: process.env.GMAIL_USER,
     to: `${email}`,
