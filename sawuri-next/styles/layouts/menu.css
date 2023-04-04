@@ -17,6 +17,7 @@
     flex-direction: column;
     transition: 0.9s;
     padding-top: 100px;
+    border: 4px solid var(--textcolor);
 }
 
 

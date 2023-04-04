@@ -53,5 +53,13 @@
     padding:0px;
     text-align: center;
     mix-blend-mode: difference;
-    color: grey;
+    color: var(--textColor);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#contact-form #submit:hover{
+    letter-spacing: 5px;
+    font-size: 25px;
+    font-weight: 900;
 }
