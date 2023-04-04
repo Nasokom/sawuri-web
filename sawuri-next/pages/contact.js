@@ -7,8 +7,10 @@ import { useStateContext } from '@/context/StateContext';
 
 const Contact = () => {
 
-  const {userLang} = useStateContext();
+    //lang
+    const {userLang} = useStateContext();
 
+    //Mail State
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [subject, setSubject] = useState("");
@@ -74,28 +76,28 @@ const Contact = () => {
   return (
     <div className='contact-page'>
             <h1 className="page-title">
-              contact
+            {userLang.includes('fr') ? 'contact' : userLang.includes('de')? 'Kontakt' : 'contact'}
               </h1>
 
-
+              userLang.includes('fr') ? 'envoyer' : userLang.includes('de')? 'schicken' : 'send'
     {/* <h3>Vous souhaitez collaborer avec moi, discuter musique ou simplement dire bonjour ? N'hésitez pas à utiliser le formulaire ci-dessous pour entrer en contact !</h3> */}
             {error && <p>{error}</p>}
             {success && <p>{success}</p>}
             <div>
                 <form id='contact-form' onSubmit={(e)=>handleSubmit(e)} onChange={(e)=>editValue(e)}>
-                    <input type="text" name='nom' placeholder='Nom' required={true} />
+                    <input type="text" name='nom' placeholder={userLang.includes('fr') ? 'Nom' : userLang.includes('de')? 'Name' : 'nom'} required={true} />
                     <input type='email' name='mail' placeholder='Email' required={true} />
                     <input type='tel' name="tel" placeholder='Phone' />
-                    <textarea id="txtid" name="message" placeholder='Message' rows="10" cols="50" maxLength="1000" required={true} >
+                    <textarea id="txtid" name="message" placeholder={userLang.includes('fr') ? 'Message' : userLang.includes('de')? 'Nachricht' : 'Message'} rows="10" cols="50" maxLength="1000" required={true} >
                     </textarea>
-                    <input id="submit"type='submit' name='submit-btn' value={'envoyer'} />
+                    <input id="submit"type='submit' name='submit-btn' value={userLang.includes('fr') ? 'envoyer' : userLang.includes('de')? 'schicken' : 'send'} />
                 </form>
             </div>
                 {toggleMsg && <MailResponse success={success} closeMsg={setToggleMsg}/>}
 
                 <Banner liens={[{
           path:'about',
-          name:'biographie'
+          name:`${userLang.includes('fr') ? 'biographie' : userLang.includes('de')? 'Biografie' : 'Biography'}`,
         },{ path:'media',name:'media'}]}/>
     </div>
   )

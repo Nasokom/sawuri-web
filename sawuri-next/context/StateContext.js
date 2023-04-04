@@ -6,9 +6,10 @@ export const StateContext = ({ children }) => {
 
     const[showMenu,setShowMenu] = useState(false);
     const[isMobile,setIsMobile] = useState(false);
-    const [userLang,setUserLang] = useState(false);
+    const [userLang,setUserLang] = useState('');
 
     useEffect(()=>{
+        
     })
 
     useEffect(()=>{
@@ -16,7 +17,7 @@ export const StateContext = ({ children }) => {
 
         //preference de langue automatique
         const userLanguage = navigator.language || navigator.userLanguage;
-        console.log(userLanguage);
+        //console.log(userLanguage);
         setUserLang(userLanguage)
     },[])
     

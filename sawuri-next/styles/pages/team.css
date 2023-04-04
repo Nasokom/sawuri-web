@@ -12,6 +12,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
     padding: 30px;
     margin-top: 100px;
     width: 100%;
@@ -39,6 +40,7 @@
 
 .team-card .team-text-container{
     width: 40%;
+    min-width: 300px;
 }
 
 .team-text-container p{
@@ -46,10 +48,11 @@
     font-size: 20px;
     padding-bottom: 10px;
     color: var(--textcolor);
+
 }
 
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
 
     .team-page{
         padding: 10vh 0px;

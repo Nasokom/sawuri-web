@@ -6,10 +6,15 @@ import { client } from '@/Utils/sanity/sanityClient'
 import Hero from '@/component/Hero'
 import Intro from '@/component/content/Intro'
 import Banner from '@/component/Ui/Banner'
+import { useStateContext } from '@/context/StateContext';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home({photos}) {
+
+
+  const {userLang} = useStateContext();
+  
   return (
     <>
       <Head>
@@ -22,8 +27,10 @@ export default function Home({photos}) {
         <Intro/>
         <Banner liens={[{
           path:'about',
-          name:'biographie'
-        },{ path:'media',name:'media'}]}/>
+          name:`${userLang.includes('fr') ? 'biographie' : userLang.includes('de')? 'Biografie' : 'Biography'}`,
+        },{ path:'media',
+        name:'media'
+        }]}/>
     </>
   )
 }

@@ -2,12 +2,15 @@ import TeamCard from '@/component/content/TeamCard'
 import React from 'react'
 import { client } from '@/Utils/sanity/sanityClient'
 import Banner from '@/component/Ui/Banner'
+import { useStateContext } from '@/context/StateContext'
 
 const Musiciens = ({team}) => {
+
+  const {userLang} = useStateContext()
   return (
     <div className='team-page'>
 
-          <h1 className='page-title'>Les Musiciens</h1>
+          <h1 className='page-title'>{userLang.includes('fr') ? 'Les Musiciens' : userLang.includes('de')? 'Die Musiker' : 'The musicians'}</h1>
       
       <div className='team-card-container'>
         {team.map((member,i)=>{
@@ -17,7 +20,7 @@ const Musiciens = ({team}) => {
       </div>
       <Banner liens={[{
           path:'about',
-          name:'biographie'
+          name:`${userLang.includes('fr') ? 'biographie' : userLang.includes('de')? 'Biografie' : 'Biography'}`,
         },{ path:'media',name:'media'}]}/>
     </div>
   )

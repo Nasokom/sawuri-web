@@ -1,8 +1,11 @@
 import React,{useRef, useEffect} from 'react'
 import Banner from '@/component/Ui/Banner'
 import { client } from '@/Utils/sanity/sanityClient'
+import { useStateContext } from '@/context/StateContext'
 
 const Media = ({videos}) => {
+
+  const {userLang} = useStateContext()
 
         const main = useRef()
 
@@ -27,7 +30,7 @@ const Media = ({videos}) => {
 
         <Banner liens={[{
           path:'about',
-          name:'biographie'
+          name:`${userLang.includes('fr') ? 'biographie' : userLang.includes('de')? 'Biografie' : 'Biography'}`,
         },{ path:'contact',name:'contact'}]}/>
     </div>
   )

@@ -6,7 +6,7 @@ const ComplexText = ({texts}) => {
         const customStyle = {
         }
 
-        data.marks.forEach((d)=>{
+      data.marks &&  data.marks.forEach((d)=>{
             switch(d) {
                 case 'strong':
                     customStyle.fontWeight = 'bolder'

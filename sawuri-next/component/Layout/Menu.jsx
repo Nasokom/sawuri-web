@@ -4,7 +4,7 @@ import { useStateContext } from '@/context/StateContext'
 
 const Menu = ({toggleMenu}) => {
 
-    const {setShowMenu} = useStateContext()
+    const {setShowMenu, userLang} = useStateContext()
     const menu = useRef(null)
 
     useEffect(()=>{
@@ -20,21 +20,21 @@ const Menu = ({toggleMenu}) => {
     <div id='menu' ref={menu}>
 
         <Link href={'/'} className="nav-link" onClick={()=>toggleMenu()}>
-            Home
+            {userLang.includes('fr') ? 'Acceuil' : userLang.includes('de')? 'Heim' : 'Home'}
         </Link>
 
         <Link href={'/about'} className="nav-link" onClick={()=>toggleMenu()}>
-            Biographie
+            {userLang.includes('fr') ? 'biographie' : userLang.includes('de')? 'Biografie' : 'Biography'}
         </Link>
 
         <Link href={'/media'} className="nav-link" onClick={()=>toggleMenu()}>
             Media
         </Link>
         <Link href={'/musiciens'} className="nav-link" onClick={()=>toggleMenu()}>
-            Collaborateur
+             {userLang.includes('fr') ? 'Les Musiciens' : userLang.includes('de')? 'Die Musiker' : 'The musicians'}
         </Link>
         <Link href={'/contact'} className="nav-link" onClick={()=>toggleMenu()}>
-            Contact
+             {userLang.includes('fr') ? 'Contact' : userLang.includes('de')? 'Kontakt' : 'Contact'}
         </Link>
 
     </div>

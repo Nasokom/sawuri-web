@@ -29,8 +29,8 @@ const NavBar = () => {
         </button>
 
 
-        <button id='burger-btn' className={showMenu && "#burger-btn-active"} onClick={()=>toggleMenu()}>
-            <span className={`menu-btn ${showMenu && 'menu-btn-active' }`}>{showMenu ? 'CLOSE':'MENU'}</span>
+        <button id='burger-btn' onClick={()=>toggleMenu()}>
+            <span className={showMenu ? 'menu-btn-active menu-btn' : 'menu-btn' }>{showMenu ? 'CLOSE':'MENU'}</span>
         </button>
 
       
