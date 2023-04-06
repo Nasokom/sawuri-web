@@ -5,7 +5,6 @@
     flex-direction: column;
     min-width: 100vw;
     min-height: 100vh;
-    color: var(--textcolor);
     font-family: "Grandstander-variable";
     font-family: "cubao";
     font-family: "blackSansa";
@@ -18,28 +17,38 @@
     z-index: 10;
 }
 .hero h1{
-    font-size: 70px;
-    text-align: center;
+    font-size: 19.5vw;
+    float: left;
     animation: titleAnim 0.5s forwards ease;
-    transition: 0.3s;
-    mix-blend-mode: difference;
-    z-index: 10;
-    
+    shape-outside: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    margin-right: 20px; 
 }
 
 .hero-title-box{
     max-width: 100%;
     overflow: hidden;
+    z-index: 1000;
+    color: #d83e00;
+    mix-blend-mode: difference;
+    z-index: 100;
+ /*    stroke: 1px white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white; */;
 }
+
 
 @keyframes titleAnim {
 
     0%{
         translate: 0 100%;
+        rotate: 45deg;
+        transition: 0.5s;
     }
 
     100%{
         translate: 0%;
+        rotate: 0;
+        transition: 0;
     }
     
 }
@@ -56,4 +65,12 @@
     top: 50%;
     left: 50%;
     translate: -50% -50%;
+}
+
+@media (prefers-color-scheme: dark) {
+    .hero-title-box{
+        mix-blend-mode: difference;
+/*         color: white; */
+    }
+
 }

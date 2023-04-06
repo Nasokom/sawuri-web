@@ -16,6 +16,7 @@ const Hero = ({photos}) => {
 
 
     const photoLayout = self.selector('.photo-layout');
+    const title = self.selector('h1')
         
         const tl = gsap.timeline({
           scrollTrigger: {
@@ -26,6 +27,11 @@ const Hero = ({photos}) => {
             pin: true,
           }
         });
+
+        tl.to(title,{
+          position:"relative",
+          fontSize: "10vw",
+        })
       
         tl.to(photoLayout, {
           top:"-120vh",

@@ -17,6 +17,8 @@ export default async function sendEmail(req, res) {
   const emailHtml = templateFile
                     .replace('{name}',name)
  */
+
+
   const mailOptions = {
     from: process.env.GMAIL_USER,
     to: `${email}`,
@@ -26,7 +28,7 @@ export default async function sendEmail(req, res) {
     text : `
     Bonjour ${name}
     Merci pour votre message ! Je vous confirme que je l'ai bien reçu et je vous recontacterai dès que possible.
-    En attendant, n'hésitez pas à consulter les différentes rubriques de mon site web me decouvrir .
+    En attendant, n'hésitez pas à consulter les différentes rubriques de mon site web .
     Si vous avez des questions urgentes ou des demandes spécifiques, n'hésitez pas à me contacter à nouveau en répondant à ce message.
     
     Cordialement,Marcel
@@ -43,7 +45,7 @@ export default async function sendEmail(req, res) {
   text: `Bonjour Marcel vous avez recu un mail de ${name} depuis votre site web :
     voici son message:
     ${message}
-
+    voici son mail pour le contacter: ${email}
     ${phone && `Voici son numero de telephone pour le contacter : ${phone}` }
   `
 };

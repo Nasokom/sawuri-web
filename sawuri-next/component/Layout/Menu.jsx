@@ -19,23 +19,23 @@ const Menu = ({toggleMenu}) => {
   return (
     <div id='menu' ref={menu}>
 
-        <Link href={'/'} className="nav-link" onClick={()=>toggleMenu()}>
-            {userLang.includes('fr') ? 'Acceuil' : userLang.includes('de')? 'Heim' : 'Home'}
-        </Link>
+            <Link href={'/'} className="nav-link" onClick={()=>toggleMenu()}>
+                {userLang.includes('fr') ? 'Acceuil' : userLang.includes('de')? 'Heim' : 'Home'}
+            </Link>
 
-        <Link href={'/about'} className="nav-link" onClick={()=>toggleMenu()}>
-            {userLang.includes('fr') ? 'biographie' : userLang.includes('de')? 'Biografie' : 'Biography'}
-        </Link>
+            <Link href={'/about'} className="nav-link" onClick={()=>toggleMenu()}>
+                {userLang.includes('fr') ? 'biographie' : userLang.includes('de')? 'Biografie' : 'Biography'}
+            </Link>
 
-        <Link href={'/media'} className="nav-link" onClick={()=>toggleMenu()}>
-            Media
-        </Link>
-        <Link href={'/musiciens'} className="nav-link" onClick={()=>toggleMenu()}>
-             {userLang.includes('fr') ? 'Les Musiciens' : userLang.includes('de')? 'Die Musiker' : 'The musicians'}
-        </Link>
-        <Link href={'/contact'} className="nav-link" onClick={()=>toggleMenu()}>
-             {userLang.includes('fr') ? 'Contact' : userLang.includes('de')? 'Kontakt' : 'Contact'}
-        </Link>
+            <Link href={'/media'} className="nav-link" onClick={()=>toggleMenu()}>
+                Media
+            </Link>
+            <Link href={'/musiciens'} className="nav-link" onClick={()=>toggleMenu()}>
+                {userLang.includes('fr') ? 'Les Musiciens' : userLang.includes('de')? 'Die Musiker' : 'The musicians'}
+            </Link>
+            <Link href={'/contact'} className="nav-link" onClick={()=>toggleMenu()}>
+                {userLang.includes('fr') ? 'Contact' : userLang.includes('de')? 'Kontakt' : 'Contact'}
+            </Link>
 
     </div>
   )

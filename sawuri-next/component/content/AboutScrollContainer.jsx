@@ -12,13 +12,14 @@ const animation = (tl, section) => {
   const texts = section.querySelectorAll(".text-box");
 
   texts.forEach((text, i) => {
-    tl.from(
+    tl.to(
       text,
       {
-        translateY: 70,
+        translateY: 170,
       },
-      i === 0 ? 0 : i * 2 - 0.5
+      i === 0 ? 0 : i * 2 - 0.9
     );
+
 
     tl.to(
       text,

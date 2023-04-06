@@ -10,6 +10,7 @@
     font-family: 'climateCrisis';
     top: 100px;
     font-size: 50px;
+    font-size: 5vw;
     margin-bottom: 150px;
 }
 
@@ -86,6 +87,7 @@
 
 @media (max-width: 700px) {
 
+    .about{padding: 0;}
 
     .about-img-limiter{
         height: 200px;
@@ -99,7 +101,7 @@
     .about .text-box{
         width: 100vw;
         min-height: 300px;
-       padding: 20px;
+       padding: 0px;
     }
     .about-paragraphe:nth-child(even){
         flex-direction : column;
