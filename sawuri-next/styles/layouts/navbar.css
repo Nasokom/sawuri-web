@@ -14,7 +14,6 @@ nav{
 }
 
 #logo{
-border-radius: 50px;
 z-index: 1000;
 cursor: pointer;
 color: var(--textcolor);
@@ -22,7 +21,7 @@ padding-top: 10px;
 overflow: visible;
 position: absolute;
 top: 0;
-color: #d83e00;;
+color: #d83e00;
 left: 20px;
 }
 
