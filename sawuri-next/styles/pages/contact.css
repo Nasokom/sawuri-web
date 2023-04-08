@@ -25,7 +25,7 @@
     padding:10px 0px;
     border-bottom: 4px solid white;
     /* mix-blend-mode: difference; */
-    font-size: 20px;
+    font-size: xx-large;
     margin: 20px 0px;
     font-family: "Grandstander-variable";
 }
@@ -50,6 +50,6 @@
 
 #contact-form #submit:hover{
     letter-spacing: 5px;
-    font-size: 25px;
+    font-size: xx-large;
     font-weight: 900;
 }

@@ -21,7 +21,7 @@ const Intro = ({data}) => {
   textEn2 = `A repertoire alternately tender, rebellious, moving or passionate. Sung in Bwamou, and Dioula "2 of the 50 dialects of Burkina Faso", in English and French (for the universality of the message). A groove born under the zenith and kneaded by the harsh soil of the Sahel with ancestral rhythms.`,
 textDe=`Eine musikalische Safari zwischen Sahel und Jamaika, mit der Stimme des Sängers als Führer. Von der Hoffnung bis zur Ungerechtigkeit, vom Leben bis zum Tod, vom Machtmissbrauch (politisch oder spirituell) bis zur Freundschaft...`,
 textDe2=`Ein Repertoire abwechselnd zärtlich, rebellisch, bewegend oder leidenschaftlich. Gesungen in Bwamou und Dioula „2 der 50 Dialekte von Burkina Faso“, in Englisch und Französisch (für die Universalität der Botschaft) Ein Groove, der unter dem Zenit geboren und von der rauen Erde der Sahelzone mit uralten Rhythmen geknetet wird.`;
-  console.log(data[0]);
+  /* console.log(data[0]); */
 
   return (
     <div className='intro'>

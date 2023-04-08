@@ -15,25 +15,33 @@ nav{
 
 #logo{
 border-radius: 50px;
-mix-blend-mode: difference;
 z-index: 1000;
 cursor: pointer;
 color: var(--textcolor);
 padding-top: 10px;
-font-size: 50px;
 overflow: visible;
+position: absolute;
+top: 0;
+color: #d83e00;;
+left: 20px;
 }
 
+.invisible-logo{
+    opacity: 0;
+}
 #logo div {
+    font-size: 3vw;
     font-family: 'manuscrit';
-    padding: 0;
-    line-height: 1rem;
+    font-family : 'climateCrisis';
+    line-height: 0.8em;
     text-align: center;
     overflow: visible;
 }
 
 #burger-btn{
     position: relative;
+    top: 0;
+    right: 20px;
     overflow: hidden;
     z-index: 100;   
     cursor: pointer;
