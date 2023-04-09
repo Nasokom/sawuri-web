@@ -36,7 +36,9 @@ export async function getStaticProps() {
     return {
       props: {
         aboutData
-      }
+      },
+      fallback: blocking,
+      revalidate: 10,
     };
   }
 export default About
