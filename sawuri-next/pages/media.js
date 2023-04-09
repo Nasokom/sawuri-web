@@ -45,7 +45,6 @@ export async function getStaticProps() {
       props: {
         videos
       },
-      fallback: blocking,
-      revalidate: 10,
+      revalidate: 1,
     };
   }

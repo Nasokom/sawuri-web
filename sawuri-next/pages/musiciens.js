@@ -49,7 +49,6 @@ export async function getStaticProps() {
     props: {
       team
     },
-    fallback: blocking,
-    revalidate: 10,
+    revalidate: 1,
   };
 }

@@ -46,7 +46,6 @@ export async function getStaticProps() {
      marketing,
       photos
     },
-    fallback: blocking,
-    revalidate: 10,
+    revalidate: 1,
   };
 }
