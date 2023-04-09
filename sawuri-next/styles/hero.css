@@ -32,6 +32,8 @@
     margin-right: 20px; 
     mix-blend-mode: difference;
     font-size: 19.5vw;
+    font-size: 15vw;
+    margin-left:12vw;
     /* !! */
     opacity: 1;
     width: 100%;
@@ -41,7 +43,7 @@
     z-index: 100;
     display: flex;
     flex-direction: column;
-    left:20px;  
+    left:0;  
     line-height: 0.8em
     
  /*    stroke: 1px white;
@@ -90,4 +92,13 @@
 /*         color: white; */
     }
 
+}
+
+@media (max-width:700px) {
+
+    .hero-title{
+        font-size: 18.5vw;
+        margin-left: 3.5vw;
+    }
+    
 }

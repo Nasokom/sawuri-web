@@ -19,7 +19,7 @@
     padding: 40px;
 }
 
-#contact-form input, textarea{
+#contact-form input, textarea, #contact-form button{
     max-width: 700px;
     width: 100%;
     padding:10px 0px;
@@ -46,10 +46,43 @@
     color: var(--textColor);
     cursor: pointer;
     transition: 0.3s;
+    position: relative;
 }
 
 #contact-form #submit:hover{
     letter-spacing: 5px;
     font-size: xx-large;
     font-weight: 900;
+}
+
+
+.sending{
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.sending:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 128, 0, 0.372);
+     animation: sendAnim 3s infinite; 
+} 
+
+@keyframes sendAnim {
+
+    0%{
+        left: -100%;
+    }
+
+    50%{
+        left:100%;
+    }
+    
+    100%{
+        left: -100%;
+    }
 }

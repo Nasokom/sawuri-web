@@ -167,6 +167,8 @@ main{
   width:100%;
   background-image: var(--bg);
   min-height:100vh;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 a {

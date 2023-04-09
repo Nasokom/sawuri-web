@@ -16,27 +16,27 @@ const Contact = () => {
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
     const [error, setError] = useState("");
-    const [success, setSuccess] = useState(null);
-    const [toggleMsg, setToggleMsg]= useState(false)
     const [phone,setPhone] = useState("")
-
+    
+    // Ux Mail progree
+    const [success, setSuccess] = useState(null);
+    const [toggleMsg, setToggleMsg]= useState(false);
+    const [sendingMail, setSendingMail] = useState(false);
     //Gerer les erreur de saisie 
 
     const editValue = (e) =>{
         const form = e.target.form; 
-        //console.log(form)
         setName(form[0].value)
         setEmail(form[1].value)
         setPhone(form[2].value)
         setMessage(form[3].value)
-        //console.table(mail)
     }   
 
 
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        
+      setSendingMail(true)
         
         //send the mail
         try {
@@ -52,8 +52,10 @@ const Contact = () => {
           //setSuccess(response.data.message);
           setToggleMsg(true)
           setSuccess(true)
+          setSendingMail(false)
           
         } catch (error) {
+            setSendingMail(false)
             setToggleMsg(true)
             setSuccess(false)
           console.log(error)
@@ -95,10 +97,25 @@ const Contact = () => {
                     <input type='tel' name="tel" placeholder='Phone' />
                     <textarea id="txtid" name="message" placeholder={userLang.includes('fr') ? 'Message' : userLang.includes('de')? 'Nachricht' : 'Message'} rows="10" cols="50" maxLength="1000" required={true} >
                     </textarea>
-                    <input id="submit"type='submit' name='submit-btn' value={userLang.includes('fr') ? 'envoyer' : userLang.includes('de')? 'schicken' : 'send'} />
+                    <button id="submit"type='submit' name='submit-btn' 
+                    className={sendingMail&&'sending'}
+                    value={userLang.includes('fr') ? 'envoyer' : userLang.includes('de')? 'schicken' : 'send'} >
+
+                        {userLang.includes('fr') && !sendingMail ? 'envoyer' 
+                        : userLang.includes('fr') && sendingMail? 'envoie' 
+
+                        : userLang.includes('de') && !sendingMail ? 'schicken' 
+                        : userLang.includes('de') && sendingMail ? 'schick' 
+
+                        : !sendingMail  ? 'send' : 'sending'}
+                      
+                      </button>
                 </form>
             </div>
+
+
                 {toggleMsg && <MailResponse success={success} closeMsg={setToggleMsg}/>}
+
 
                 <Banner liens={[{
           path:'about',

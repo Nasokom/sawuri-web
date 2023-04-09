@@ -13,7 +13,7 @@ const Hero = ({photos}) => {
   useIsomorphicLayoutEffect(() => {
 
     const ctx = gsap.context((self) => {
-      console.log(main);
+      //console.log(main);
 
 
     const photoLayout = self.selector('.photo-layout');
@@ -52,6 +52,7 @@ const Hero = ({photos}) => {
           width:'fit-content',
           fontSize:'3vw',
           position:"fixed",
+          marginLeft: 0,
           onComplete:onEnd,
           onReverseComplete:onStart,
         },0.5)

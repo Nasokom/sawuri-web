@@ -71,6 +71,7 @@
     opacity:1;
     position: relative;
     mix-blend-mode: luminosity;
+    mix-blend-mode: difference;
   
 }
 
@@ -87,6 +88,9 @@
 @media (max-width: 700px) {
 
     .about{padding: 0;}
+    .about p {
+        font-size: 20px;
+    }
 
     .about-img-limiter{
         height: 200px;
@@ -94,7 +98,7 @@
     .about-paragraphe{
         flex-direction : column;
         justify-content:center ;
-        align-items: baseline;
+        align-items: center;
     }
 
     .about .text-box{
@@ -104,7 +108,7 @@
     }
     .about-paragraphe:nth-child(even){
         flex-direction : column;
-        align-items: end;
+        align-items: center;
     }
     
 

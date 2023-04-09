@@ -12,6 +12,20 @@ const Musiciens = ({team}) => {
 
           <h1 className='page-title'>{userLang.includes('fr') ? 'Les Musiciens' : userLang.includes('de')? 'Die Musiker' : 'The musicians'}</h1>
       
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <p style={{padding:'20px'}}>
+        {userLang.includes('fr') ? `Voici quelques musiciens qui ont marqué la musique de Sawuri Merci à eux pour leur professionnalisme et leur virtuosité` 
+        : userLang.includes('de')? `Hier sind einige Musiker, die die Musik von Sawuri geprägt haben Danke an sie für ihre Professionalität und Virtuosität`
+        : 'Here are some musicians who marked the music of Sawuri Thanks to them for their professionalism and their virtuosity'}
+      </p>
+
+
+
+{/* Hier sind einige Musiker, die die Musik von Sawuri geprägt haben
+Danke an sie für ihre Professionalität und Virtuosität */}
       <div className='team-card-container'>
         {team.map((member,i)=>{
           
