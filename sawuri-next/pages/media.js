@@ -33,6 +33,7 @@ const Media = ({videos}) => {
           //console.log(main);
     
           const videos = self.selector('video')
+          console.log(videos[0])
             
           //const videos = container.querySelectorAll('video');
 
@@ -45,32 +46,21 @@ const Media = ({videos}) => {
 
           videos.forEach((video,i)=>{
             
-          /*   tl.to(video,{
-              width:"100vw",
-              height:'100vh',
-            },i) */
-            //tl.to(video,{width:"400px",height:"300px"},i+1),
             const tl = gsap.timeline({
               scrollTrigger: {
                 trigger: video,
-                start: "10% 40%",
+                start: "-20% 40%",
                 end: "100% 40%",
                 scrub: 1,
-                //markers: true
+                markers: true
               }
             });
-            /*tl.to(video, {
-               onStart: ()=>fullScreen(video,true),
-               onReverseComplete:()=>fullScreen(video,true),
-               onComplete: ()=>fullScreen(video,false),
-               onEnterBack:()=>fullScreen(video,true) ,
-              })  */
-              
+            video.volume = 0.2;
               tl.to(video, {
-                width:"100vw",
-                height:"100vh",
-                position:"fixed",
-                zIndex:1000,
+                width:"80vw",
+                height:"80vh",
+                //position:"fixed",
+                //zIndex:1000,
                 onStart:()=>{video.pause(); video.currentTime=0},
                 onEnterBack: ()=>{video.pause();video.style.borderRadius="20px" },
                 onRepeat: ()=>{video.pause();video.style.borderRadius="20px" },
@@ -114,7 +104,7 @@ const Media = ({videos}) => {
               return (
                 <div className='video-box' key={i} >
                         <h4 >{video.titre}</h4>
-                          <video  allowFullScreen muted onClick={()=>setIsAudio(false)}>
+                          <video  allowFullScreen muted controls onClick={()=>setIsAudio(false)} onMouseOver={()=>setIsAudio(false)}>
                             <source src={`/videos/${video.path}.mp4`} type="video/mp4"/>
                           </video>
                  </div>

@@ -38,7 +38,7 @@ const NavBar = () => {
     <>
     <nav ref={nav}>
       <Link href={'/'} >
-        <button id='logo' className={isHome.length <= 1 &&'invisible-logo'}>
+        <button id='logo' className={isHome.length <= 1 ?'invisible-logo' : ''}>
           <div>Marcel</div>
           <div>Sawuri</div>
         </button>
