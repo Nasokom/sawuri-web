@@ -52,7 +52,7 @@ const Media = ({videos}) => {
                 start: "-20% 40%",
                 end: "100% 40%",
                 scrub: 1,
-                markers: true
+                //markers: true
               }
             });
             video.volume = 0.2;
