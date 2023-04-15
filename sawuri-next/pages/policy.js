@@ -9,8 +9,15 @@ const Policy = ({policys}) => {
     const subCateg = mainRef.current.querySelectorAll('.policy-text');
     //console.log(subCateg[i])
     subCateg.forEach(elt => {
-      //elt.classList.remove('ppda')
       elt.style.maxHeight = "0vh"
+    });
+
+    const button = mainRef.current.querySelectorAll('button');
+
+    button.forEach(elt => {
+      elt.style.width ="40px"
+      elt.style.height ="40px"
+
     });
 
     console.log(e.target.parentElement.parentElement);
@@ -19,6 +26,8 @@ const Policy = ({policys}) => {
     console.log(text)
     //text.classList.add('ppda')
     text.style.maxHeight = "40vh"
+    parent.querySelector('button').style.width = "0px"
+    parent.querySelector('button').style.height = "0px"
   }
 
   const mainRef = useRef(null)
@@ -40,7 +49,8 @@ const Policy = ({policys}) => {
 
                     <div className='policy-sub-title' onClick={(e)=>toggleText(e)}>
                       <h3>{categ.titre}</h3>
-                      <button >Expand</button>
+                      <button>
+                      </button>
                     </div>
 
                     <div className='policy-text'>

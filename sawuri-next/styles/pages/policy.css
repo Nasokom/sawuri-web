@@ -44,7 +44,7 @@
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
-    border-bottom: 4px solid black;
+    border-bottom: 4px solid var(--textcolor);
     margin-bottom: 30px;
     padding-bottom: 20px;
 }
@@ -70,4 +70,33 @@
     max-height: 0vh;
     transition: 0.5s;
     overflow: hidden;
+}
+
+#policy button:hover{
+    scale: 1.1;
+}
+
+#policy button{
+    height: 40px;
+    width: 40px;
+    border: 2px solid var(--textcolor);
+    position: relative;
+    border-radius: 50%;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+#policy button:after,#policy button::before {
+    content: "";
+    width: 50%;
+    height: 2px;
+    background-color: var(--textcolor);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
+#policy button::before{
+    rotate: 90deg;
 }
