@@ -1,0 +1,32 @@
+#cookieBanner{
+bottom: 0;
+left: 0;
+position: fixed;
+background: var(--titlecolor);
+padding: 30px;
+width: 100%;
+display: flex;
+justify-content: space-around;
+align-items: center;
+z-index: 100000000;
+}
+#cookieBanner p{
+    font-size: 20px;
+}
+
+#cookieBanner button{
+    padding: 10px;
+    background: var(--bg);
+    color: var(--textcolor);
+    border-radius: 20px;
+    width: 70px;
+    text-align: center;
+    transition: 0.3s;
+    font-size: 20px;
+}
+
+#cookieBanner button:hover{
+    cursor:pointer;
+    scale: 1.2;
+    border: 3px solid var(--textcolor);
+}

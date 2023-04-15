@@ -38,8 +38,9 @@ const Footer = () => {
 
           <ul>
             <h3>Policy</h3>
-            <li> <Link href={'/'} >Data policy</Link></li>
-            <li> <Link href={'/'} >terms of use</Link></li>
+            <li> <Link href={'/policy#data'} >Data policy</Link></li>
+            <li> <Link href={'/policy#terms'} >terms of use</Link></li>
+            <li> <Link href={'/policy#cookie'} >cookies</Link></li>
           </ul>
         </div>
 

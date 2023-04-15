@@ -24,6 +24,7 @@ const SectionTest = ({datas}) => {
       }</h2>
 
       <div className='para-container'>
+        
           {contenu.map((para,i)=>{
             const [tradText,setTradText] = useState(null)
             useEffect(()=>{

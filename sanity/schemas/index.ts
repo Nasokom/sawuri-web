@@ -6,5 +6,7 @@ import video from './video'
 import test from './textImage'
 import about from './about'
 import marketing from './marketing'
+import titreText from './titreText'
+import policy from './policy'
 
-export const schemaTypes = [marketing,test,about,sons, gallery, contenu, collaborateur, video]
+export const schemaTypes = [titreText,policy,marketing,test,about,sons, gallery, contenu, collaborateur, video]

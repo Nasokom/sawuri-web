@@ -1,13 +1,21 @@
 :root {
   --textcolor:black;
   --bg : linear-gradient(to right bottom, #ffe5c8, #f2e3c0, #e3e1ba, #d3dfb7, #c1ddb7);
+  --bg:linear-gradient(
+    45deg,
+    hsl(32deg 100% 84%) 1%,
+    hsl(32deg 100% 95%) 51%,
+    hsl(32deg 100% 95%) 49%,
+    hsl(32deg 100% 84%) 99%
+    );
+  --bg :linear-gradient(144deg, rgba(255,255,255,1) 0%, rgba(255,228,197,1) 100%);
   --rasta-bg: linear-gradient(90deg, rgba(29,121,9,1) 0%, rgba(190,198,28,1) 34%, rgba(255,222,0,1) 50%, rgba(240,180,2,1) 68%, rgba(179,10,10,1) 100%);
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-
+  --titlecolor : white;
 
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
@@ -84,7 +92,7 @@ h1{
   text-align: center;
 }
 
-.page-title{
+/* .page-title{
   mix-blend-mode: none;
   font-size: 12vw;
   background: rgb(29,121,9);
@@ -92,6 +100,18 @@ h1{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 0.2vw var(--textcolor);
+} */
+
+.page-title{
+  mix-blend-mode: none;
+  font-size: 12vw;
+  letter-spacing: 4px;
+  /* Warning: no fallback */
+  background: -webkit-linear-gradient(-90deg, rgba(29,121,9,1) 0%, rgba(190,198,28,1) 34%, rgba(255,222,0,1) 50%, rgba(240,180,2,1) 68%, rgba(179,10,10,1) 100%);;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 3px black;
+  -webkit-text-stroke: 12px transparent;
+  color: var(--titlecolor);
 }
 
 
@@ -99,18 +119,21 @@ p{
   font-size: xx-large;
   font-family: "Grandstander-variable";
 }
-@import url('layouts/navbar.css');
-@import url('layouts/footer.css');
+
+a,button{
+  cursor: pointer;
+}
+@import url('layouts/layout.css');
 @import url('hero.css');
 @import url('contents/intro.css');
 @import url('contents/about.css');
-@import url('layouts/menu.css');
 @import url("ui/ui.css");
 @import url('pages/page.css');
 
 @media (prefers-color-scheme: dark) {
   :root {
     --textcolor:white;
+    --titlecolor : black;
     --bg:radial-gradient(circle, #000000, #1a1210, #281f17, #312e1c, #30402a);
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;

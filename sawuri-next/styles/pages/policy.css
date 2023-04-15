@@ -1,0 +1,73 @@
+#policy{
+    padding-top: 70px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 100px;
+}
+
+#policy h1{
+    margin-bottom: 70px;
+}
+#policy p{
+    font-size: clamp(15px, 2vw, 25px);
+    width: 100%;
+}
+
+#policy h2{
+    font-size: clamp(25px, 4vw, 40px);
+    padding-bottom: 70px;
+    font-family: 'cubao';
+    text-align: center;
+    font-weight: 100;
+}
+
+#policy h3{
+    font-size: clamp(20px, 4vw, 35px);
+    font-weight: bolder;
+    padding-bottom: 20px;
+    font-family: 'Grandstander-variable';
+}
+
+
+.policy-categ{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 50vh;
+}
+
+
+.policy-sub-categ{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 4px solid black;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+.policy-sub-title{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* .policy-sub-categ:hover .policy-text{
+    transition: 1s;
+    max-height: 100vh;
+} */
+
+.ppda{
+    max-height: 50vh !important;
+    transition: 1s;
+}
+
+.policy-text{
+    width: 80vw;
+    max-height: 0vh;
+    transition: 0.5s;
+    overflow: hidden;
+}

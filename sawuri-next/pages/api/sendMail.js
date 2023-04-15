@@ -27,13 +27,17 @@ export default async function sendEmail(req, res) {
     //html : emailHtml,
     text : `
     Bonjour ${name}
+
     Merci pour votre message ! Je vous confirme que je l'ai bien reçu et je vous recontacterai dès que possible.
     En attendant, n'hésitez pas à consulter les différentes rubriques de mon site web .
     Si vous avez des questions urgentes ou des demandes spécifiques, n'hésitez pas à me contacter à nouveau en répondant à ce message.
     
     Cordialement,Marcel
 
-    (Ceci est un mail automatique suite à la soumission du formulaire de contact sur mon site web   https://sawuri-web.vercel.app)
+    (Ceci est un mail automatique suite à la soumission du formulaire de contact sur mon site web   https://www.marcel-sawuri.online)
+
+    Votre message :
+    ${message}
     `
 
   };
@@ -42,11 +46,17 @@ export default async function sendEmail(req, res) {
   from: email,
   to: process.env.GMAIL_USER,
   subject: `${name} vous a envoyé un message depuis votre siteweb`,
-  text: `Bonjour Marcel vous avez recu un mail de ${name} depuis votre site web :
-    voici son message:
-    ${message}
-    voici son mail pour le contacter: ${email}
-    ${phone && `Voici son numero de telephone pour le contacter : ${phone}` }
+  text: 
+  `Bonjour Marcel,
+  
+   Vous avez recu un mail de ${name} depuis votre site web :
+   
+   voici son message:
+    
+   ${message}
+
+   voici son mail pour le contacter: ${email}
+   ${phone && `Voici son numero de telephone pour le contacter : ${phone}` }
   `
 };
 
