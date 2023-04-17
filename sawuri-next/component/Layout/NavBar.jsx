@@ -15,11 +15,13 @@ const NavBar = () => {
     if(showMenu){
       const menuElt = nav.current.querySelector('#menu') || elt.current;
       menuElt.style.background = "var(--rasta-bg)";
-      menuElt.style.transform = "translateY(-110%)"
+      menuElt.style.transform = "translateY(-110%)";
+      nav.current.querySelector('.menu-text').style.top = "0%"
       setTimeout(()=>{
         setShowMenu(false)
       },550)
     }else{
+      nav.current.querySelector('.menu-text').style.top = "-100%"
       setShowMenu(!showMenu)
     }
 
@@ -45,7 +47,11 @@ const NavBar = () => {
       </Link>
 
         <button id='burger-btn' onClick={()=>toggleMenu()}>
-            <span className={showMenu ? 'menu-btn-active menu-btn' : 'menu-btn' }>{showMenu ? 'CLOSE':'MENU'}</span>
+          <span className={showMenu ? 'menu-btn-active menu-btn' : 'menu-btn' }>{showMenu ? 'CLOSE':'MENU'}</span> 
+           <div className='menu-text'> 
+            <div>MENU</div>
+            <div>CLOSE</div>
+           </div>
         </button>
 
 

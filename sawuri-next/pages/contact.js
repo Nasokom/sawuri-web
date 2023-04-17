@@ -97,7 +97,7 @@ const Contact = () => {
                     <input type='tel' name="tel" placeholder='Phone' />
                     <textarea id="txtid" name="message" placeholder={userLang.includes('fr') ? 'Message' : userLang.includes('de')? 'Nachricht' : 'Message'} rows="10" cols="50" maxLength="1000" required={true} >
                     </textarea>
-                    <button id="submit"type='submit' name='submit-btn' 
+                    <button id="submit" type='submit' name='submit-btn' 
                     className={sendingMail&&'sending'}
                     value={userLang.includes('fr') ? 'envoyer' : userLang.includes('de')? 'schicken' : 'send'} >
 

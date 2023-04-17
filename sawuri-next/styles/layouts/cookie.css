@@ -12,6 +12,7 @@ z-index: 100000000;
 }
 #cookieBanner p{
     font-size: 20px;
+    color: var(--textcolor);
 }
 
 #cookieBanner button{

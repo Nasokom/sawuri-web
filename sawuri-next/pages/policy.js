@@ -25,7 +25,7 @@ const Policy = ({policys}) => {
     const text = parent.querySelector('.policy-text');
     console.log(text)
     //text.classList.add('ppda')
-    text.style.maxHeight = "40vh"
+    text.style.maxHeight = "100vh"
     parent.querySelector('button').style.width = "0px"
     parent.querySelector('button').style.height = "0px"
   }

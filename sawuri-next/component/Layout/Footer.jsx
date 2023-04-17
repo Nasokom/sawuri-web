@@ -1,10 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
 import { useStateContext } from '@/context/StateContext'
+import ThemeBtn from '../Ui/ThemeBtn'
+import LangueBtn from '../Ui/LangueBtn'
 
 const Footer = () => {
 
   const {userLang } = useStateContext()
+  
 
   return (
     <footer>
@@ -42,10 +45,16 @@ const Footer = () => {
             <li> <Link href={'/policy#terms'} >terms of use</Link></li>
             <li> <Link href={'/policy#cookie'} >cookies</Link></li>
           </ul>
-        </div>
 
+          <ul>
+            <h3>Settings</h3>
+            <li> <LangueBtn/></li>
+            <li><ThemeBtn/></li>
+          
+          </ul>
 
-      
+        
+        </div>      
 
           <p id="credit"> Website made by Nasoa 2023</p>
 

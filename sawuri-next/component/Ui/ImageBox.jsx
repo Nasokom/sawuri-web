@@ -7,6 +7,7 @@ import { useStateContext } from '@/context/StateContext'
 const ImageBox = ({data,axesRanges,rndmZidx}) => {
 
     const {isMobile} = useStateContext();
+    //const [isMobile, setIsMobile] = useState(false);
     const {max, min} = axesRanges;
 
     const myLoader = () => {

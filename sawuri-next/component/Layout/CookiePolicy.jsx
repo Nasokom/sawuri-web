@@ -11,7 +11,7 @@ function close(){
   return (
     <div id="cookieBanner" ref={cookieRef}>
             <p>
-            Nous ne recoltons que les données strictement necessaire, vos données ne sont pas revendus à un tiers 
+            Nous ne recoltons que les données strictement necessaires, vos données ne sont pas revendues à un tiers 
             </p>
             <button onClick={()=>close()}>Ok</button>
 

@@ -23,11 +23,11 @@
     max-width: 700px;
     width: 100%;
     padding:10px 0px;
-    border-bottom: 4px solid white;
-    /* mix-blend-mode: difference; */
+    border-bottom: 4px solid var(--textcolor);
     font-size: xx-large;
     margin: 20px 0px;
     font-family: "Grandstander-variable";
+    color: var(--textcolor);
 }
 
 #contact-form input{
@@ -35,15 +35,15 @@
 }
 
 #contact-form textarea{
-
+    color: var(--textcolor);
 }
 
 #contact-form  #submit{
     max-width: 200px;
-    border: 4px solid white;
+    border: 4px solid var(--textcolor);
     padding:0px;
     text-align: center;
-    color: var(--textColor);
+    color: var(--textcolor);
     cursor: pointer;
     transition: 0.3s;
     position: relative;

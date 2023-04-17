@@ -1,5 +1,6 @@
 :root {
   --textcolor:black;
+  --html : white;
   --bg : linear-gradient(to right bottom, #ffe5c8, #f2e3c0, #e3e1ba, #d3dfb7, #c1ddb7);
   --bg:linear-gradient(
     45deg,
@@ -9,36 +10,12 @@
     hsl(32deg 100% 84%) 99%
     );
   --bg :linear-gradient(144deg, rgba(255,255,255,1) 0%, rgba(255,228,197,1) 100%);
+  
   --rasta-bg: linear-gradient(90deg, rgba(29,121,9,1) 0%, rgba(190,198,28,1) 34%, rgba(255,222,0,1) 50%, rgba(240,180,2,1) 68%, rgba(179,10,10,1) 100%);
+  --rasta-bg: linear-gradient(90deg, #709255 0%, #FFE787 50%, #EF233C 100%);
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-  --titlecolor : white;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
+  --titlecolor : #ffe5c8;
 }
 
 
@@ -104,13 +81,13 @@ h1{
 
 .page-title{
   mix-blend-mode: none;
-  font-size: 12vw;
+  font-size: 10vw;
   letter-spacing: 4px;
   /* Warning: no fallback */
-  background: -webkit-linear-gradient(-90deg, rgba(29,121,9,1) 0%, rgba(190,198,28,1) 34%, rgba(255,222,0,1) 50%, rgba(240,180,2,1) 68%, rgba(179,10,10,1) 100%);;
+  background: -webkit-var(--rasta-bg);
+  background: var(--rasta-bg);
   -webkit-background-clip: text;
-  -webkit-text-stroke: 3px black;
-  -webkit-text-stroke: 12px transparent;
+  -webkit-text-stroke: 0.15em transparent;
   color: var(--titlecolor);
 }
 
@@ -118,53 +95,26 @@ h1{
 p{
   font-size: xx-large;
   font-family: "Grandstander-variable";
+  color: var(--textcolor);
+}
+
+h2,h3{
+  color: var(--textcolor);
 }
 
 a,button{
   cursor: pointer;
 }
-@import url('layouts/layout.css');
-@import url('hero.css');
-@import url('contents/intro.css');
-@import url('contents/about.css');
-@import url("ui/ui.css");
-@import url('pages/page.css');
 
-@media (prefers-color-scheme: dark) {
-  :root {
+
+/* @media (prefers-color-scheme: dark){}*/
+[data-theme="dark"]{
+    --html : black;
     --textcolor:white;
     --titlecolor : black;
     --bg:radial-gradient(circle, #000000, #1a1210, #281f17, #312e1c, #30402a);
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
   }
-}
+
 
 * {
   box-sizing: border-box;
@@ -185,6 +135,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  background-color: var(--html);
 }
 main{
   width:100%;
@@ -207,10 +158,13 @@ button{
   background-color: none;
   text-decoration: none;
   text-indent: 0;
+  color: var(--textcolor);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
+@import url('layouts/layout.css');
+@import url('hero.css');
+@import url('contents/intro.css');
+@import url('contents/about.css');
+@import url('pages/page.css');
+@import url("ui/ui.css");
+

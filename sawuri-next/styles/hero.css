@@ -18,17 +18,20 @@
     
 }
 .hero h1{
-    animation: titleAnim 0.5s forwards ease;
     margin-right: 20px; 
     mix-blend-mode: difference;
     font-size: 19.5vw;
 }
 
+.titleAnim{
+    animation: titleAnim 0.5s forwards ease;
+}
+
+
 
 
 
 .hero-title{
-     animation: titleAnim 0.5s forwards ease;
     margin-right: 20px; 
     mix-blend-mode: difference;
     font-size: 19.5vw;
@@ -44,13 +47,22 @@
     display: flex;
     flex-direction: column;
     left:0;  
-    line-height: 0.8em
+    line-height: 0.9em
     
  /*    stroke: 1px white;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: white; */;
 }
 
+.title-box{
+    overflow: hidden;
+    display: flex;
+}
+
+.title-box div{
+    transform: rotate(90deg) translateX(600px);
+    transition: 0.5s;
+}
 
 
 

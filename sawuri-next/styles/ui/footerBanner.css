@@ -40,8 +40,8 @@
 .footer-banner button:hover{
     height: 300px;
     border-radius: 50%;
-    border: 20px solid green;
-    background-color: rgb(243, 243, 21);
-    color: red;
+    border: 20px solid #709255;
+    background-color: #FFE787;
+    color: #EF233C;
     font-size: 45px;
 }

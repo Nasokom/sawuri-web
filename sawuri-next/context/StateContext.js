@@ -6,19 +6,18 @@ export const StateContext = ({ children }) => {
 
     const[showMenu,setShowMenu] = useState(false);
     const[isMobile,setIsMobile] = useState(false);
-    const [userLang,setUserLang] = useState('');
+    const [userLang,setUserLang] = useState('en');
 
-    useEffect(()=>{
-        
-    })
 
-    useEffect(()=>{
+
+    useEffect(()=>{      
         window.innerWidth <= 700 ? setIsMobile(true) : setIsMobile(false);
-
         //preference de langue automatique
         const userLanguage = navigator.language || navigator.userLanguage;
-        //console.log(userLanguage);
         setUserLang(userLanguage)
+        //console.log(isMobile)
+        console.log(userLanguage);
+
     },[])
     
     return (
@@ -29,6 +28,7 @@ export const StateContext = ({ children }) => {
             isMobile,
             setIsMobile,
             userLang,
+            setUserLang
         }}
         >
         {children}
