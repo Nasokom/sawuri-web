@@ -58,7 +58,7 @@ const ThemeBtn = () => {
 }
 
   return (
-    <button className="theme-btn" onClick={()=>switchTheme()} ref={main}>
+    <button className="theme-btn" name="Theme button" onClick={()=>switchTheme()} ref={main}>
         {theme ? 'dark mode' : 'light Mode'}
        <span className="theme-logo">{theme ? <FiMoon/> : <FiSun/>}</span> 
     </button>

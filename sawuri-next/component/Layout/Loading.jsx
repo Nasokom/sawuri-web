@@ -21,6 +21,7 @@ export const Loading = () => {
         src={vin}
         height={500}
         width={500}
+        alt="Sawuri vinyle"
         />
     </div>
   )

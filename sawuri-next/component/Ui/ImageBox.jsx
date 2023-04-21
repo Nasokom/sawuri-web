@@ -11,7 +11,14 @@ const ImageBox = ({data,axesRanges,rndmZidx}) => {
     const {max, min} = axesRanges;
 
     const myLoader = () => {
-        return data && urlFor(data).url()}
+      if(isMobile){
+        console.log(data)
+        return data && urlFor(data).width(200).height(200).url()
+      }else{
+        console.log(data)
+        return data && urlFor(data).width(400).height(400).url()
+      }
+    }
     
     //!! PERFORMANCE ISSUES Server : CLient & Server Different style
     //TODO Maybe try a useEffect side effect to be sur all elt are there
