@@ -21,7 +21,9 @@ const Footer = () => {
 
       <div id='footer-right'>
           <ul>
-          <h3>Site Map</h3>
+            <li>
+              <h3>Site Map</h3>
+            </li>
             <li>
               <Link href={'/'}>home</Link>
             </li>
@@ -40,14 +42,18 @@ const Footer = () => {
           </ul>
 
           <ul>
-            <h3>Policy</h3>
+            <li>
+              <h3>Policy</h3>
+            </li>
             <li> <Link href={'/policy#data'} >Data policy</Link></li>
             <li> <Link href={'/policy#terms'} >terms of use</Link></li>
             <li> <Link href={'/policy#cookie'} >cookies</Link></li>
           </ul>
 
           <ul>
-            <h3>Settings</h3>
+            <li>
+              <h3>Settings</h3>
+            </li>
             <li> <LangueBtn/></li>
             <li><ThemeBtn/></li>
           

@@ -40,13 +40,13 @@ const NavBar = () => {
     <>
     <nav ref={nav}>
       <Link href={'/'} >
-        <button id='logo' className={isHome.length <= 1 ?'invisible-logo' : ''}>
+        <button id='logo' aria-label='home' className={isHome.length <= 1 ?'invisible-logo' : ''}>
           <div>Marcel</div>
           <div>Sawuri</div>
         </button>
       </Link>
 
-        <button id='burger-btn' onClick={()=>toggleMenu()}>
+        <button id='burger-btn' aria-label="menu" onClick={()=>toggleMenu()}>
           <span className={showMenu ? 'menu-btn-active menu-btn' : 'menu-btn' }>{showMenu ? 'CLOSE':'MENU'}</span> 
            <div className='menu-text'> 
             <div>MENU</div>
