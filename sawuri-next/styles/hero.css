@@ -5,16 +5,12 @@
     flex-direction: column;
     min-width: 100vw;
     min-height: 100vh;
-    font-family: "Grandstander-variable";
-    font-family: "cubao";
-    font-family: "blackSansa";
-    font-family: "Afronic";
-    font-family: "cubaoUltra";
     font-family: "climateCrisis";
     text-align: center;
     left: auto;
     z-index: 10;
     font-size: 19.5vw;
+    font-display: swap;
     
 }
 .hero h1{

@@ -22,44 +22,44 @@
 /* Fonts */
 @font-face {
   font-family: "Grandstander-variable";
-  src: url(".././public/fonts/Grandstander-VariableFont_wght.ttf")
+  src: url(".././public/fonts/Grandstander-VariableFont_wght.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "cubao";
   /* src: url("/sawuri-next/public/fonts/CubaoFree2-SemiCondensed.ttf") */
-  src: url('.././public/fonts/CubaoFree2-SemiCondensed.ttf')
+  src: url('.././public/fonts/CubaoFree2-SemiCondensed.ttf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: "cubaoUltra";
   /* src: url("/sawuri-next/public/fonts/CubaoFree2-SemiCondensed.ttf") */
-  src: url('.././public/fonts/CubaoFree2-UltraCondensed.ttf')
+  src: url('.././public/fonts/CubaoFree2-UltraCondensed.ttf');
+  font-display: swap;
 }
 
 
 @font-face {
   font-family: "climateCrisis";
   /* src: url("/sawuri-next/public/fonts/CubaoFree2-SemiCondensed.ttf") */
-  src: url('.././public/fonts/ClimateCrisis-Regular-VariableFont_YEAR.ttf')
+  src: url('.././public/fonts/ClimateCrisis-Regular-VariableFont_YEAR.ttf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Afronic";
   /* src: url("/sawuri-next/public/fonts/CubaoFree2-SemiCondensed.ttf") */
-  src: url('.././public/fonts/Afronik-ExtraBold.otf')
+  src: url('.././public/fonts/Afronik-ExtraBold.otf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: "BlackSansa";
   /* src: url("/sawuri-next/public/fonts/CubaoFree2-SemiCondensed.ttf") */
-  src: url('.././public/fonts/BlackSansaFree-Regular.otf')
-}
-
-@font-face {
-  font-family: "manuscrit";
-  /* src: url("/sawuri-next/public/fonts/CubaoFree2-SemiCondensed.ttf") */
-  src: url('.././public/fonts/tuesdaynight-regular.otf')
+  src: url('.././public/fonts/BlackSansaFree-Regular.otf');
+  font-display: swap;
 }
 
 h1{
@@ -67,6 +67,7 @@ h1{
   font-size: 70px;
   width: 100%;
   text-align: center;
+
 }
 
 /* .page-title{
@@ -89,6 +90,7 @@ h1{
   -webkit-background-clip: text;
   -webkit-text-stroke: 0.15em transparent;
   color: var(--titlecolor);
+
 }
 
 
@@ -96,6 +98,7 @@ p{
   font-size: xx-large;
   font-family: "Grandstander-variable";
   color: var(--textcolor);
+
 }
 
 h2,h3{
@@ -129,7 +132,7 @@ a,button{
     text-align: left;
     text-decoration: none;
     text-indent: 0;
-    font-display: swap;
+
 }
 
 html,

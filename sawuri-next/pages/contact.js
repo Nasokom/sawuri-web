@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import React,{useState} from 'react'
 import axios from "axios";
 import MailResponse from '@/component/Ui/MailResponse';
@@ -81,6 +82,13 @@ const Contact = () => {
 
 
   return (
+    <>
+    <Head>
+        <title>Contact</title>
+        <meta name="description" content="Contact Sawuri" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+    </Head>
     <div className='contact-page'>
             <h1 className="page-title">
             {userLang.includes('fr') ? 'contact' : userLang.includes('de')? 'Kontakt' : 'contact'}
@@ -103,10 +111,10 @@ const Contact = () => {
 
                         {userLang.includes('fr') && !sendingMail ? 'envoyer' 
                         : userLang.includes('fr') && sendingMail? 'envoie' 
-
+                        
                         : userLang.includes('de') && !sendingMail ? 'schicken' 
                         : userLang.includes('de') && sendingMail ? 'schick' 
-
+                        
                         : !sendingMail  ? 'send' : 'sending'}
                       
                       </button>
@@ -118,10 +126,11 @@ const Contact = () => {
 
 
                 <Banner liens={[{
-          path:'about',
-          name:`${userLang.includes('fr') ? 'biographie' : userLang.includes('de')? 'Biografie' : 'Biography'}`,
-        },{ path:'media',name:'media'}]}/>
+                  path:'about',
+                  name:`${userLang.includes('fr') ? 'biographie' : userLang.includes('de')? 'Biografie' : 'Biography'}`,
+                },{ path:'media',name:'media'}]}/>
     </div>
+</>
   )
 }
 

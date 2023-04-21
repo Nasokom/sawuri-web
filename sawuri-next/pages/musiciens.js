@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import TeamCard from '@/component/content/TeamCard'
 import React from 'react'
 import { client } from '@/Utils/sanity/sanityClient'
@@ -8,6 +9,14 @@ const Musiciens = ({team}) => {
 
   const {userLang} = useStateContext()
   return (
+
+    <>
+    <Head>
+        <title>Team</title>
+        <meta name="description" content="learn about the sawuri crew-member" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+    </Head>
     <div className='team-page'>
 
           <h1 className='page-title'>{userLang.includes('fr') ? 'Les Musiciens' : userLang.includes('de')? 'Die Musiker' : 'The musicians'}</h1>
@@ -22,10 +31,6 @@ const Musiciens = ({team}) => {
         : 'Here are some musicians who marked the music of Sawuri Thanks to them for their professionalism and their virtuosity'}
       </p>
 
-
-
-{/* Hier sind einige Musiker, die die Musik von Sawuri geprägt haben
-Danke an sie für ihre Professionalität und Virtuosität */}
       <div className='team-card-container'>
         {team.map((member,i)=>{
           
@@ -33,17 +38,18 @@ Danke an sie für ihre Professionalität und Virtuosität */}
         })}
       </div>
       <Banner liens={[{
-          path:'about',
-          name:`${userLang.includes('fr') ? 'biographie' : userLang.includes('de')? 'Biografie' : 'Biography'}`,
-        },{ path:'media',name:'media'}]}/>
+        path:'about',
+        name:`${userLang.includes('fr') ? 'biographie' : userLang.includes('de')? 'Biografie' : 'Biography'}`,
+      },{ path:'media',name:'media'}]}/>
     </div>
+</>
   )
 }
 
 export default Musiciens
 
 export async function getStaticProps() {
-
+  
   const team = await client.fetch(`*[_type == "team"]`);
   return {
     props: {

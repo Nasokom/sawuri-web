@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import React,{useRef, useEffect, useState} from 'react'
 import Banner from '@/component/Ui/Banner'
 import { client } from '@/Utils/sanity/sanityClient'
@@ -79,6 +80,14 @@ const Media = ({videos}) => {
       
 
   return (
+
+    <>
+    <Head>
+        <title>media</title>
+        <meta name="description" content="Watch Sawuri performance in video" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+    </Head>
     <div className='media-page' ref={main}> 
 
         <h1 className="page-title">Media</h1>
@@ -89,7 +98,7 @@ const Media = ({videos}) => {
               
               return (
                 <div className='video-box' key={i}
-                 onClick={()=>setIsMuted(false)} 
+                onClick={()=>setIsMuted(false)} 
                 >
                         <h4 id={i+0.5}>{video.titre}</h4>
                           <video  
@@ -98,7 +107,7 @@ const Media = ({videos}) => {
                           autoPlay 
                           controls  
                           muted
-                           >
+                          >
                             <source src={`/videos/${video.path}.mp4`} type="video/mp4"/>
                           </video>
                  </div>
@@ -119,17 +128,18 @@ const Media = ({videos}) => {
           name:`${userLang.includes('fr') ? 'biographie' : userLang.includes('de')? 'Biografie' : 'Biography'}`,
         },{ path:'contact',name:'contact'}]}/>
     </div>
+</>
   )
 }
 
 export default Media
 
 export async function getStaticProps() {
-
-    const videos = await client.fetch(`*[_type == "video"]`);
-    return {
-      props: {
-        videos
+  
+  const videos = await client.fetch(`*[_type == "video"]`);
+  return {
+    props: {
+      videos
       },
       revalidate: 1,
     };

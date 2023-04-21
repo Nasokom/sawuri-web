@@ -1,9 +1,14 @@
 /** @type {import('next').NextConfig} */
+const bundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+}); 
 const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ['cdn.sanity.io'],
   },
+  withBundleAnalyzer : bundleAnalyzer,
+
   async headers() {
     return [
       {

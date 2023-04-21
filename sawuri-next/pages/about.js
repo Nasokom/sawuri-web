@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 import AboutScrollContainer from '@/component/content/AboutScrollContainer'
 import { client } from '@/Utils/sanity/sanityClient'
 import Banner from '@/component/Ui/Banner'
@@ -11,6 +12,13 @@ const About = ({aboutData}) => {
 
    // console.table(aboutData[0].contenu[0].text)
   return (
+<>
+    <Head>
+        <title>About</title>
+        <meta name="description" content="learn more about Sawuri" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+    </Head>
 
     <div className='about-page'>
 
@@ -18,14 +26,15 @@ const About = ({aboutData}) => {
             <AboutScrollContainer datas={aboutData}/>
 
             <Banner liens={[{
-          path:'media',
-          name:'media'
-        },{ 
-          path:'contact',
-          name:`${userLang.includes('fr') ? 'contact' : userLang.includes('de')? 'Kontakt' : 'contact'}`,
-        }]}/>
+              path:'media',
+              name:'media'
+            },{ 
+              path:'contact',
+              name:`${userLang.includes('fr') ? 'contact' : userLang.includes('de')? 'Kontakt' : 'contact'}`,
+            }]}/>
 
     </div>
+            </>
   )
 }
 

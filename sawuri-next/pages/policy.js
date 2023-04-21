@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import React,{useRef} from 'react'
 import { client } from '@/Utils/sanity/sanityClient'
 import ComplexText from '@/component/Ui/ComplexText'
@@ -34,6 +35,15 @@ const Policy = ({policys}) => {
 
 
   return (
+
+    <>
+    <Head>
+        <title>Policy</title>
+        <meta name="description" content="Find the policy of the sawuri's website" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+    </Head>
+
     <div id="policy" ref={mainRef}>
         <h1 className='page-title'>policy</h1>
         
@@ -63,11 +73,12 @@ const Policy = ({policys}) => {
 
           </div>
           )
-      })}
+        })}
     
     
     
     </div>
+  </>
   )
 }
 
