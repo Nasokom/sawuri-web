@@ -10,7 +10,6 @@ const About = ({aboutData}) => {
 
   const {userLang} = useStateContext();
 
-   // console.table(aboutData[0].contenu[0].text)
   return (
 <>
     <Head>

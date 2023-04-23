@@ -45,19 +45,17 @@
     left:0;  
     line-height: 0.9em
     
- /*    stroke: 1px white;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: white; */;
 }
 
 .title-box{
     overflow: hidden;
     display: flex;
+    transition: 0.5s;
 }
 
 .title-box div{
     transform: rotate(90deg) translateX(600px);
-    transition: 0.5s;
+    transition: inherit;
 }
 
 

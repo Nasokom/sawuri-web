@@ -45,19 +45,15 @@ const TeamCard = ({member}) => {
         
         { tradText && <ComplexText texts={tradText} />}
 
-{/* 
-        {member.desc.map((p,i)=>{
-           return <p key={i}>{p}</p>
-        })} */}
-            { member.skillz &&  <p>Maitrise : {
-            //member.skillz
-            userLang.includes('fr') ? member.skillz
-        : userLang.includes('de') ? member.skillzDe
-        : member.skillzEn
+            { member.skillz &&  
+                <p>Maitrise : 
+                    { userLang.includes('fr') ? member.skillz
+                    : userLang.includes('de') ? member.skillzDe
+                    : member.skillzEn
+                    }
+                </p>
             }
-            </p>}
         </div>
-
        
     </div>
   )

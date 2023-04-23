@@ -65,7 +65,6 @@ const AboutScrollContainer= ({datas}) => {
 
     const sections = self.selector('.para-container');
     
-    //const sections = gsap.utils.toArray(".para-container");
     const tl = gsap.timeline();
 
     sections.forEach((section, i) => {

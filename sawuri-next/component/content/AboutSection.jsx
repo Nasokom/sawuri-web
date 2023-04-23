@@ -3,17 +3,12 @@ import ImageBox from '../Ui/ImageBox'
 import ComplexText from '../Ui/ComplexText';
 import { useStateContext } from '@/context/StateContext'
 
-const SectionTest = ({datas}) => {
+const SectionTest = ({datas:{title,titleDe,titleEn,contenu}}) => {
 
   const {userLang} = useStateContext();
 
-  const {title,titleDe,titleEn,contenu} = datas;
   const main = useRef(null);
   
-  useEffect(()=>{
-
-  },[])
-
   return (
     <div className='about-section' ref={main}>
 
@@ -27,6 +22,7 @@ const SectionTest = ({datas}) => {
         
           {contenu.map((para,i)=>{
             const [tradText,setTradText] = useState(null)
+            
             useEffect(()=>{
               setTradText(userLang.includes('fr') ? para.text 
               : userLang.includes('de') ? para.textDe

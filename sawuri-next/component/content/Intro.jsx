@@ -39,22 +39,3 @@ textDe2=`Ein Repertoire abwechselnd zärtlich, rebellisch, bewegend oder leidens
 }
 
 export default Intro
-
-
-
-/*  {
-        name:"textfr",
-        title:"Paragraphe f",
-        type:'array',
-        of:[{type:'block'}],
-      },
-      {name: 'textEn',
-      title: 'Paragraphe Anglais',
-      type: 'array',
-      of:[{type:"block"}]
-     },
-     {name: 'textDe',
-      title: 'Paragraphe De',
-      type: 'array',
-      of:[{type:"block"}]
-     }, */

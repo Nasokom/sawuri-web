@@ -16,13 +16,13 @@ const main = useRef();
 
    const ctx = gsap.context((self) => {
 
-            //console.log(main);
             const photoLayout = self.selector('.photo-layout');
-            const titleBox = self.selector('.hero-title')
+            const title = self.selector('.hero-title')
             const arrow = main.current.querySelector('#scroll-down');
+  
+
             function onEnd(){
               const logo =document.querySelector('#logo');
-              //logo.style.color="red";
               logo.classList.remove('invisible-logo');
               const title =document.querySelector('.hero-title');
               title.style.opacity = 0;
@@ -34,6 +34,8 @@ const main = useRef();
               logo.classList.add('invisible-logo');
               const title =document.querySelector('.hero-title');
               title.style.opacity = 1;
+              self.selector('.title-box')[0].style.transition = "0s";
+              self.selector('.title-box')[1].style.transition = "0s";
             }
 
 
@@ -49,14 +51,17 @@ const main = useRef();
               }
             });
 
+            tl.to(arrow,{
+              opacity:0,
+            })
               
-              tl.to(arrow,{
-                opacity:0,
-              })
               
-              tl.to(titleBox,{
+              tl.to(title,{
+                transition:0,
                 top :10,
-                left:20,
+                //left:20,
+                translateX:'20px',
+                lineHeight:"0.8em",
                 width:'fit-content',
                 fontSize:'3vw',
                 position:"fixed",
@@ -74,6 +79,10 @@ const main = useRef();
             top:"-90vh",
             ease: "power2.inOut",
           },0.5)
+
+        
+            
+          
           
 
           
@@ -86,10 +95,6 @@ const main = useRef();
     <div className='hero' ref={main}>
         <ScrollDownArrow/>
           <PhotoLayout photos={photos}/>
-        {/* <div className='hero-title'>
-          <span>Marcel </span>
-          <span>Sawuri</span>
-        </div> */}
         <HeroTitle/>
 
     </div>

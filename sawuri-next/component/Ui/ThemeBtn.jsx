@@ -10,7 +10,6 @@ const ThemeBtn = () => {
         //local storage is used to override OS theme settings
         if(localStorage.getItem("theme")){
             if(localStorage.getItem("theme") == "dark"){
-                //var theme = "dark";
                 setTheme(true)
             }else{
                 setTheme(false)
@@ -22,15 +21,11 @@ const ThemeBtn = () => {
             return false;
         } else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
             //OS theme setting detected as dark
-            //var theme = "dark";
             setTheme(true)
         }else{
             setTheme(false)
         }
     
-       /*  //dark theme preferred, set document with a `data-theme` attribute
-        if (theme=="dark") {
-        } */
     },[])
 
     useEffect(()=>{

@@ -12,10 +12,8 @@ export const StateContext = ({ children }) => {
 
     useEffect(()=>{      
         window.innerWidth <= 700 ? setIsMobile(true) : setIsMobile(false);
-        //preference de langue automatique
         const userLanguage = navigator.language || navigator.userLanguage;
         setUserLang(userLanguage)
-        //console.log(isMobile)
         console.log(userLanguage);
 
     },[])
@@ -35,13 +33,5 @@ export const StateContext = ({ children }) => {
         </Context.Provider>
     )
 }
-
-//fetching data 
-/* export const getServerSideProps = async ()=>{
-  
-    return {
-      props: { products }
-    }
-  } */
 
 export const useStateContext = () => useContext(Context);

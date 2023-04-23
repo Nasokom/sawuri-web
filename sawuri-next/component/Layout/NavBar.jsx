@@ -7,7 +7,7 @@ import { useStateContext } from '@/context/StateContext'
 const NavBar = () => {
 
   const {showMenu, setShowMenu} = useStateContext();
-  const [isHome, setIsHome] = useState('')
+  const [isHome, setIsHome] = useState('');// to hide/show logo only on home
   const nav = useRef(null);
 
 
@@ -28,12 +28,9 @@ const NavBar = () => {
   }
 
   useEffect(()=>{
-    //console.log(window.location.href)
-    //setIsHome(window.location.pathnames);
     const regex = /[^/]*$/;
     const extractedString = window.location.href.match(regex)[0];
     setIsHome(extractedString)
-    //console.log(isHome)
   })
 
   return (
