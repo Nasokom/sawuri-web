@@ -42,6 +42,7 @@ const Policy = ({policys}) => {
         <meta name="description" content="Find the policy of the sawuri's website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <meta name="robots" content="noindex,nofollow" />
     </Head>
 
     <div id="policy" ref={mainRef}>

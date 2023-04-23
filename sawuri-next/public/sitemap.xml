@@ -1,0 +1,29 @@
+  <!-- public/sitemap.xml -->
+   <xml version="1.0" encoding="UTF-8">
+   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+     <url>
+       <loc>http://www.marcel-sawuri.online/</loc>
+       <lastmod>2023-04-20</lastmod>
+     </url>
+      <url>
+       <loc>http://www.marcel-sawuri.online/about</loc>
+       <lastmod>2023-04-20</lastmod>
+     </url>
+     <url>
+       <loc>http://www.marcel-sawuri.online/musiciens</loc>
+       <lastmod>2023-04-20</lastmod>
+     </url>
+     <url>
+       <loc>http://www.marcel-sawuri.online/contact</loc>
+       <lastmod>2023-04-20</lastmod>
+     </url>
+     <url>
+       <loc>http://www.marcel-sawuri.online/media</loc>
+       <lastmod>2023-04-20</lastmod>
+     </url>
+     <url>
+       <loc>http://www.marcel-sawuri.online/policy</loc>
+       <lastmod>2023-04-20</lastmod>
+     </url>
+   </urlset>
+   </xml>

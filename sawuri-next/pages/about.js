@@ -17,6 +17,7 @@ const About = ({aboutData}) => {
         <meta name="description" content="learn more about Sawuri" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <meta name="robots" content="all" />
     </Head>
 
     <div className='about-page'>
