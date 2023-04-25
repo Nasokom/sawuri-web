@@ -4,11 +4,11 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
-    <loc>http://www.marcel-sawuri.online/index</loc>
+    <loc>https://www.marcel-sawuri.online/index</loc>
     <lastmod>2023-04-20</lastmod>
   </url>
   <url>
-    <loc>https://www.marcel-sawuri.online/about</loc>
+    <loc>http://www.marcel-sawuri.online/about</loc>
     <lastmod>2023-04-20</lastmod>
   </url>
   <url>
