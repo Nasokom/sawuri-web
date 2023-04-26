@@ -13,8 +13,8 @@ const About = ({aboutData}) => {
   return (
 <>
     <Head>
-        <title>About</title>
-        <meta name="description" content="learn more about Sawuri" />
+        <title>About Sawuri</title>
+        <meta name="description" content="Apprenez en plus sur le groupe Sawuri, et son fondateur Marcel Sawuri" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="robots" content="all" />

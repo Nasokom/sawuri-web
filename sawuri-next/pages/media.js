@@ -83,8 +83,8 @@ const Media = ({videos}) => {
 
     <>
     <Head>
-        <title>media</title>
-        <meta name="description" content="Watch Sawuri performance in video" />
+        <title>Media Sawuri</title>
+        <meta name="description" content="Regarder les preformances de Sawuri en Videos " />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="robots" content="all" />

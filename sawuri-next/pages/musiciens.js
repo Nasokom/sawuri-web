@@ -12,8 +12,8 @@ const Musiciens = ({team}) => {
 
     <>
     <Head>
-        <title>Team</title>
-        <meta name="description" content="learn about the sawuri crew-member" />
+        <title>Sawuri Team</title>
+        <meta name="description" content="learn about the Sawuri crew-member" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="robots" content="all" />
