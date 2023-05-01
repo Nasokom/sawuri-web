@@ -89,6 +89,10 @@ const Contact = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="robots" content="all" />
+        <meta name="author" content="Marcel Sawuri"/>
+        <meta name="publisher" content="Marcel Sawuri"/>
+        <meta name="copyright" content="Marcel Sawuri"/>
+        <meta name="page-topic" content=" Contacter Sawuri"></meta>
     </Head>
     <div className='contact-page'>
             <h1 className="page-title">

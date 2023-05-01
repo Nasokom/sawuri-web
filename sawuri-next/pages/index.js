@@ -22,6 +22,10 @@ export default function Home({photos,marketing}) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="robots" content="all" />
+        <meta name="author" content="Sawuri"/>
+        <meta name="publisher" content="Sawuri"/>
+        <meta name="copyright" content="Sawuri"/>
+        <meta name="page-topic" content="Sawuri"></meta>
       </Head>
         <Hero photos={photos}/>
         <Intro data={marketing}/>
