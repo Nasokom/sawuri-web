@@ -11,6 +11,7 @@
     z-index: 10;
     font-size: 19.5vw;
     font-display: swap;
+    position: relative;
     
 }
 .hero h1{
@@ -38,7 +39,7 @@
     width: 100%;
     position: fixed;
     z-index: 1000;
-    color: #d83e00;
+    color: var(--color1);
     z-index: 100;
     display: flex;
     flex-direction: column;

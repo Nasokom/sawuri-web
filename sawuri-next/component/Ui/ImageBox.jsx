@@ -12,10 +12,10 @@ const ImageBox = ({data,axesRanges,rndmZidx}) => {
 
     const myLoader = () => {
       if(isMobile){
-        console.log(data)
+        //console.log(data)
         return data && urlFor(data).width(200).height(200).url()
       }else{
-        console.log(data)
+        //console.log(data)
         return data && urlFor(data).width(400).height(400).url()
       }
     }

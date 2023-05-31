@@ -8,5 +8,8 @@ import about from './about'
 import marketing from './marketing'
 import titreText from './titreText'
 import policy from './policy'
+import titleTrad from './titleTrad'
+import textTrad from './textTrad'
+import news from './news'
 
-export const schemaTypes = [titreText,policy,marketing,test,about,sons, gallery, contenu, collaborateur, video]
+export const schemaTypes = [news,textTrad,titleTrad,titreText,policy,marketing,test,about,sons, gallery, contenu, collaborateur, video]

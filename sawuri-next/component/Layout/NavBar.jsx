@@ -3,6 +3,7 @@ import React ,{useRef,useEffect,useState} from 'react'
 import Menu from './Menu'
 import Link from 'next/link'
 import { useStateContext } from '@/context/StateContext'
+import News from '../content/News'
 
 const NavBar = () => {
 
@@ -35,26 +36,28 @@ const NavBar = () => {
 
   return (
     <>
-    <nav ref={nav}>
-      <Link href={'/'} >
-        <button id='logo' aria-label='home' className={isHome.length <= 1 ?'invisible-logo' : ''}>
-          <div>Marcel</div>
-          <div>Sawuri</div>
-        </button>
-      </Link>
+      <nav ref={nav}>
 
-        <button id='burger-btn' aria-label="menu" onClick={()=>toggleMenu()}>
-          <span className={showMenu ? 'menu-btn-active menu-btn' : 'menu-btn' }>{showMenu ? 'CLOSE':'MENU'}</span> 
-           <div className='menu-text'> 
-            <div>MENU</div>
-            <div>CLOSE</div>
-           </div>
-        </button>
+          <News/>
+        <div id="nav">
+          <Link href={'/'} >
+            <button id='logo' aria-label='home' className={isHome.length <= 1 ?'invisible-logo' : ''}>
+              <div>Marcel</div>
+              <div>Sawuri</div>
+            </button>
+          </Link>
 
+            <button id='burger-btn' aria-label="menu" onClick={()=>toggleMenu()}>
+              <span className={showMenu ? 'menu-btn-active menu-btn' : 'menu-btn' }>{showMenu ? 'CLOSE':'MENU'}</span> 
+              <div className='menu-text'> 
+                <div>MENU</div>
+                <div>CLOSE</div>
+              </div>
+            </button>  
+          { showMenu ? <Menu toggleMenu={toggleMenu}/> : null}
+        </div>
 
-        
-      { showMenu ? <Menu toggleMenu={toggleMenu}/> : null}
-    </nav>
+      </nav>
     </>
   )
 }

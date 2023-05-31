@@ -58,7 +58,7 @@ const main = useRef();
               
               tl.to(title,{
                 transition:0,
-                top :10,
+                top :'10px',
                 //left:20,
                 translateX:'20px',
                 lineHeight:"0.8em",

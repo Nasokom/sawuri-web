@@ -15,9 +15,10 @@ export const StateContext = ({ children }) => {
         const userLanguage = navigator.language || navigator.userLanguage;
         setUserLang(userLanguage)
         console.log(userLanguage);
-
     },[])
     
+    
+
     return (
         <Context.Provider
         value={{
