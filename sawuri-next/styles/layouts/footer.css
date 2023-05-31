@@ -1,70 +1,121 @@
-footer{
-    padding-top: 50px;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-    padding-bottom: 50px;
-}
 
-#footer-left{
-display: flex;
-justify-content: center;
-align-items: center;
-min-width: 300px;
-max-width: 100%;
-flex-grow: 1;
-}
+ /* todo New */
 
-footer h2{
-    text-align: center;
-    font-family: 'climateCrisis';
-    max-width: 600px;
-}
-#footer-right{
-    margin: 50px 20px;
+ footer{
+    min-height: 20vh;
+    color: var(--textcolor);
+    
     display: flex;
     justify-content: center;
-    align-items: baseline;
-    flex-grow: 1;
-    border-radius: 12px;
-    padding: 20px;
-    border: 3px solid var(--textcolor);
-    font-size: 20px;
-    color: var(--textcolor);
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 0;
 }
 
+
+footer #line{ 
+    height: 4px;
+    width: 90vw;
+    background-color: var(--textColor); 
+    border-radius: 50px;
+}
+
+footer h4{
+    font-size: 25px;
+}
+
+
+
+
+footer .footer-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    min-width: 0;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 30px 1vw;
+    font-family: tahoma;
+    border: 5px solid var(--textcolor);
+}
+
+footer .content-box{
+    flex-shrink: 0;
+    margin-top: 20px;
+    padding: 20px 3vw;
+    flex-grow: 1;
+    max-width: fit-content;
+}
+
+
+footer .content-box:nth-child(3){
+    flex-grow: 0;
+}
 
 footer ul{
-flex-shrink: 1;
-display: flex;
-flex-wrap: wrap;
-padding-top: 70px;
-position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
 }
-footer ul li{
-    min-width: 50%;
+
+footer div p{
+    margin-top: 20px;
+    text-align: left;
+    font-size: 20px;
+}
+
+footer div.content-box p{
+    font-style: italic;
+}
+
+
+footer ul li a {
+    margin-right: 15px;
     transition: 0.3s;
-    cursor: pointer;
+    position: relative;
+}
+
+footer ul li{
+    overflow-x: hidden;
+    overflow-y:auto;
+    padding-bottom: 5px;
+}
+
+footer ul li:last-child {
+    margin-right: 0;
+}
+
+footer ul li a::after{
+    content: '';
+    background-color: var(--textcolor);
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    translate: -100% 0;
+    transition: 0.5s;
 }
 
 footer ul li a:hover{
-    color: red;
+    color: var(--color1);
 }
 
-footer ul h3{
-    position: absolute;
-    top: 0;
-    left: 0;
+footer ul li a:hover::after{
+    translate: 0 0;
+    background-color: var(--color1);
+
 }
 
 footer #credit{
-    position: absolute;
-    bottom: 10px;
-    font-size: 12px;
-    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     width: 100%;
+    align-items: center;
 }
 
+footer #credit p{
+    opacity: 0.5;
+    text-align: center;
+}

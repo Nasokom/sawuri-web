@@ -1,32 +1,12 @@
 import React,{useState, useEffect, useRef} from 'react'
 import { FiSun, FiMoon } from 'react-icons/fi';
+import { useStateContext } from '@/context/StateContext';
 
 const ThemeBtn = () => {
 
-    const [theme, setTheme] = useState(false) 
+    const {theme, setTheme} = useStateContext() 
 
     const main = useRef(null)
-    useEffect(()=>{
-        //local storage is used to override OS theme settings
-        if(localStorage.getItem("theme")){
-            if(localStorage.getItem("theme") == "dark"){
-                setTheme(true)
-            }else{
-                setTheme(false)
-            }
-        } 
-        
-        if(!window.matchMedia) {
-            //matchMedia method not supported
-            return false;
-        } else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            //OS theme setting detected as dark
-            setTheme(true)
-        }else{
-            setTheme(false)
-        }
-    
-    },[])
 
     useEffect(()=>{
         theme ? document.documentElement.setAttribute("data-theme", "dark") 

@@ -10,61 +10,72 @@ const Footer = () => {
   
 
   return (
-    <footer>
-      <div id='footer-left'>
-      <h2> 
-        {userLang.includes('fr')? 'Pour naviguer facilement dans notre site ...' 
-          : userLang.includes('de') ? 'Um einfach auf unserer Seite zu navigieren...' 
-          :'To easily navigate our site...'}
-        </h2>
+  <footer>
+
+      <span id='line'></span>
+      <div className='footer-container'>
+
+        <div className='content-box'>
+
+          <h4>Menu</h4>
+          <p>
+          {userLang.includes('fr') ? 'Pour naviguer facilement sur notre site web' 
+          : userLang.includes('de') ? 'Zur einfachen Navigation auf unserer Website'
+          : 'To easily navigate our website' }
+          </p>
+            <ul>
+              <li><Link href={'/'}>Home</Link></li>
+              <li><Link href={'/about'}>About</Link></li>
+              <li><Link href={'/musiciens'}>Musiciens</Link></li>
+              <li><Link href={'/media'}>Media</Link></li>
+              <li><Link href={'/contact'}>Contact</Link></li>
+            </ul>
+          </div>
+
+          <div className='content-box'>
+
+            <h4>Policy</h4>
+            <p>          
+            {userLang.includes('fr') ? 'Retrouver les infos legales' 
+            :userLang.includes('de') ? 'Rechtliche Hinweise finden'
+            :'Find legal information' }
+              </p>
+            <ul>
+              <li><Link href={'/policy#terms'}>
+                {userLang.includes('fr') ? "Conditions d'utlitisation"
+                :userLang.includes('de') ? 'Nutzungsbedingungen'
+                :'Terms of use' }
+              </Link></li>
+              <li><Link href={'/policy#cookie'}>Cookie</Link></li>
+              <li><Link href={'/policy#data'}>
+              {userLang.includes('fr') ? "Politique de données"
+                :userLang.includes('de') ? 'Datenrichtlinie'
+                :'Data policy' }
+              </Link></li>
+            </ul>
+          </div>
+
+        <div className='content-box'>
+          <span></span>
+          <h4>settings</h4>
+          <p>
+          {userLang.includes('fr') ? 'Regler vos preferences' 
+            :userLang.includes('de') ? 'Legen Sie Ihre Einstellungen fest'
+            :'Set your preferences' }
+            
+            </p>
+          <ul>
+            <li><ThemeBtn/></li> 
+            <li><LangueBtn/></li>
+          </ul>
+        </div>
       </div>
-
-      <div id='footer-right'>
-          <ul>
-            <li>
-              <h3>Site Map</h3>
-            </li>
-            <li>
-              <Link href={'/'}>home</Link>
-            </li>
-            <li>
-               <Link href={'/about'}>about</Link>
-            </li>
-            <li>
-              <Link href={'/media'}>media</Link>
-            </li>
-            <li>
-              <Link href={'/contact'}>contact</Link>
-            </li>
-            <li>
-              <Link href={'/musiciens'}>musiciens</Link>
-            </li>
-          </ul>
-
-          <ul>
-            <li>
-              <h3>Policy</h3>
-            </li>
-            <li> <Link href={'/policy#data'} >Data policy</Link></li>
-            <li> <Link href={'/policy#terms'} >terms of use</Link></li>
-            <li> <Link href={'/policy#cookie'} >cookies</Link></li>
-          </ul>
-
-          <ul>
-            <li>
-              <h3>Settings</h3>
-            </li>
-            <li> <LangueBtn/></li>
-            <li><ThemeBtn/></li>
-          
-          </ul>
-
-        
-        </div>      
-
-          <p id="credit"> Website made by Nasoa 2023</p>
-
+      <div id="credit">
+        <p>@Marcel Sawuri <span>2023</span></p>
+        <p>Website made by Nasoa</p>
+      </div>
     </footer>
+
   )
 }
 
