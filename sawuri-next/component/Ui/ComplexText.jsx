@@ -27,7 +27,7 @@ const ComplexText = ({texts}) => {
 
   return (
     <div className='text-container'>
-        {texts.map((p,i)=>{
+        { texts && texts.map((p,i)=>{
             return( 
             <p key={i}>
                 {p.children.map((t,i)=>{
