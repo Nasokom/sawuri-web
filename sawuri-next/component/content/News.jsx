@@ -73,7 +73,7 @@ const News = () => {
 
                     <div className={styles.left}>
                       <div className={styles.text}>
-                        <ComplexText texts={d.text[userLang]}/>
+                        {d.text && <ComplexText texts={d.text[userLang]}/>}
                       </div>
                       <div className={styles.adress}> 
                       <p>{d.adress}</p>
