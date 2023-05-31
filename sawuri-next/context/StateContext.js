@@ -41,10 +41,9 @@ export const StateContext = ({ children }) => {
         : userLanguage.includes('de') ? setUserLang('de')
         : setUserLang('en');
         console.log(userLanguage);
+
     },[])
     
-    
-
     return (
         <Context.Provider
         value={{

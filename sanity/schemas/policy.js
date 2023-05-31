@@ -29,4 +29,5 @@ export default {
                 type: 'titreText',
             },]
       },
+     
     ]}
