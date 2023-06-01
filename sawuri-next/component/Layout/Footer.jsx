@@ -46,25 +46,25 @@ const Footer = () => {
                 :userLang.includes('de') ? 'Nutzungsbedingungen'
                 :'Terms of use' }
               </Link></li>
-              <li><Link href={'/policy#cookie'}>Cookie</Link></li>
               <li><Link href={'/policy#data'}>
               {userLang.includes('fr') ? "Politique de données"
                 :userLang.includes('de') ? 'Datenrichtlinie'
                 :'Data policy' }
               </Link></li>
+                <li><Link href={'/policy#cookie'}>Cookie</Link></li>
             </ul>
           </div>
 
         <div className='content-box'>
           <span></span>
-          <h4>settings</h4>
+          <h4>Settings</h4>
           <p>
           {userLang.includes('fr') ? 'Regler vos preferences' 
             :userLang.includes('de') ? 'Legen Sie Ihre Einstellungen fest'
             :'Set your preferences' }
             
             </p>
-          <ul>
+          <ul id="footer-settings">
             <li><ThemeBtn/></li> 
             <li><LangueBtn/></li>
           </ul>

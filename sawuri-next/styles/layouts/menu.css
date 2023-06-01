@@ -1,6 +1,7 @@
 #menu{
     width: 99vw;
     min-height: 99vh;
+    min-height: 99dvh;
     background-image:var(--bg) ;
     z-index: 99;
     position: fixed;

@@ -34,12 +34,12 @@ export const StateContext = ({ children }) => {
         }
 
 
-
-
-
         window.innerWidth <= 700 ? setIsMobile(true) : setIsMobile(false);
+
         const userLanguage = navigator.language || navigator.userLanguage;
-        setUserLang(userLanguage)
+        userLanguage.includes('fr') ? setUserLang('fr')
+        : userLanguage.includes('de') ? setUserLang('de')
+        : setUserLang('en');
         console.log(userLanguage);
     },[])
     

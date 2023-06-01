@@ -55,6 +55,7 @@ footer .content-box:nth-child(3){
 
 footer ul{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 20px;
 }
@@ -76,14 +77,15 @@ footer ul li a {
     position: relative;
 }
 
+
+footer ul li:last-child {
+    margin-right: 0;
+}
 footer ul li{
     overflow-x: hidden;
     overflow-y:auto;
     padding-bottom: 5px;
-}
-
-footer ul li:last-child {
-    margin-right: 0;
+    margin-right: 15px;
 }
 
 footer ul li a::after{
@@ -94,7 +96,7 @@ footer ul li a::after{
     left: 0;
     height: 2px;
     width: 100%;
-    translate: -100% 0;
+    translate: -101% 0;
     transition: 0.5s;
 }
 
@@ -119,4 +121,8 @@ footer #credit{
 footer #credit p{
     opacity: 0.5;
     text-align: center;
+}
+
+footer ul#footer-settings li{
+    overflow: visible;
 }

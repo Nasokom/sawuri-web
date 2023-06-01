@@ -1,5 +1,7 @@
 import React, {useEffect, useRef} from 'react'
 import Link from 'next/link'
+import ThemeBtn from '../Ui/ThemeBtn'
+import LangueBtn from '../Ui/LangueBtn'
 import { useStateContext } from '@/context/StateContext'
 
 const Menu = ({toggleMenu}) => {
@@ -37,6 +39,10 @@ const Menu = ({toggleMenu}) => {
                 {userLang.includes('fr') ? 'Contact' : userLang.includes('de')? 'Kontakt' : 'Contact'}
             </Link>
 
+            <div id="menu-settings">
+                <ThemeBtn/>
+                <LangueBtn/>
+            </div>
     </div>
   )
 }

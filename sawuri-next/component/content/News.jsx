@@ -22,7 +22,7 @@ const News = () => {
           setLoading(false);
           console.log(data)
         });
-    }, []);
+    }, [userLang]);
 
 
   return (
@@ -69,7 +69,6 @@ const News = () => {
                     <h4>{d.name[userLang]}</h4>
 
                     <h4>{d.date}</h4>
-
 
                     <div className={styles.left}>
                       <div className={styles.text}>
