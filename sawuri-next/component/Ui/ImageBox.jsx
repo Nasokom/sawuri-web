@@ -44,6 +44,7 @@ const ImageBox = ({data,axesRanges,rndmZidx}) => {
         style={{objectFit:'contain'}}
         alt={'photo de marcel'}
         loader={myLoader}
+        className='img-box'
         />
     </div>
   )

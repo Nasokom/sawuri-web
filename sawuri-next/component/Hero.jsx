@@ -19,6 +19,8 @@ const main = useRef();
             const photoLayout = self.selector('.photo-layout');
             const title = self.selector('.hero-title')
             const arrow = main.current.querySelector('#scroll-down');
+
+            const imgs = main.current.querySelectorAll('.img-box')
   
 
             function onEnd(){
@@ -53,6 +55,23 @@ const main = useRef();
 
             tl.to(arrow,{
               opacity:0,
+            })
+
+            function random(min, max) {
+              return Math.floor(Math.random() * (max - min + 1) + min);
+            }
+
+            imgs.forEach((img,i)=>{
+
+              tl.to(img,{
+                rotate : `${random(-30,30)}deg`,
+                translate:`${random(-200,200)}px ${random(-200,200)}px`,
+              },0)
+
+              tl.to(img,{
+                rotate : `${random(-30,30)}deg`,
+                translate:`${random(-200,200)}px ${random(-200,200)}px`,
+              },0.5)
             })
               
               
