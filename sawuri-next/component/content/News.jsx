@@ -22,13 +22,18 @@ const News = () => {
           setLoading(false);
           console.log(data)
         });
+
+        document.documentElement.style.overflow = "hidden"
+        return ()=>{
+            document.documentElement.style.overflow = "auto"
+        }
+
     }, [userLang]);
 
 
   return (
-    <div 
-        className={ `${styles.container} ${collapse ? styles.collapsed : ''}` } 
-    >  
+    <div className={`${styles.container} ${collapse ? styles.collapsed : ''}` }>  
+
         <div className={`${styles.banner}`}>
             <p>News</p>
             <p>News</p>
@@ -37,17 +42,18 @@ const News = () => {
         </div>
 
           <div className={`${styles.btnBox} ${collapse ? styles.btnActive : ''}`} onClick={()=>toggleCollapse(!collapse)}>
+            
             <button onClick={()=>toggleCollapse(!collapse)}> 
-            
               {collapse ? 'close' : "open"}
-            
             </button>
+
             <div className={`${styles.banner}`}>
-            <p>News</p>
-            <p>News</p>
-            <p>News</p>
-            <p>News</p>
-        </div>
+              <p>News</p>
+              <p>News</p>
+              <p>News</p>
+              <p>News</p>
+            </div>
+
           </div>
 
 
@@ -57,39 +63,51 @@ const News = () => {
           {!data && <p>No profile data</p>}
 
 
-          {
-            data && 
+          {data && 
           <div className={styles.content}> 
 
             {data.map((d,i)=>{
 
              const myLoader = () => {return d.image && urlFor(d.image).url()}
               return(
+
                 <div key={i} className={styles.card}> 
+
+                  <div className={styles.card_top}>
                     <h4>{d.name[userLang]}</h4>
-
                     <h4>{d.date}</h4>
+                  </div>
 
-                    <div className={styles.left}>
-                      <div className={styles.text}>
-                        {d.text && <ComplexText texts={d.text[userLang]}/>}
+                  <div className={styles.content}>
+
+                      <div className={styles.img}>
+                        <Image 
+                        style={{objectFit:'contain',borderRadius:"20px"}}
+                        src="vzzf" 
+                        height={500} 
+                        width={400} 
+                        loader={myLoader}
+                        />
                       </div>
-                      <div className={styles.adress}> 
-                      <p>{d.adress}</p>
-                      <button><a href={`https://maps.google.com/maps?q=${d.adress}`} target='_blank'> Let's Go </a></button> 
+
+                      <div className={styles.left}>
+                        
+                        <div className={styles.text}>
+                          {d.text && <ComplexText texts={d.text[userLang]}/>}
+                        </div>
+
+
+                        <div className={styles.adress}> 
+
+                          <p>{d.adress}sdcczvzvzdvzdvzfvzdvzvzvvzvfzvfvzfvzvzvzjo9786</p>
+                          <button><a href={`https://maps.google.com/maps?q=${d.adress}`} target='_blank'> Let's Go </a></button> 
+
+                        </div>
                       </div>
+
+
+
                     </div>
-
-
-                    <div className={styles.img}>
-                      <Image 
-                      style={{objectFit:'contain',borderRadius:"20px"}}
-                      src="vzzf" 
-                      height={500} 
-                      width={400} 
-                      loader={myLoader}
-                      />
-                     </div>
 
                 </div>
               )

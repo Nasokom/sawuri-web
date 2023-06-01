@@ -11,10 +11,7 @@ const Menu = ({toggleMenu}) => {
 
     useEffect(()=>{
 
-        document.documentElement.style.overflow = "hidden"
-        return ()=>{
-            document.documentElement.style.overflow = "auto"
-        }
+      
 
     },[])
 
