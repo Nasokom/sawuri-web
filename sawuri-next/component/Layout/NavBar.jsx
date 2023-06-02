@@ -37,8 +37,7 @@ const NavBar = () => {
   return (
     <>
       <nav ref={nav}>
-
-          <News/>
+        <News/>
         <div id="nav">
           <Link href={'/'} >
             <button id='logo' aria-label='home' className={isHome.length <= 1 ?'invisible-logo' : ''}>
