@@ -88,7 +88,6 @@ const Ui = ({data, isLoading, userLang})=>{
 
 
                     <div className={styles.adress}> 
-
                       <p>{d.adress}   </p>
                         <a href={`https://maps.google.com/maps?q=${d.adress}`} target='_blank'>
                           <button> Let's Go </button> 
