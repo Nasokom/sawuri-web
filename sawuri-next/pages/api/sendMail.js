@@ -10,7 +10,7 @@ export default async function sendEmail(req, res) {
     },
   });
 
-  const { name, email, message,phone } = req.body;
+  const { name, email, message,phone, userLang } = req.body;
 
   /* const templateFile = await fs.readFile('public/mailTemplate/emailClient.html', 'utf-8');
 
@@ -18,15 +18,8 @@ export default async function sendEmail(req, res) {
                     .replace('{name}',name)
  */
 
-
-  const mailOptions = {
-    from: process.env.GMAIL_USER,
-    to: `${email}`,
-    subject: "Salut c'est marcel",
-    text: 'Merci pour la venu sur mon site web',
-    //html : emailHtml,
-    text : `
-    Bonjour ${name}
+  const text = {
+    fr:`Bonjour ${name}
 
     Merci pour votre message ! Je vous confirme que je l'ai bien reçu et je vous recontacterai dès que possible.
     En attendant, n'hésitez pas à consulter les différentes rubriques de mon site web .
@@ -38,7 +31,43 @@ export default async function sendEmail(req, res) {
 
     Votre message :
     ${message}
+    `,
+    de:`Hallo ${name}
+
+    Danke für deine Nachricht ! Ich bestätige, dass ich es erhalten habe und werde mich so schnell wie möglich mit Ihnen in Verbindung setzen.
+    Zögern Sie in der Zwischenzeit nicht, die verschiedenen Bereiche meiner Website zu konsultieren.
+    Wenn Sie dringende Fragen oder konkrete Wünsche haben, zögern Sie nicht, mich erneut zu kontaktieren, indem Sie auf diese Nachricht antworten.
+   
+    Mit freundlichen Grüßen, Marcel
+
+    (Dies ist eine automatische E-Mail nach dem Absenden des Kontaktformulars auf meiner Website https://www.marcel-sawuri.online)
+
+    Ihre Nachricht :
+    ${message}
+    `,
+    en:`Hello ${name}
+
+     Thank you for your message ! I confirm that I have received it and I will contact you as soon as possible.
+     In the meantime, do not hesitate to consult the different sections of my website.
+     If you have urgent questions or specific requests, do not hesitate to contact me again by replying to this message.
+    
+     Sincerely, Marcel
+
+     (This is an automatic email following the submission of the contact form on my website https://www.marcel-sawuri.online)
+
+     Your message :
+     ${message}
     `
+
+  }
+
+  const mailOptions = {
+    from: process.env.GMAIL_USER,
+    to: `${email}`,
+    subject: "Salut c'est marcel",
+    text: 'Merci pour la venu sur mon site web',
+    //html : emailHtml,
+    text : text[userLang]
 
   };
 
@@ -52,11 +81,12 @@ export default async function sendEmail(req, res) {
    Vous avez recu un mail de ${name} depuis votre site web :
    
    voici son message:
-    
    ${message}
 
    voici son mail pour le contacter: ${email}
    ${phone && `Voici son numero de telephone pour le contacter : ${phone}` }
+
+   ps: Cette personne est communique en ${userLang == 'fr' ? 'Francais' : userLang == 'de' ? 'Allemand' : 'Anglais' }
   `
 };
 
