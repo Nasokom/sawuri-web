@@ -6,7 +6,13 @@ export default {
       {
         name: 'name',
         type: 'string',
-        title: 'Titre'
+        title: 'nom',
+        description:'Non afficher sur le site'
+      },
+      {
+        name:'title',
+        type:'titleTrad',
+        title:'Titre'
       },
       {
         name: 'id',

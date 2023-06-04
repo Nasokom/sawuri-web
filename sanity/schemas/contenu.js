@@ -13,18 +13,11 @@ export default {
         type: 'string',
         title: 'Titre'
       },
-
       {
-        name: 'titleDe',
-        type: 'string',
-        title: 'Titre De'
+        name:'titles',
+        type:'titleTrad',
+        title:'Titre traduits'
       },
-      {
-        name: 'titleEn',
-        type: 'string',
-        title: 'Titre En'
-      },
-
       {
         title: 'paragraphe',
         name: 'contenu',

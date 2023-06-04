@@ -9,47 +9,15 @@ export default {
         title: 'Name'
       },
       {
-        name:'desc',
-        title:'Description',
-        type: 'array',
-        of: [{type: 'text'}],
-        description:'conseil 1 text sur la rencontre avec Marcel Sawuri, et 1 pour decrire le collaborateur lui meme'
+        name:'texts',
+        type:'textTrad',
+        title:'Description'
       },
       {
-        name:'text',
-        title:'Description f',
-        type: 'array',
-        of: [{type: 'block'}],
+        name:'skill',
+        title:'instruments / Skills',
+        type:"titleTrad"
       },
-      {
-        name:'textEn',
-        title:'Description englais',
-        type: 'array',
-        of: [{type: 'block'}],
-      },
-      {
-        name:'textDe',
-        title:'Description allemand',
-        type: 'array',
-        of: [{type: 'block'}],
-      },
-      {
-        name: 'skillz',
-        title: 'instruments / Competences,',
-        type: 'string',
-      },
-      {
-        name: 'skillzEn',
-        title: 'instruments En',
-        type:'string',
-        of:[{ type: 'string'}],
-      },
-      {
-        name: 'skillzDe',
-        title: 'instruments De',
-        type:'string',
-      },
-
       {
         title: 'images',
         name: 'images',

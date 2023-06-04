@@ -9,18 +9,12 @@ const TeamCard = ({member}) => {
     const {isMobile}  = useStateContext();
     const {userLang} = useStateContext();
 
-    const [tradText, setTradText] = useState()
-
     const myLoader = () => {
         return member.images && urlFor(member.images).url()}
 
-
         useEffect(()=>{
-
-            setTradText(userLang.includes('fr') ? member.text 
-            : userLang.includes('de') ? member.textDe
-            : member.textEn)
-        },[tradText])
+        
+        },[userLang])
 
 
 
@@ -43,14 +37,11 @@ const TeamCard = ({member}) => {
 
         <div className='team-text-container'>
         
-        { tradText && <ComplexText texts={tradText} />}
+        <ComplexText texts={member.texts[userLang]} />
 
-            { member.skillz &&  
+            { member.skill &&  
                 <p>Maitrise : 
-                    { userLang.includes('fr') ? member.skillz
-                    : userLang.includes('de') ? member.skillzDe
-                    : member.skillzEn
-                    }
+                    {member.skill[userLang]}
                 </p>
             }
         </div>

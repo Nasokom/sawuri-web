@@ -5,37 +5,19 @@ export default{
     fields: [
         {
             name:'titre',
-            title:'Titre',
-            type:"string"
+            title:'NOm',
+            type:"string",
+            description:'Non afficher sur le site'
         },
         {
-            name:'titreEn',
-            title:'Titre En',
-            type:"string"
+          name:'title',
+          title:'Titre Traduit',
+          type:'titleTrad'
         },
-        {
-            name:'titreDe',
-            title:'Titre De',
-            type:"string"
-        },
-
-      {
-        name: 'text',
-       title: 'text fr',
-       type: 'array',
-       of:[{type:"block"}]
-      },
-      {
-        name: 'textEn',
-      title: 'text en',
-      type: 'array',
-      of:[{type:"block"}]
-     },
      {
-        name: 'textDe',
-      title: 'text De',
-      type: 'array',
-      of:[{type:"block"}]
-     },
+      name:'texts',
+      title:'Textes Traduit',
+      type:'textTrad'
+      }
     ]
   }

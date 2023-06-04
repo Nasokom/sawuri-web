@@ -177,15 +177,17 @@
     position: relative;
     border-top: 4px solid var(--textcolor);
     display: flex;
-    padding-left: 20px;
     max-width: 100%;
     word-wrap: break-word;
     justify-content: space-between;
+    background: var(--html);
+    background: var(--bg);
+
 }
 
 .adress p{
-    font-size: 20px;
     width: 70%;
+    font-weight: bold;
     max-width: 70%;
     padding: 20px;
 }
@@ -193,7 +195,7 @@
 .adress button{
     border-radius: 0px;
     border: unset;
-    border-left:4px solid black ;
+    border-left:4px solid var(--textcolor);
     height: 100%;
     padding: 20px;
     flex-grow: 1;

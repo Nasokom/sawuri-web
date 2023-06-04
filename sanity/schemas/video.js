@@ -1,7 +1,7 @@
 export default {
     name: 'video',
     type: 'document',
-      title: 'Videos',
+      title: 'Medias',
     fields: [
       {
         name: 'titre',
@@ -9,14 +9,15 @@ export default {
         title: 'Titre'
       },
       {
-        name: 'titreEn',
-        type: 'string',
-        title: 'Titre Englais' 
+        name:'ordre',
+        type:'number',
+        title:'ordre',
+        description:"Definit l'ordre d'apparition"
       },
       {
-        name: 'titreDe',
-        type: 'string',
-        title: 'Titre allemand'
+        name:"titles",
+        type:"titleTrad",
+        title:'Titre traduit'
       },
       {
         name:"url",

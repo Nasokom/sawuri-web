@@ -13,7 +13,14 @@ const Media = ({videos}) => {
 
   const [isMuted, setIsMuted]= useState(true)
 
-  const {userLang} = useStateContext()
+  const {userLang} = useStateContext();
+
+  function sortContent( a, b ){
+    if ( a.ordre < b.ordre){ return -1;}
+    if ( a.ordre > b.ordre){return 1;}
+    return 0;
+    }
+    const content = videos.sort(sortContent)
 
   const main = useRef(null)
 
@@ -22,14 +29,11 @@ const Media = ({videos}) => {
         const ctx = gsap.context((self) => {
     
           const videos = self.selector('video')
-            
-          //const videos = container.querySelectorAll('video');
 
           videos.forEach((video,i)=>{
             
             const tl = gsap.timeline({
               scrollTrigger: {
-                //scroller: video,
                 trigger: video,
                 start: "-20% 40%",
                 end: "100% 40%",
@@ -99,7 +103,7 @@ const Media = ({videos}) => {
 
         <div className='video-container'>
 
-            {videos.map((video,i)=>{
+            {content.map((video,i)=>{
               
               return (
                 <div className='video-box' key={i}

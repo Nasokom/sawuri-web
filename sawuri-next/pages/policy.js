@@ -1,10 +1,13 @@
 import Head from 'next/head'
-import React,{useRef} from 'react'
+import React,{useEffect, useRef} from 'react'
 import { client } from '@/Utils/sanity/sanityClient'
 import ComplexText from '@/component/Ui/ComplexText'
+import { useStateContext } from '@/context/StateContext'
 
 
 const Policy = ({policys}) => {
+
+    const {userLang} = useStateContext()
 
   const toggleText = (e) => {
     const subCateg = mainRef.current.querySelectorAll('.policy-text');
@@ -31,6 +34,10 @@ const Policy = ({policys}) => {
     parent.querySelector('button').style.height = "0px"
   }
 
+  useEffect(()=>{
+
+  },[userLang])
+
   const mainRef = useRef(null)
 
 
@@ -51,33 +58,33 @@ const Policy = ({policys}) => {
       {policys.map((policy,i)=>{
         return(
           <div className='policy-categ' key={i} id={policy.id}>
-            <h2>{policy.name}</h2>
-            
+
+            <h2>{policy.title[userLang]}</h2>
+
             <div>
+
               {policy.subCateg.map((categ,i)=>{
                 return(
                   <div className='policy-sub-categ' key={i}>
 
                     <div className='policy-sub-title' onClick={(e)=>toggleText(e)}>
-                      <h3>{categ.titre}</h3>
+                      <h3>{categ.title[userLang]}</h3>
                       <button>
                       </button>
                     </div>
 
                     <div className='policy-text'>
-                      { categ.text && <ComplexText texts={categ.text}/>}
+                      <ComplexText texts={categ.texts[userLang]}/>
                     </div>
                   </div>
                 )
               })}
+
             </div>
 
           </div>
           )
         })}
-    
-    
-    
     </div>
   </>
   )

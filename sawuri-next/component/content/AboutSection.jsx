@@ -3,7 +3,7 @@ import ImageBox from '../Ui/ImageBox'
 import ComplexText from '../Ui/ComplexText';
 import { useStateContext } from '@/context/StateContext'
 
-const SectionTest = ({datas:{title,titleDe,titleEn,contenu}}) => {
+const SectionTest = ({datas:{title,titleDe,titleEn,contenu,texts,titles}}) => {
 
   const {userLang} = useStateContext();
 
@@ -12,27 +12,19 @@ const SectionTest = ({datas:{title,titleDe,titleEn,contenu}}) => {
   return (
     <div className='about-section' ref={main}>
 
-      <h2>{
-        userLang.includes('fr') ? title
-        : userLang.includes('de') ? titleDe
-        : titleEn
-      }</h2>
+      <h2>{titles[userLang]}</h2>
 
       <div className='para-container'>
         
           {contenu.map((para,i)=>{
-            const [tradText,setTradText] = useState(null)
             
             useEffect(()=>{
-              setTradText(userLang.includes('fr') ? para.text 
-              : userLang.includes('de') ? para.textDe
-              : para.textEn)
-            },[tradText])
+            },[userLang])
 
             return(
               <div className='about-paragraphe' key={i} style={{zIndex:i}}>
                 <div className='text-box'>
-                    { tradText && <ComplexText texts={tradText} />}
+                   { para.texts && <ComplexText texts={para.texts[userLang]}/>}
                 </div>
                     <div className='about-img-limiter' >  
                        <ImageBox data={para.image} 

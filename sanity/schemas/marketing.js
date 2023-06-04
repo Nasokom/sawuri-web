@@ -8,21 +8,10 @@ export default {
         type: 'string',
         title: 'Name',
       },
-      {
-        name:"textfr",
-        title:"Paragraphe f",
-        type:'array',
-        of:[{type:'block'}],
-      },
-      {name: 'textEn',
-      title: 'Paragraphe Anglais',
-      type: 'array',
-      of:[{type:"block"}]
-     },
-     {name: 'textDe',
-      title: 'Paragraphe De',
-      type: 'array',
-      of:[{type:"block"}]
+     {
+      name:'text',
+      title:"Text Traduction",
+      type:'textTrad',
      },
      {
       name:'image',
