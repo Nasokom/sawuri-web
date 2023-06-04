@@ -5,7 +5,6 @@
     min-width: 90%;
     background: var(--bg);
     opacity: 0.9;
-    backdrop-filter: blur(100px);
     height: 70vh;
     top: 50%;
     left: 50%;
