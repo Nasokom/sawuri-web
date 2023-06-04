@@ -1,7 +1,0 @@
-#Disable web crawlers
-User-agent: *
-Disallow: /accounts
-
-# Allow all crawlers
-User-agent: *
-Allow: /
