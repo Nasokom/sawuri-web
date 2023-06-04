@@ -1,0 +1,100 @@
+.container{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 10000;
+    transition: 0.5s;
+    height: 0;
+    width: 100%;
+    border: 4px solid var(--transparent);
+    background: var(--bg);
+}
+
+.collapse{
+    border: 4px solid var(--textcolor);
+    width: 100%;
+    height: 60%;
+}
+
+.btn{
+    width: 100px;
+    height:100px;
+    background: var(--bg);
+    border: 3px solid var(--textcolor);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    padding: 2px;
+    color: var(--color1) !important ;
+    scale: 3 3;
+}
+
+.btn:hover{
+    scale: 3 3;
+    cursor: pointer;
+    translate: -50px -50px;
+}
+
+.btn svg{
+    animation:  spin 10s infinite linear;
+    font-family: 'climateCrisis';
+    color: red !important;
+}
+.btn .circle{
+    color: red !important;
+}
+
+@keyframes spin {
+    0%{
+        rotate: 0deg;
+    }
+    100%{
+        rotate: 360deg;
+    }
+}
+
+.cross{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    translate: -50% -50%;
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    border: 3px solid var(--textcolor);
+    display: flex;
+    transition: 0.5s;
+}
+
+.turnCross{
+    rotate: 45deg;
+}
+
+.cross::before{
+    content:"";
+    position: absolute;
+    width: 60%;
+    top: 50%;
+    left:50%;
+    translate: -50% -50%;
+    height: 4px;
+    background-color: var(--textcolor);
+    border-radius: 30px;
+}
+
+.cross::after{
+    content:"";
+    position: absolute;
+    width: 4px;
+    height: 60%;
+    top: 50%;
+    left:50%;
+    translate: -50% -50%;
+    background-color: var(--textcolor);
+    border-radius: 30px
+}

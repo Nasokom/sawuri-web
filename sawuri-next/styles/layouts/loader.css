@@ -1,0 +1,31 @@
+.loader{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    z-index: 10000000000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader img{
+animation: img 10s infinite ease-in-out;
+animation-delay: 0ms;
+}
+
+
+@keyframes img {
+    0%{
+        rotate: 0deg;
+    }
+    50%{
+        rotate: 360deg;
+    }
+
+    100%{
+        rotate: 0deg;
+    }
+}

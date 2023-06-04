@@ -1,0 +1,58 @@
+#menu{
+    width: 99vw;
+    min-height: 99vh;
+    min-height: 99dvh;
+    background-image:var(--bg) ;
+    z-index: 99;
+    position: fixed;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    translate: -120% -50%;
+    top: 50%;
+    left: 50%;
+    animation: menuAppear 0.5s forwards;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.9s;
+    padding-top: 100px;
+    border: 4px solid var(--textcolor);
+    overflow: scroll;
+}
+
+
+
+.nav-link{
+    color: var(--textcolor);
+    font-family: "climateCrisis";
+    font-size: 8vw;
+    font-size: 20px ;
+    font-size: clamp(20px,8vw, 50px );
+    transition: 0.3s;
+}
+
+.nav-link:hover{
+    letter-spacing:1vw;
+    scale: 0.7;
+}
+
+@keyframes menuAppear {
+
+    0%{
+        translate: -50% -120%;
+    }
+
+    100%{
+        translate: -50% -50%;
+    }
+    
+}
+
+@media (min-width: 701px) {
+    
+    .nav-link{
+        /* font-size: 7vw; */
+    }
+}
