@@ -6,13 +6,157 @@ import Hero from '@/component/Hero'
 import Intro from '@/component/content/Intro'
 import Banner from '@/component/Ui/Banner'
 import { useStateContext } from '@/context/StateContext';
+import { useEffect,useRef, useState } from 'react'
+import { gsap } from 'gsap';
+import { ScrollTrigger} from 'gsap/dist/ScrollTrigger';
+import { useIsomorphicLayoutEffect } from '../Utils/isomorphicLayout';
 
 const inter = Inter({ subsets: ['latin'] })
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home({photos,marketing}) {
 
 
-  const {userLang} = useStateContext();
+const {userLang,isMobile} = useStateContext();
+const main = useRef(null)
+
+const [fix,setFix] = useState(0)
+
+useIsomorphicLayoutEffect(() => {
+
+
+  const ctx = gsap.context((self) => {
+
+           const photoLayout = self.selector('.photo-layout');
+           const title = self.selector('.hero-title')
+           const arrow = main.current.querySelector('#scroll-down');
+
+           const imgs = main.current.querySelectorAll('.img-box')
+           
+ 
+
+           function onEnd(){
+             const logo =document.querySelector('#logo');
+             logo.classList.remove('invisible-logo');
+             const title =document.querySelector('.hero-title');
+             title.style.opacity = 0;
+           }
+           
+           function onStart(){
+             const logo =document.querySelector('#logo');
+             logo.classList.add('invisible-logo');
+             const title =document.querySelector('.hero-title');
+             title.style.opacity = 1;
+             self.selector('.title-box')[0].style.transition = "0s";
+             self.selector('.title-box')[1].style.transition = "0s";
+           }
+
+
+           const tl = gsap.timeline({
+             scrollTrigger: {
+               trigger: main.current,
+               start:"top top",
+               end: "+=2500px",
+               scrub: true,
+               pin: true,
+               onEnterBack: onStart,
+               onStart: onStart
+             }
+           });
+
+           tl.to(arrow,{
+             opacity:0,
+           })
+
+           function random(min, max) {
+             return Math.floor(Math.random() * (max - min + 1) + min);
+           }
+ 
+
+           //Image anim
+           imgs.forEach((img,i)=>{
+
+             tl.to(img,{
+               rotate : `${random(-30,30)}deg`,
+               translate:`${random(-200,200)}px ${random(-200,200)}px`,
+             },0)
+
+             tl.to(img,{
+               rotate : `${random(-30,30)}deg`,
+               translate:`${random(-200,200)}px ${random(-200,200)}px`,
+             },0.5)
+
+             tl.to(img,{
+               rotate : `${random(-30,30)}deg`,
+               translate:`${random(-5000,5000)}px ${random(-5000,5000)}px`,
+               opacity: 0
+             },1)
+           })
+             
+           //Title anim  
+             tl.to(title,{
+               transition:0,
+               top :'10px',
+               //left:20,
+               translateX:'20px',
+               lineHeight:"0.8em",
+               width:'fit-content',
+               fontSize:'3vw',
+               position:"fixed",
+               marginLeft: 0,
+               onComplete:onEnd,
+               onReverseComplete:onStart,
+         },0.5)
+         
+         tl.to(photoLayout, {
+           top:"-40vh",
+           ease: "power2.inOut",
+         },0)
+         
+         tl.to(photoLayout, {
+           top:"-90vh",
+           ease: "power2.inOut",
+         },0.5)
+
+
+         //TODO EXTRA intro anim
+
+         const intro = main.current.querySelector('.intro');
+
+       
+
+         const texts = main.current.querySelectorAll('p');
+
+
+         texts.forEach((text,i)=>{
+
+          tl.from(text,{
+            scale:0.8,
+            opacity:0,
+            y:-200,
+          },0.5)
+        })
+
+         texts.forEach((text,i)=>{
+
+           tl.from(text,{
+             scale:0,
+             opacity:0,
+             y:'-200px',
+           },1)
+
+           tl.to(text,{
+             y:0,
+             scale:1,
+             opacity:1,
+           },(1+i))
+         })
+
+         
+       }, main);
+       return () => ctx.revert();
+     }, []);
   
   return (
     <>
@@ -27,15 +171,21 @@ export default function Home({photos,marketing}) {
         <meta name="copyright" content="Sawuri"/>
         <meta name="page-topic" content="Sawuri"></meta>
       </Head>
-        <Hero photos={photos}/>
+
+
+        <div ref={main}>
+
+        <Hero photos={photos} data={marketing}/>
         <Intro data={marketing}/>
-        <Banner liens={[{
+        <Banner
+        liens={[{
           path:'about',
           name:`${userLang.includes('fr') ? 'biographie' : userLang.includes('de')? 'Biografie' : 'Biography'}`,
         },{ path:'media',
         name:'media'
-        }]}/>
-    </>
+      }]}/>
+    </div>
+      </>
   )
 }
 
