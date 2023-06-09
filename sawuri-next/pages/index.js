@@ -44,7 +44,7 @@ useIsomorphicLayoutEffect(() => {
            }
            
            function onStart(){
-             const logo =document.querySelector('#logo');
+             const logo = document.querySelector('#logo');
              logo.classList.add('invisible-logo');
              const title =document.querySelector('.hero-title');
              title.style.opacity = 1;
@@ -57,7 +57,7 @@ useIsomorphicLayoutEffect(() => {
              scrollTrigger: {
                trigger: main.current,
                start:"top top",
-               end: "+=2500px",
+               end: "+=7000vh",
                scrub: true,
                pin: true,
                onEnterBack: onStart,
@@ -119,6 +119,10 @@ useIsomorphicLayoutEffect(() => {
            ease: "power2.inOut",
          },0.5)
 
+          tl.to( main.current.querySelector('.hero'),{
+            y:'-100vh',
+          },1)
+
 
          //TODO EXTRA intro anim
 
@@ -143,7 +147,7 @@ useIsomorphicLayoutEffect(() => {
            tl.from(text,{
              scale:0,
              opacity:0,
-             y:'-200px',
+             y:'1000px',
            },1)
 
            tl.to(text,{
@@ -151,7 +155,54 @@ useIsomorphicLayoutEffect(() => {
              scale:1,
              opacity:1,
            },(1+i))
+
+           tl.to(text,{
+            y: "-400px",
+            scale:0,
+            opacity:0,
+          },(2+i))
          })
+         tl.to(intro,{
+          y:'-100vh'
+         },3)
+
+         //footer-banner
+         const banner = main.current.querySelector('.footer-banner');
+         const btnBanner = main.current.querySelectorAll('.footer-banner-btn');
+
+         tl.from(banner,{
+          opacity:0,
+          position:'absolute'
+        },0)
+
+        tl.to(banner,{
+         y:'-100vh',
+         opacity:1,
+         zIndex: 11
+        },3)
+
+        tl.to(main.current.querySelector('.footer-banner-title'),{
+          //y: "-300px",
+          scale:5,
+        },0)
+
+        tl.to(main.current.querySelector('.footer-banner-title'),{
+          y: "0",
+          scale:1,
+        },3)
+
+         btnBanner.forEach((btn,i)=>{
+           tl.from(btn,{
+             scale:'0.1',
+             opacity:0,
+            },0)
+
+            tl.to(btn,{
+              opacity:1,
+              scale: 1,
+             },3.2 + i*0.2)
+          })
+
 
          
        }, main);

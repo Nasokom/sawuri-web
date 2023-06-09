@@ -10,12 +10,14 @@
 
 .intro p{
     padding: 50px 4vw ;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
     font-size: xx-large;
     position: absolute;
     line-height: 4rem;
     opacity: 0;
     width: 100vw;
-    left: 0;
 }
 
 @media (max-width: 800px) {

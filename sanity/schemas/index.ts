@@ -10,5 +10,6 @@ import policy from './policy'
 import titleTrad from './titleTrad'
 import textTrad from './textTrad'
 import news from './news'
+import mail from './mail'
 
-export const schemaTypes = [news,textTrad,titleTrad,titreText,policy,marketing,test,sons, gallery, contenu, collaborateur, video]
+export const schemaTypes = [mail,news,textTrad,titleTrad,titreText,policy,marketing,test,sons, gallery, contenu, collaborateur, video]

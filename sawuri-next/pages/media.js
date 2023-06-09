@@ -109,7 +109,7 @@ const Media = ({videos}) => {
                 <div className='video-box' key={i}
                 onClick={()=>setIsMuted(false)} 
                 >
-                        <h4 id={i+0.5}>{video.titre}</h4>
+                        <h4 id={i+0.5}>{video.titles[userLang]}</h4>
                           <video  
                           id={i}
                           //allowFullScreenmuted

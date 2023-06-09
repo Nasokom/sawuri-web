@@ -9,9 +9,12 @@ const Banner = ({liens}) => {
   return (
     <div className='footer-banner'>
 
-        <h2> 
-        {userLang.includes('fr') ? 'Decouvrez' : userLang.includes('de')? 'entdecken' : 'Discover'}
-        </h2>
+        <div //style={{overflow:'hidden'}}
+        >
+            <h2 className='footer-banner-title'> 
+            {userLang.includes('fr') ? 'Decouvrez' : userLang.includes('de')? 'entdecken' : 'Discover'}
+            </h2>
+        </div>
 
 
 <div className='btn-container'>
@@ -19,9 +22,8 @@ const Banner = ({liens}) => {
         {liens.map((lien,i)=>{
             return(
                 
-                
                 <Link href={`/${lien.path}`} key={i}>
-                    <button >
+                    <button className='footer-banner-btn' >
                         {lien.name}
                     </button>
                 </Link>

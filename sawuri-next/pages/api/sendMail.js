@@ -12,11 +12,10 @@ export default async function sendEmail(req, res) {
 
   const { name, email, message,phone, userLang } = req.body;
 
-  /* const templateFile = await fs.readFile('public/mailTemplate/emailClient.html', 'utf-8');
+  const templateFile = await fs.readFile('public/mailTemplate/emailClient.html', 'utf-8');
 
-  const emailHtml = templateFile
-                    .replace('{name}',name)
- */
+  const emailHtml = templateFile.replace('{name}',name)
+
 
   const text = {
     fr:`Bonjour ${name}
@@ -30,6 +29,7 @@ export default async function sendEmail(req, res) {
     (Ceci est un mail automatique suite à la soumission du formulaire de contact sur mon site web   https://www.marcel-sawuri.online)
 
     Votre message :
+
     ${message}
     `,
     de:`Hallo ${name}
@@ -65,9 +65,9 @@ export default async function sendEmail(req, res) {
     from: process.env.GMAIL_USER,
     to: `${email}`,
     subject: "Salut c'est marcel",
-    text: 'Merci pour la venu sur mon site web',
-    //html : emailHtml,
-    text : text[userLang]
+    //text: 'Merci pour la venu sur mon site web',
+    html : emailHtml
+    //text : text[userLang]
 
   };
 
@@ -91,7 +91,7 @@ export default async function sendEmail(req, res) {
 };
 
 try {
-  await transporter.sendMail(mailOptions2);
+  //await transporter.sendMail(mailOptions2);
   await transporter.sendMail(mailOptions);
   res.status(200).json({ message: "Emails sent successfully." });
 } catch (error) {

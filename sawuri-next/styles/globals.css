@@ -95,11 +95,10 @@ h1{
 }
 
 
-p{
+.text-container li, p{
   font-size: xx-large;
   font-family: "Grandstander-variable";
   color: var(--textcolor);
-
 }
 
 h2,h3{
