@@ -5,8 +5,6 @@ import Link from 'next/link'
 const ComplexText = ({texts}) => {
 
 //This Component render one paragraphe "<p/>", with multiple span inside for the style 
-
- //console.log(data)
 //todo 
     const Span = ({data, defs}) =>{
   
