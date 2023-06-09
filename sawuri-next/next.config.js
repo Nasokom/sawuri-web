@@ -7,7 +7,10 @@ const nextConfig = {
   images: {
     domains: ['cdn.sanity.io'],
   },
-  withBundleAnalyzer : bundleAnalyzer,
+  //withBundleAnalyzer : bundleAnalyzer,
+  publicRuntimeConfig: {
+    staticFolder: '/static'
+  },
 
   async headers() {
     return [
