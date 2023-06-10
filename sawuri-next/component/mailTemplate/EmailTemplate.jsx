@@ -66,7 +66,7 @@ const base64Image = imageBuffer.toString('base64');
             <div style={line}></div>
 
             <img  style={img} 
-            src="https://sawuri.vercel.app/marcel_logo.jpg" 
+            src="https://sawuri.vercel.app/marcel_logo.png" 
             //src={imageSrc}
             alt="Image" />
         </body>
