@@ -124,7 +124,6 @@ const News = () => {
           setData(data);
           setLoading(false);
           //console.log(data)
-
         });
 
     }, [userLang]);

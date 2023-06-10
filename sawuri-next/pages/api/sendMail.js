@@ -1,7 +1,53 @@
 import nodemailer from "nodemailer";
+import ComplexText from "@/component/Ui/ComplexText";
+import { client } from "@/Utils/sanity/sanityClient";
 const fs =  require('fs-extra')
+const ReactDOMServer = require('react-dom/server');
+import EmailTemplate from "@/component/mailTemplate/EmailTemplate";
 
 export default async function sendEmail(req, res) {
+
+  const { name, email, message,phone, userLang } = req.body;
+  
+  //get sanity mail Data 
+  const getMail = await client.fetch("*[_type == 'mail']");
+  
+  //Pass data to compo
+
+  const ourResponse = getMail.map((mail,i)=>{
+    if(mail.name.includes('client')){
+      return mail
+    }
+  });
+  
+  //Algo remplacer les champs {ww}
+  const stringiRes = JSON.stringify(ourResponse[0])
+
+
+   var mapObj = {
+    name:name,
+    message:message,
+    phone:phone,
+    email:email
+ };
+
+ const responseText = stringiRes.replace(/\$(name|message|email|phone)/gi, function(matched,key){
+  return mapObj[key];
+});
+
+
+const finalResp = JSON.parse(responseText);
+
+/*    modifieRe.replaceAll('$name',name)
+   modifieRe.replaceAll('$message',message)
+   modifieRe.replaceAll('$message',message) */
+
+
+//  console.log(ourResponse[0].message[userLang][0].children.text);
+  //console.log(str)
+
+  const emailHtml = ReactDOMServer.renderToStaticMarkup(<EmailTemplate name={name} message={message} userLang={userLang} ourResponse={JSON.parse(responseText)}/>);
+
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -9,12 +55,6 @@ export default async function sendEmail(req, res) {
       pass: process.env.GMAIL_KEY_PASS
     },
   });
-
-  const { name, email, message,phone, userLang } = req.body;
-
-  const templateFile = await fs.readFile('public/mailTemplate/emailClient.html', 'utf-8');
-
-  const emailHtml = templateFile.replace('{name}',name)
 
 
   const text = {
@@ -64,9 +104,9 @@ export default async function sendEmail(req, res) {
   const mailOptions = {
     from: process.env.GMAIL_USER,
     to: `${email}`,
-    subject: "Salut c'est marcel",
-    //text: 'Merci pour la venu sur mon site web',
+    subject: finalResp.subject[userLang],
     html : emailHtml
+    //html: await <ComplexText texts={clientResponse[userLang]}/>
     //text : text[userLang]
 
   };
