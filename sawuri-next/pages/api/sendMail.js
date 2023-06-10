@@ -8,7 +8,7 @@ import EmailTemplate from "@/component/mailTemplate/EmailTemplate";
 export default async function sendEmail(req, res) {
 
   const { name, email, message,phone, userLang } = req.body;
-  
+
   //get sanity mail Data 
   const getMail = await client.fetch("*[_type == 'mail']");
   

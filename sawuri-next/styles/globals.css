@@ -1,7 +1,7 @@
 :root {
   --textcolor:black;
   --html : white;
-  --bg : linear-gradient(to right bottom, #ffe5c8, #f2e3c0, #e3e1ba, #d3dfb7, #c1ddb7);
+  --bg : linear-gradient(to right bottom, #f9d1a3, #f2e3c0, #e3e1ba, #d3dfb7, #c1ddb7);
   --bg:linear-gradient(
     45deg,
     hsl(32deg 100% 84%) 1%,
