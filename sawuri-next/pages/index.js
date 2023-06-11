@@ -79,19 +79,19 @@ useIsomorphicLayoutEffect(() => {
 
              tl.to(img,{
                rotate : `${random(-30,30)}deg`,
-               translate:`${random(-200,200)}px ${random(-200,200)}px`,
-             },0)
+               translate:`${random(-300,300)}px ${random(-300,300)}px`,
+             },0)//0
 
              tl.to(img,{
                rotate : `${random(-30,30)}deg`,
-               translate:`${random(-200,200)}px ${random(-200,200)}px`,
-             },0.5)
+               translate:`${random(-400,400)}px ${random(-400,400)}px`,
+             },0.5)//1
 
              tl.to(img,{
                rotate : `${random(-30,30)}deg`,
-               translate:`${random(-5000,5000)}px ${random(-5000,5000)}px`,
+               translate:`${random(-2000,2000)}px ${random(-2000,2000)}px`,
                opacity: 0
-             },1)
+             },1)//2
            })
              
            //Title anim  
@@ -107,21 +107,21 @@ useIsomorphicLayoutEffect(() => {
                marginLeft: 0,
                onComplete:onEnd,
                onReverseComplete:onStart,
-         },0.5)
+         },0.5)//1
          
          tl.to(photoLayout, {
            top:"-40vh",
            ease: "power2.inOut",
-         },0)
+         },0)//0
          
          tl.to(photoLayout, {
            top:"-90vh",
            ease: "power2.inOut",
-         },0.5)
+         },0.5)//1
 
           tl.to( main.current.querySelector('.hero'),{
             y:'-100vh',
-          },1)
+          },1)//2
 
 
          //TODO EXTRA intro anim
@@ -132,39 +132,59 @@ useIsomorphicLayoutEffect(() => {
 
          const texts = main.current.querySelectorAll('p');
 
+          const letters = main.current.querySelectorAll('.letterEffect')
 
          texts.forEach((text,i)=>{
 
           tl.from(text,{
             scale:0.8,
             opacity:0,
-            y:-200,
-          },0.5)
+            y:400,
+          },0.5)//1
         })
 
          texts.forEach((text,i)=>{
 
            tl.from(text,{
-             scale:0,
+             //scale:0,
              opacity:0,
-             y:'1000px',
-           },1)
+             y:'-1000px',
+           },1)//2
 
            tl.to(text,{
              y:0,
-             scale:1,
+             //scale:1,
              opacity:1,
-           },(1+i))
+           },(1+i*0.5))//2+i
 
            tl.to(text,{
-            y: "-400px",
-            scale:0,
+            y: "-700px",
+           // scale:0,
             opacity:0,
-          },(2+i))
+          },(1.5+i*0.5))//3+i
          })
+
+         //todo letter effect
+         letters.forEach((l,i)=>{
+
+          tl.from(l,{
+            y:400,
+            rotateY:'45deg',
+            translateY:"400px",
+            scale:0
+          },1.1)//3+i
+
+          tl.to(l,{
+            opacity:1,
+            y:0,
+            scale:1
+          },1+i/600)//3+i
+         })
+
+
          tl.to(intro,{
           y:'-100vh'
-         },3)
+         },2)//4
 
          //footer-banner
          const banner = main.current.querySelector('.footer-banner');
@@ -178,8 +198,8 @@ useIsomorphicLayoutEffect(() => {
         tl.to(banner,{
          y:'-100vh',
          opacity:1,
-         zIndex: 11
-        },3)
+         zIndex: 100
+        },2)
 
         tl.to(main.current.querySelector('.footer-banner-title'),{
           //y: "-300px",
@@ -189,7 +209,7 @@ useIsomorphicLayoutEffect(() => {
         tl.to(main.current.querySelector('.footer-banner-title'),{
           y: "0",
           scale:1,
-        },3)
+        },2)
 
          btnBanner.forEach((btn,i)=>{
            tl.from(btn,{
@@ -200,10 +220,14 @@ useIsomorphicLayoutEffect(() => {
             tl.to(btn,{
               opacity:1,
               scale: 1,
-             },3.2 + i*0.2)
+             },2)
           })
 
+          tl.to(main.current.querySelector('.footer-banner-title'),{
+           opacity:1,
+          },2.5)
 
+         
          
        }, main);
        return () => ctx.revert();

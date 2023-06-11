@@ -23,17 +23,23 @@ export default async function sendEmail(req, res) {
   //Algo remplacer les champs {ww}
   const stringiRes = JSON.stringify(ourResponse[0])
 
+console.log('Object string : ')
+  console.log(stringiRes)
 
    var mapObj = {
     name:name,
-    message:message,
+    message:message.replace("\n\n", "$enter$enter").replace("\n", "$enter"),
     phone:phone,
     email:email
  };
 
+ console.log(message.replace(/\s\s+/g, ' '))
+
  const responseText = stringiRes.replace(/\$(name|message|email|phone)/gi, function(matched,key){
   return mapObj[key];
 });
+console.log('Object string Modifier : ')
+console.log(responseText)
 
 
 const finalResp = JSON.parse(responseText);

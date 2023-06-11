@@ -87,6 +87,7 @@
     position: absolute;
     z-index: 0;
     overflow: visible;
+    pointer-events: none;
 }
 
 .image-box{

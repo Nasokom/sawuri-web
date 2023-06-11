@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import Link from 'next/link'
 
-const ComplexText = ({texts}) => {
+const ComplexText = ({texts,charEffect}) => {
 
 //This Component render one paragraphe "<p/>", with multiple span inside for the style 
 //todo 
@@ -37,10 +37,13 @@ const ComplexText = ({texts}) => {
                     // code block
                   }              
                 })
-
           })
+          const texteAvecSpan = Array.from(data.text).map((caractere, index) => (
+            <span  className='letterEffect' key={index}>{caractere}</span>
+          ));
+        
 
-        return  customStyle.href ? <Link href={customStyle.href} style={customStyle} target='_blank'>{data.text}</Link>  : <span style={customStyle}>{data.text}</span>
+        return charEffect ? <span style={customStyle}>{texteAvecSpan}</span> : customStyle.href ? <Link href={customStyle.href} style={customStyle} target='_blank'>{data.text}</Link>  : <span style={customStyle}>{data.text}</span>
        // return <span style={customStyle}>{data.text}</span>
     }
 

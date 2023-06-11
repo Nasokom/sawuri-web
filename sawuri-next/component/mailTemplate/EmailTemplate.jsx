@@ -40,6 +40,12 @@ function EmailTemplate({ name, message,ourResponse, userLang}) {
     marginBottom: '40px'
   }
 
+  const msg = {
+    fr:'Votre message',
+    de:'Ihre Nachricht :',
+    en:'Your Message',
+  }
+
 
 /*   const imagePath = '/public/marcel_logo.png';
 
@@ -62,6 +68,11 @@ const base64Image = imageBuffer.toString('base64');
             <div style={line}></div>
 
             <ComplexText texts={ourResponse.message[userLang]}/>
+
+            <div style={line}></div>
+
+            <p>{msg[userLang]}</p>
+            <p>{message}</p>
 
             <div style={line}></div>
 
