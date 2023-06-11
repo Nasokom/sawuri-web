@@ -68,7 +68,9 @@ const base64Image = imageBuffer.toString('base64');
             <img  style={img} 
             src="https://sawuri.vercel.app/marcel_logo.png" 
             //src={imageSrc}
-            alt="Image" />
+            width='400px'
+            height='400px'
+            alt="Image"/>
         </body>
       </html>
     );
