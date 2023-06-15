@@ -52,7 +52,7 @@ const finalResp = JSON.parse(responseText);
 //  console.log(ourResponse[0].message[userLang][0].children.text);
   //console.log(str)
 
-  const emailHtml = ReactDOMServer.renderToStaticMarkup(<EmailTemplate name={name} message={message} userLang={userLang} ourResponse={JSON.parse(responseText)}/>);
+  const emailHtml = ReactDOMServer.renderToStaticMarkup(<EmailTemplate name={name} message={message.replace("\n\n", "$enter$enter").replace("\n", "$enter")} userLang={userLang} ourResponse={JSON.parse(responseText)}/>);
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
