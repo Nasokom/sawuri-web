@@ -56,6 +56,14 @@ const imageBuffer = fs.readFileSync(imagePath);
 const base64Image = imageBuffer.toString('base64');
   const imageSrc = `data:image/png;base64,${base64Image}`;
  */
+    // Diviser le texte en mots
+    const mots = message.split(' ');
+
+    // Remplacer le mot cible par une balise <br/>
+    const texteAvecBr = mots.map((mot, index) => (
+      mot === '$enter' ? <br key={index} /> : mot
+    ));
+
     return (
       <html style={{...html,...base}}>
         <head>
@@ -72,7 +80,7 @@ const base64Image = imageBuffer.toString('base64');
             <div style={line}></div>
 
             <p>{msg[userLang]}</p>
-            <p>{message}</p>
+            <p>{texteAvecBr}</p>
 
             <div style={line}></div>
 
