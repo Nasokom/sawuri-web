@@ -28,14 +28,14 @@ console.log('Object string : ')
 
    var mapObj = {
     name:name,
-    message:message.replace("\n\n", "$enter$enter").replace("\n", "$enter"),
+    //message:message.replace("\n\n", "$enter$enter").replace("\n", "$enter"),
     phone:phone,
     email:email
  };
 
  console.log(message.replace(/\s\s+/g, ' '))
 
- const responseText = stringiRes.replace(/\$(name|message|email|phone)/gi, function(matched,key){
+ const responseText = stringiRes.replace(/\$(name|email|phone)/gi, function(matched,key){
   return mapObj[key];
 });
 console.log('Object string Modifier : ')
