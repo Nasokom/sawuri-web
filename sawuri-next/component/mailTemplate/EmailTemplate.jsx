@@ -61,7 +61,7 @@ const base64Image = imageBuffer.toString('base64');
 
     // Remplacer le mot cible par une balise <br/>
     const texteAvecBr = mots.map((mot, index) => (
-      mot === '$enter' ? <br key={index} /> : mot
+      mot === '$enter' ? <br key={index} /> : ` ${mot} `
     ));
 
     return (
