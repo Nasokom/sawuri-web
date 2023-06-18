@@ -1,17 +1,27 @@
 .intro{
+    top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     width: 100%;
     min-height: 100vh;
-    padding-top: 100px;
+    position: absolute;
 }
 
 .intro p{
     padding: 50px 4vw ;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
     font-size: xx-large;
+    position: absolute;
     line-height: 4rem;
+    opacity: 0;
+    width: 100vw;
+}
+
+.intro .letterEffect{
+    translate: 50px;
 }
 
 @media (max-width: 800px) {

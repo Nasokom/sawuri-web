@@ -14,7 +14,6 @@
     font-size: 19.5vw;
     font-display: swap;
     position: relative;
-    margin-bottom: 200px;
     
 }
 .hero h1{
@@ -88,6 +87,7 @@
     position: absolute;
     z-index: 0;
     overflow: visible;
+    pointer-events: none;
 }
 
 .image-box{

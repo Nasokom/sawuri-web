@@ -123,8 +123,7 @@ const News = () => {
         .then((data) => {
           setData(data);
           setLoading(false);
-          console.log(data)
-
+          //console.log(data)
         });
 
     }, [userLang]);

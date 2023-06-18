@@ -115,7 +115,7 @@ const Contact = () => {
                     value={userLang.includes('fr') ? 'envoyer' : userLang.includes('de')? 'schicken' : 'send'} >
 
                         {userLang.includes('fr') && !sendingMail ? 'envoyer' 
-                        : userLang.includes('fr') && sendingMail? 'envoie' 
+                        : userLang.includes('fr') && sendingMail? 'envoi' 
                         
                         : userLang.includes('de') && !sendingMail ? 'schicken' 
                         : userLang.includes('de') && sendingMail ? 'schick' 
