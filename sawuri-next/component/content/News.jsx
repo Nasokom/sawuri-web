@@ -73,7 +73,7 @@ const Ui = ({data, isLoading, userLang})=>{
                   <div className={styles.img}>
                     <Image 
                     style={{objectFit:'contain',borderRadius:"20px"}}
-                    src="vzzf" 
+                    //src="https://cdn.sanity.io/images/sloowon5/production/18a9538b33dd7bb9b1d62f4d64490322ffd0b597-500x500.webp" 
                     height={500} 
                     width={400} 
                     loader={myLoader}

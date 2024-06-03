@@ -26,6 +26,7 @@ const ImageBox = ({data,axesRanges,rndmZidx}) => {
       return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
+    
 
   return (
     <div className='image-box'  

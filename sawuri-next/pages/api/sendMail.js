@@ -29,6 +29,7 @@ export default async function sendEmail(req, res) {
     phone:phone,
     email:email
  };
+ 
  console.log('Message simple:')
  console.log(message)
  console.log('modif regex chelou :')
