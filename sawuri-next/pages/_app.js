@@ -1,4 +1,4 @@
-import '@/styles/globals.css'
+import '../styles/globals.css'
 import Layout from '@/component/Layout/Layout'
 import { StateContext } from '@/context/StateContext'
 import { Analytics } from '@vercel/analytics/react'

@@ -48,6 +48,11 @@ export default {
         type:"string",
         title:"FolderPathDontTouch!!!",
         description:"Ne pas modifier!!!!!!"
-      }
+      },
+      {
+        title: 'Video file',
+        name: 'video',
+        type: 'mux.video',
+      },
     ]
 }

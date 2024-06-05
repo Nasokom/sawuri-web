@@ -6,6 +6,8 @@ import { useStateContext } from '@/context/StateContext'
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useIsomorphicLayoutEffect } from '@/Utils/isomorphicLayout';
+import MuxPlayer from '@mux/mux-player-react'
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,7 +30,7 @@ const Media = ({videos}) => {
 
         const ctx = gsap.context((self) => {
     
-          const videos = self.selector('video')
+          const videos = self.selector('.gsap-video')
 
           videos.forEach((video,i)=>{
             
@@ -110,7 +112,11 @@ const Media = ({videos}) => {
                 onClick={()=>setIsMuted(false)} 
                 >
                         <h4 id={i+0.5}>{video.titles[userLang]}</h4>
-                          <video  
+
+                        { video.video && <MuxPlayer playbackId={video.video.asset.playbackid}  streamType="on-demand" autoPlay muted/> }
+                       {video.video && console.log(video)}
+                        <video  
+                        className='gsap-video'
                           id={i}
                           //allowFullScreenmuted
                           autoPlay 
@@ -119,6 +125,7 @@ const Media = ({videos}) => {
                           >
                             <source src={`/videos/${video.path}.mp4`} type="video/mp4"/>
                           </video>
+
                  </div>
                 )
               })}
@@ -145,7 +152,18 @@ export default Media
 
 export async function getStaticProps() {
   
-  const videos = await client.fetch(`*[_type == "video"]`);
+  const videos = await client.fetch(`*[_type == "video"]{
+    titles,
+    path,
+    video {
+      asset-> {
+        playbackId,
+        assetId,
+        filename,
+      }
+    }
+   
+  }`);
   return {
     props: {
       videos
