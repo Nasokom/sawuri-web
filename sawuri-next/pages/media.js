@@ -117,7 +117,8 @@ const Media = ({videos}) => {
                           controls  
                           muted
                           >
-                            <source src={`/videos/${video.path}.mp4`} type="video/mp4"/>
+                           {video.videoUrl ? <source src={video.videoUrl}/>
+                        :<source src={`/videos/${video.path}.mp4`} type="video/mp4"/>}
                           </video>
                  </div>
                 )
@@ -145,7 +146,7 @@ export default Media
 
 export async function getStaticProps() {
   
-  const videos = await client.fetch(`*[_type == "video"]`);
+  const videos = await client.fetch(`*[_type == "video"]{ordre,titles,path,'videoUrl':file.asset->url}`);
   return {
     props: {
       videos

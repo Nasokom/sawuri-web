@@ -4,9 +4,24 @@ export default {
       title: 'Medias',
     fields: [
       {
-        name: 'titre',
-        type: 'string',
-        title: 'Titre'
+        name:'titre',
+        type:'string',
+        title:'Titre dans Sanity',
+        description:'Nom du document'
+      },
+      {
+        name:"titles",
+        type:"titleTrad",
+        title:'Titre site web'
+      },
+      {
+        name:'file',
+        title:'Video',
+        description:'100mb max !!',
+        type:'file',
+        options: {
+    accept: 'video/*', 
+  },
       },
       {
         name:'ordre',
@@ -14,16 +29,14 @@ export default {
         title:'ordre',
         description:"Definit l'ordre d'apparition"
       },
-      {
-        name:"titles",
-        type:"titleTrad",
-        title:'Titre traduit'
-      },
+
       {
         name:"url",
         type:"string",
         title:"Lien",
-        description:"chemin exact svp"
+        description:"chemin exact svp",
+        deprecated:'true',
+        hidden:true,
       },
       {
         name:"source",
@@ -35,7 +48,9 @@ export default {
           ], 
           layout: 'radio',
         },
-        description:"important"
+        description:"important",
+        deprecated:'true',
+        hidden:true,
       },
       {
         name:'desc',
@@ -47,7 +62,8 @@ export default {
         name:"path",
         type:"string",
         title:"FolderPathDontTouch!!!",
-        description:"Ne pas modifier!!!!!!"
+        description:"Ne pas modifier!!!!!!",
+        deprecated:'true',
       }
     ]
 }
