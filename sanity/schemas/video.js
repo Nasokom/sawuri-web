@@ -29,12 +29,7 @@ export default {
     accept: 'video/*', 
   },
       },
-      {
-        name:'ordre',
-        type:'number',
-        title:'ordre',
-        description:"Definit l'ordre d'apparition"
-      },
+  
 
       {
         name:"url",

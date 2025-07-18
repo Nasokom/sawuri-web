@@ -6,11 +6,7 @@ export default {
    orderings: [orderRankOrdering],
   fields: [
     orderRankField({ type: "orderRank" }),
-       {   
-        name:"ordre",
-        type:"number",
-        title:"Ordre"
-      },
+
       {
         name: 'title',
         type: 'string',
