@@ -1,14 +1,20 @@
+import {orderRankField, orderRankOrdering} from '@sanity/orderable-document-list'
+
 export default {
     name: 'video',
     type: 'document',
       title: 'Medias',
-    fields: [
-      {
-        name:'titre',
-        type:'string',
-        title:'Titre dans Sanity',
-        description:'Nom du document'
-      },
+    orderings: [orderRankOrdering],
+
+  fields: [
+
+    {
+      name:'titre',
+      type:'string',
+      title:'Titre dans Sanity',
+      description:'Nom du document'
+    },
+    orderRankField({ type: "orderRank" }),
       {
         name:"titles",
         type:"titleTrad",
