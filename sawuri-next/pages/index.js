@@ -267,7 +267,7 @@ useIsomorphicLayoutEffect(() => {
 export async function getStaticProps() {
 
   //const aboutData = await client.fetch(`*[_type == "contenu"]`);
-  const photos = await client.fetch(`*[_type == "gallery"]`);
+  const photos = await client.fetch(`*[_type == "gallery"]|order(orderRank)`);
   const marketing = await client.fetch(`*[_type == "Marketing"]`);
   return {
     props: {

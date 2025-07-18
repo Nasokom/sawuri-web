@@ -55,7 +55,7 @@ export default Musiciens
 
 export async function getStaticProps() {
   
-  const team = await client.fetch(`*[_type == "team"]`);
+  const team = await client.fetch(`*[_type == "team"]|order(orderRank)`);
   return {
     props: {
       team
