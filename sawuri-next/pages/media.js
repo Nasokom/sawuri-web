@@ -106,9 +106,9 @@ const Media = ({videos}) => {
                           <video  
                           id={i}
                           //allowFullScreenmuted
-                          autoPlay 
+                          //autoPlay 
                           controls  
-                          muted
+                          //muted
                           >
                            {video.videoUrl ? <source src={video.videoUrl}/>
                         :<source src={`/videos/${video.path}.mp4`} type="video/mp4"/>}
