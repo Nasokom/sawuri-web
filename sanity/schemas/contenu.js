@@ -1,13 +1,12 @@
+import {orderRankField, orderRankOrdering} from '@sanity/orderable-document-list'
 export default {
     name: 'contenu',
     type: 'document',
       title: 'Biographie Sawuri',
-    fields: [
-       {   
-        name:"ordre",
-        type:"number",
-        title:"Ordre"
-      },
+   orderings: [orderRankOrdering],
+  fields: [
+    orderRankField({ type: "orderRank" }),
+
       {
         name: 'title',
         type: 'string',

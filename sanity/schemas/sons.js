@@ -1,13 +1,17 @@
+import {orderRankField, orderRankOrdering} from '@sanity/orderable-document-list'
 export default {
     name: 'sons',
     type: 'document',
       title: 'Musique Piste',
-    fields: [
-      {
-        name: 'titre',
-        type: 'string',
-        title: 'Titre'
-      },
+  orderings: [orderRankOrdering],
+  fields: [
+
+    {
+      name: 'titre',
+      type: 'string',
+      title: 'Titre'
+    },
+    orderRankField({ type: "orderRank" }),
       {
         name:"audio",
         type:"file",

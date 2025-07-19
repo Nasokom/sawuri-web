@@ -1,29 +1,43 @@
+import {orderRankField, orderRankOrdering} from '@sanity/orderable-document-list'
+
 export default {
     name: 'video',
     type: 'document',
       title: 'Medias',
-    fields: [
-      {
-        name: 'titre',
-        type: 'string',
-        title: 'Titre'
-      },
-      {
-        name:'ordre',
-        type:'number',
-        title:'ordre',
-        description:"Definit l'ordre d'apparition"
-      },
+    orderings: [orderRankOrdering],
+
+  fields: [
+
+    {
+      name:'titre',
+      type:'string',
+      title:'Titre dans Sanity',
+      description:'Nom du document'
+    },
+    orderRankField({ type: "orderRank" }),
       {
         name:"titles",
         type:"titleTrad",
-        title:'Titre traduit'
+        title:'Titre site web'
       },
+      {
+        name:'file',
+        title:'Video',
+        description:'100mb max !!',
+        type:'file',
+        options: {
+    accept: 'video/*', 
+  },
+      },
+  
+
       {
         name:"url",
         type:"string",
         title:"Lien",
-        description:"chemin exact svp"
+        description:"chemin exact svp",
+        deprecated:'true',
+        hidden:true,
       },
       {
         name:"source",
@@ -35,7 +49,9 @@ export default {
           ], 
           layout: 'radio',
         },
-        description:"important"
+        description:"important",
+        deprecated:'true',
+        hidden:true,
       },
       {
         name:'desc',
@@ -47,7 +63,8 @@ export default {
         name:"path",
         type:"string",
         title:"FolderPathDontTouch!!!",
-        description:"Ne pas modifier!!!!!!"
+        description:"Ne pas modifier!!!!!!",
+        deprecated:'true',
       }
     ]
 }

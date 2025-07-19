@@ -15,22 +15,15 @@ const Media = ({videos}) => {
 
   const {userLang} = useStateContext();
 
-  function sortContent( a, b ){
-    if ( a.ordre < b.ordre){ return -1;}
-    if ( a.ordre > b.ordre){return 1;}
-    return 0;
-    }
-    const content = videos.sort(sortContent)
-
   const main = useRef(null)
 
       useIsomorphicLayoutEffect(() => {
 
         const ctx = gsap.context((self) => {
     
-          const videos = self.selector('video')
+          const videosElt = self.selector('video')
 
-          videos.forEach((video,i)=>{
+          videosElt.forEach((video,i)=>{
             
             const tl = gsap.timeline({
               scrollTrigger: {
@@ -103,7 +96,7 @@ const Media = ({videos}) => {
 
         <div className='video-container'>
 
-            {content.map((video,i)=>{
+            {videos.map((video,i)=>{
               
               return (
                 <div className='video-box' key={i}
@@ -117,7 +110,8 @@ const Media = ({videos}) => {
                           controls  
                           muted
                           >
-                            <source src={`/videos/${video.path}.mp4`} type="video/mp4"/>
+                           {video.videoUrl ? <source src={video.videoUrl}/>
+                        :<source src={`/videos/${video.path}.mp4`} type="video/mp4"/>}
                           </video>
                  </div>
                 )
@@ -145,7 +139,7 @@ export default Media
 
 export async function getStaticProps() {
   
-  const videos = await client.fetch(`*[_type == "video"]`);
+  const videos = await client.fetch(`*[_type == "video"] {orderRank,titles,path,'videoUrl':file.asset->url} | order(orderRank asc)`);
   return {
     props: {
       videos
